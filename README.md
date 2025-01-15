@@ -1,1 +1,0 @@
-# oshumate.github.io
