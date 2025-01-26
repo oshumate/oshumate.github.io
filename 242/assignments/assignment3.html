@@ -24,6 +24,7 @@
             display: flex;
             justify-content: space-between; /* Spread out the buttons */
             padding: 1rem;
+            margin-bottom: 2rem; /* Added space between nav and content */
         }
 
         nav ul {
@@ -69,18 +70,31 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .big-ideas > div img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         .big-ideas h3 {
             color: #ff4500;
+            flex: 1;
         }
 
-        .big-ideas img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .big-ideas p {
+            flex: 2;
+            text-align: justify;
+        }
+
+        /* Special layout adjustments for Idea 2 */
+        .big-ideas > div:nth-child(2) {
+            flex-direction: row-reverse;
         }
 
         footer {
@@ -98,6 +112,16 @@
 
             .big-ideas {
                 align-items: center;
+            }
+
+            .big-ideas > div {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .big-ideas > div img {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -124,23 +148,19 @@
             <div>
                 <h3>Idea 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
-                <div class="image-placeholder">
-                    <img src="#" alt="Idea 1 Image">
-                </div>
+                <img src="#" alt="Idea 1 Image">
             </div>
             <div>
-                <h3>Idea 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
-                <div class="image-placeholder">
-                    <img src="#" alt="Idea 2 Image">
+                <img src="#" alt="Idea 2 Image">
+                <div>
+                    <h3>Idea 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
                 </div>
             </div>
             <div>
                 <h3>Idea 3</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
-                <div class="image-placeholder">
-                    <img src="#" alt="Idea 3 Image">
-                </div>
+                <img src="#" alt="Idea 3 Image">
             </div>
         </div>
     </div>
