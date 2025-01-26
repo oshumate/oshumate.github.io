@@ -22,9 +22,9 @@
         nav {
             background-color: #ff6347;
             display: flex;
-            justify-content: space-between; /* Spread out the buttons */
+            justify-content: space-between;
             padding: 1rem;
-            margin-bottom: 2rem; /* Added space between nav and content */
+            margin-bottom: 2rem;
         }
 
         nav ul {
@@ -33,7 +33,7 @@
             padding: 0;
             margin: 0;
             width: 100%;
-            justify-content: space-evenly; /* Evenly space out the buttons */
+            justify-content: space-evenly;
         }
 
         nav ul li {
@@ -60,7 +60,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2rem; /* Space between the ideas */
+            gap: 2rem;
         }
 
         .big-ideas > div {
@@ -70,16 +70,15 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
             align-items: flex-start;
         }
 
-        .big-ideas > div img {
+        .big-ideas img {
             width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
+            margin-left: 1rem;
         }
 
         .big-ideas h3 {
@@ -92,9 +91,28 @@
             text-align: justify;
         }
 
-        /* Special layout adjustments for Idea 2 */
+        /* Separate image box for Ideas 1 and 3 */
+        .big-ideas > div:nth-child(1) .content,
+        .big-ideas > div:nth-child(3) .content {
+            flex: 2;
+        }
+
+        .big-ideas > div:nth-child(1) .image,
+        .big-ideas > div:nth-child(3) .image {
+            flex: 1;
+        }
+
         .big-ideas > div:nth-child(2) {
             flex-direction: row-reverse;
+        }
+
+        .big-ideas > div:nth-child(2) .content {
+            flex: 2;
+        }
+
+        .big-ideas > div:nth-child(2) .image {
+            flex: 1;
+            order: -1; /* Move image to the left */
         }
 
         footer {
@@ -123,6 +141,10 @@
                 width: 100%;
                 height: auto;
             }
+
+            .big-ideas > div:nth-child(2) .image {
+                order: 0; /* Reset order for mobile view */
+            }
         }
     </style>
 </head>
@@ -146,21 +168,31 @@
         <h2>Big Ideas</h2>
         <div class="big-ideas">
             <div>
-                <h3>Idea 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
-                <img src="#" alt="Idea 1 Image">
+                <div class="content">
+                    <h3>Idea 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
+                </div>
+                <div class="image">
+                    <img src="#" alt="Idea 1 Image">
+                </div>
             </div>
             <div>
-                <img src="#" alt="Idea 2 Image">
-                <div>
+                <div class="image">
+                    <img src="#" alt="Idea 2 Image">
+                </div>
+                <div class="content">
                     <h3>Idea 2</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
                 </div>
             </div>
             <div>
-                <h3>Idea 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
-                <img src="#" alt="Idea 3 Image">
+                <div class="content">
+                    <h3>Idea 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
+                </div>
+                <div class="image">
+                    <img src="#" alt="Idea 3 Image">
+                </div>
             </div>
         </div>
     </div>
