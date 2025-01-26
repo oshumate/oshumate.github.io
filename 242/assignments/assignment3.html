@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 3</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,6 +12,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            background-color: #fafafa;
         }
 
         header, footer {
@@ -23,7 +23,7 @@
         }
 
         nav {
-            background-color: #444;
+            background-color: #ff6347;
             display: flex;
             justify-content: center;
             padding: 1rem;
@@ -45,63 +45,66 @@
             font-weight: bold;
         }
 
-        /* Flexbox Layout */
         .main-content {
             display: flex;
-            flex: 1;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             padding: 2rem;
         }
 
-        .main-content > section, .main-content > aside {
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 2rem;
+        }
+
+        .big-ideas {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .big-ideas > div {
             flex: 1;
+            margin: 0 1rem;
+            padding: 1rem;
+            background-color: #f0f8ff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .big-ideas h3 {
+            color: #ff4500;
+        }
+
+        .big-ideas img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
             padding: 1rem;
         }
 
-        article {
-            flex: 3;
-            padding: 1rem;
-        }
-
-        /* Media Queries */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .main-content {
+            .big-ideas {
                 flex-direction: column;
             }
 
-            .main-content > section, .main-content > aside, article {
-                flex: none;
-                width: 100%;
+            .big-ideas > div {
+                margin-bottom: 1rem;
             }
         }
-
-        /* Additional Styles */
-        .background {
-            background-color: #f4f4f4;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 200px;
-            background-color: #ddd;
-            text-align: center;
-            line-height: 200px;
-            color: #888;
-        }
-
-        .content-text {
-            background-color: #fff;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
     </style>
 </head>
 <body>
@@ -111,40 +114,40 @@
     
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/242/index.html">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="main-content">
-        <section>
-            <div class="content-text">
-                <h2>Section Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna.</p>
+        <h2>Big Ideas</h2>
+        <div class="big-ideas">
+            <div>
+                <h3>Idea 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
+                <div class="image-placeholder">
+                    <img src="#" alt="Idea 1 Image">
+                </div>
             </div>
-            <div class="image-placeholder">
-                Image Placeholder
+            <div>
+                <h3>Idea 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
+                <div class="image-placeholder">
+                    <img src="#" alt="Idea 2 Image">
+                </div>
             </div>
-        </section>
-
-        <aside>
-            <div class="content-text">
-                <h3>Aside Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat orci quis magna pretium, eget tincidunt ante laoreet.</p>
+            <div>
+                <h3>Idea 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet condimentum urna. Vivamus ullamcorper orci eu tincidunt faucibus.</p>
+                <div class="image-placeholder">
+                    <img src="#" alt="Idea 3 Image">
+                </div>
             </div>
-        </aside>
-
-        <article>
-            <div class="content-text">
-                <h2>Article Title</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet enim eget augue fermentum, ut facilisis dui facilisis.</p>
-            </div>
-            <div class="image-placeholder">
-                Image Placeholder
-            </div>
-        </article>
+        </div>
     </div>
 
     <footer>
