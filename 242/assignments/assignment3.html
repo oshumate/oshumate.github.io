@@ -52,26 +52,30 @@
 
         h2 {
             color: #6a0dad;
-            margin-bottom: 2rem;
+            margin: 0 0 1rem;
             text-align: left;
+            font-size: 2rem;
         }
 
         .big-ideas {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2rem;
-            padding: 2rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
         }
 
         .big-ideas > div {
             display: flex;
+            flex-direction: row;
             align-items: flex-start;
             gap: 1rem;
             background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 1rem;
+            width: 100%;
+            justify-content: space-between;
         }
 
         .big-ideas h3 {
@@ -90,11 +94,6 @@
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-        }
-
-        /* Change flex-direction for the second idea box */
-        .big-ideas > div:nth-child(2) {
-            flex-direction: row; /* Changed from row-reverse */
         }
 
         footer {
