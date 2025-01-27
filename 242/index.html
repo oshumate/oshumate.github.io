@@ -47,6 +47,17 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 30%;
+            transition: transform 0.2s;
+        }
+
+        .assignment:hover {
+            transform: translateY(-5px);
+        }
+
+        .assignment a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .assignment img {
@@ -63,21 +74,6 @@
         .assignment p {
             color: #555;
         }
-
-        .assignment a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #8e44ad;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .assignment a:hover {
-            background-color: #e74c3c;
-        }
     </style>
 </head>
 <body>
@@ -89,22 +85,25 @@
         <h2>Assignments</h2>
         <div class="assignments">
             <div class="assignment">
-                <h3>Assignment 1</h3>
-                <img src="images/assignment1.jpg" alt="Assignment 1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
-                <a href="assignments/assignment1.html">Go to Assignment 1</a>
+                <a href="assignments/assignment1.html">
+                    <h3>Assignment 1</h3>
+                    <img src="images/assignment1.jpg" alt="Assignment 1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
+                </a>
             </div>
             <div class="assignment">
-                <h3>Assignment 2</h3>
-                <img src="images/assignment2.jpg" alt="Assignment 2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
-                <a href="assignments/assignment2.html">Go to Assignment 2</a>
+                <a href="assignments/assignment2.html">
+                    <h3>Assignment 2</h3>
+                    <img src="images/assignment2.jpg" alt="Assignment 2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
+                </a>
             </div>
             <div class="assignment">
-                <h3>Assignment 3</h3>
-                <img src="images/assignment3.jpg" alt="Assignment 3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
-                <a href="assignments/assignment3.html">Go to Assignment 3</a>
+                <a href="assignments/assignment3.html">
+                    <h3>Assignment 3</h3>
+                    <img src="images/assignment3.jpg" alt="Assignment 3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut dolor euismod.</p>
+                </a>
             </div>
         </div>
     </div>
