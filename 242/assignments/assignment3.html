@@ -112,12 +112,29 @@
             width: 48%;
         }
 
-        .middle-column {
+        .links {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             gap: 1rem;
             width: 48%;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .links h3 {
+            color: #6a0dad;
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links ul li {
+            color: #333;
+            font-size: 1rem;
         }
 
         .title-box {
@@ -138,25 +155,6 @@
         .title-box p {
             color: #333;
             font-size: 0.9rem;
-        }
-
-        /* Adjust the title box layout */
-        .new-section .left-column, .new-section .right-column {
-            width: 48%;
-        }
-
-        .new-section .left-column > div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .new-section .right-column > div {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .new-section .middle-column {
-            display: none; /* Hiding middle column as per the updated structure */
         }
 
         footer {
@@ -186,13 +184,8 @@
                 align-items: center;
             }
 
-            .new-section .left-column, .new-section .right-column {
+            .new-section .left-column, .new-section .right-column, .links {
                 width: 100%;
-            }
-
-            .new-section .middle-column {
-                width: 100%;
-                display: block;
             }
         }
     </style>
@@ -263,6 +256,15 @@
                     <img src="https://via.placeholder.com/200x100" alt="Title 4 Image">
                     <p>Short ipsum paragraph for title 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
+            </div>
+            <div class="links">
+                <h3>Links</h3>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
             </div>
         </div>
     </div>
