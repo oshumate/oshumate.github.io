@@ -57,14 +57,14 @@
 
         .hero-text {
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 50%;
+            left: 1rem; /* Aligning with the left of the image */
+            transform: translateY(-50%); /* Centering vertically */
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 1rem;
             border-radius: 5px;
             max-width: 300px;
-            margin: 1rem;
             text-align: left;
         }
 
@@ -78,6 +78,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: absolute;
             left: 0;
+            top: 500px; /* Positioning below the hero image */
         }
 
         .sidebar h2 {
