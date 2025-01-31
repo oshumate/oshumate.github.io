@@ -14,6 +14,19 @@
             background-color: #822633; /* Main maroon color */
             color: white;
             padding: 1rem;
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .top-right p {
+            margin: 0.3rem 0;
         }
 
         nav {
@@ -38,6 +51,35 @@
         .hero img {
             max-width: 100%;
             height: auto;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            color: #822633;
+            font-size: 1.25rem;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 0.5rem 0;
+            color: #333;
+            font-size: 0.9rem;
         }
 
         .content {
@@ -94,9 +136,11 @@
 </head>
 <body>
     <header>
+        <div class="top-right">
+            <p>Gateways For: STUDENTS | FACULTY & STAFF | ALUMNI | PARENTS & FAMILIES</p>
+            <p>Calendar | Map | Directory | Apply | Give</p>
+        </div>
         <h1>College of Arts and Sciences</h1>
-        <p>Gateways For: STUDENTS | FACULTY & STAFF | ALUMNI | PARENTS & FAMILIES</p>
-        <p>Calendar | Map | Directory | Apply | Give</p>
     </header>
     <nav>
         <a href="#">About</a>
@@ -109,6 +153,19 @@
         <img src="https://place-hold.it/1200x400" alt="Placeholder image">
         <h2>Lorem Ipsum Dolor Sit Amet</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+    </div>
+    <div class="sidebar">
+        <h2>College of Arts and Sciences</h2>
+        <ul>
+            <li>About</li>
+            <li>Academics</li>
+            <li>Departments, Schools and Programs</li>
+            <li>Centers and Institutes</li>
+            <li>Beyond the Classroom</li>
+            <li>Research</li>
+            <li>Alumni and Friends</li>
+            <li>Support the College</li>
+        </ul>
     </div>
     <div class="content">
         <div class="content-item">
