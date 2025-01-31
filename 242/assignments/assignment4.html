@@ -75,10 +75,8 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: left;
-            position: absolute;
-            top: 100%;
-            left: 10px;
-            transform: translateY(-100%);
+            position: relative;
+            margin-left: 10px;
         }
 
         .sidebar h2 {
@@ -101,9 +99,10 @@
         .content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: flex-start;
             padding: 2rem;
             gap: 1rem;
+            margin-left: 350px; /* Offset content to the right */
         }
 
         .content-item {
@@ -146,6 +145,9 @@
         @media (max-width: 768px) {
             .content-item {
                 width: 100%;
+            }
+            .content {
+                margin-left: 0;
             }
         }
     </style>
