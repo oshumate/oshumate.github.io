@@ -45,12 +45,24 @@
         .hero {
             background-color: #f4f4f4;
             text-align: center;
-            padding: 2rem 1rem;
+            position: relative;
+            padding: 0;
         }
 
         .hero img {
             max-width: 100%;
             height: auto;
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            max-width: 300px;
         }
 
         .sidebar {
@@ -63,6 +75,10 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: left;
+            position: absolute;
+            top: 100%;
+            left: 10px;
+            transform: translateY(-100%);
         }
 
         .sidebar h2 {
@@ -151,8 +167,10 @@
     </nav>
     <div class="hero">
         <img src="https://place-hold.it/1200x400" alt="Placeholder image">
-        <h2>Lorem Ipsum Dolor Sit Amet</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+        <div class="hero-text">
+            <h2>Lorem Ipsum Dolor Sit Amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+        </div>
     </div>
     <div class="sidebar">
         <h2>College of Arts and Sciences</h2>
