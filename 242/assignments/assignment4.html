@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts and Sciences Recreation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #822633; /* Main maroon color */
+            color: white;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #5b1e26; /* Darker maroon */
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2rem;
+            gap: 1rem;
+        }
+
+        .content-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33% - 2rem);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .content-item h3 {
+            background-color: #822633;
+            color: white;
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .content-item p {
+            padding: 1rem;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #5b1e26;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College of Arts and Sciences</h1>
+    </header>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Academics</a>
+        <a href="#">Research</a>
+        <a href="#">Admissions</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="hero">
+        <img src="https://place-hold.it/1200x400" alt="Placeholder image">
+        <h2>Lorem Ipsum Dolor Sit Amet</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+    </div>
+    <div class="content">
+        <div class="content-item">
+            <img src="https://place-hold.it/300x200" alt="Placeholder">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="content-item">
+            <img src="https://place-hold.it/300x200" alt="Placeholder">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="content-item">
+            <img src="https://place-hold.it/300x200" alt="Placeholder">
+            <h3>Lorem Ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 College of Arts and Sciences</p>
+    </footer>
+</body>
+</html>
