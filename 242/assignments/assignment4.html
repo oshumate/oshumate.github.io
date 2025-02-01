@@ -11,7 +11,7 @@
         }
 
         header {
-            background-color: #822633; /* Main maroon color */
+            background-color: #822633;
             color: white;
             padding: 1rem;
             position: relative;
@@ -32,7 +32,7 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #5b1e26; /* Darker maroon */
+            background-color: #5b1e26;
             padding: 0.5rem 0;
         }
 
@@ -50,22 +50,27 @@
         }
 
         .hero img {
-            max-width: 100%; /* Keeps the image responsive */
-            height: 500px; /* Increased height to make the image bigger */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
+            max-width: 100%;
+            height: 500px;
+            object-fit: cover;
         }
 
         .hero-text {
             position: absolute;
             top: 50%;
-            left: 1rem; /* Aligning with the left of the image */
-            transform: translateY(-50%); /* Centering vertically */
+            left: 1rem;
+            transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 1rem;
             border-radius: 5px;
             max-width: 300px;
             text-align: left;
+        }
+
+        .main-container {
+            display: flex;
+            align-items: flex-start;
         }
 
         .sidebar {
@@ -76,9 +81,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            top: 550px; /* Adjusted positioning */
-            left: 20px; /* Aligned with the main content */
         }
 
         .sidebar h2 {
@@ -101,10 +103,8 @@
         .content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
-            padding: 2rem;
             gap: 1rem;
-            margin-left: 350px; /* Adjusted margin to align next to sidebar */
+            padding: 2rem;
         }
 
         .content-item {
@@ -143,15 +143,6 @@
             padding: 1rem;
             margin-top: 2rem;
         }
-
-        @media (max-width: 768px) {
-            .content-item {
-                width: 100%;
-            }
-            .content {
-                margin-left: 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -176,49 +167,46 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
         </div>
     </div>
-    <div class="sidebar">
-        <h2>College of Arts and Sciences</h2>
-        <ul>
-            <li>About</li>
-            <li>Academics</li>
-            <li>Departments, Schools and Programs</li>
-            <li>Centers and Institutes</li>
-            <li>Beyond the Classroom</li>
-            <li>Research</li>
-            <li>Alumni and Friends</li>
-            <li>Support the College</li>
-        </ul>
-    </div>
-    <div class="content">
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Undergraduate</h3>
-            <p>Find countless career paths with dozens of degree choices.</p>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>College of Arts and Sciences</h2>
+            <ul>
+                <li>About</li>
+                <li>Academics</li>
+                <li>Departments, Schools and Programs</li>
+                <li>Centers and Institutes</li>
+                <li>Beyond the Classroom</li>
+                <li>Research</li>
+                <li>Alumni and Friends</li>
+                <li>Support the College</li>
+            </ul>
         </div>
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Graduate</h3>
-            <p>Develop deep expertise with research and creative practice.</p>
-        </div>
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Departments</h3>
-            <p>Find your academic home in our departments and programs.</p>
-        </div>
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Careers</h3>
-            <p>Excel and advance with a degree in the arts and sciences.</p>
-        </div>
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Research</h3>
-            <p>Drive innovation by advancing the frontiers of what’s known.</p>
-        </div>
-        <div class="content-item">
-            <img src="https://place-hold.it/300x200" alt="Placeholder">
-            <h3>Alumni & Friends</h3>
-            <p>Connect with fellow Gamecocks from your program.</p>
+        <div class="content">
+            <div class="content-item">
+                <img src="https://place-hold.it/300x200" alt="Placeholder">
+                <h3>Undergraduate</h3>
+                <p>Find countless career paths with dozens of degree choices.</p>
+            </div>
+            <div class="content-item">
+                <img src="https://place-hold.it/300x200" alt="Placeholder">
+                <h3>Graduate</h3>
+                <p>Develop deep expertise with research and creative practice.</p>
+            </div>
+            <div class="content-item">
+                <img src="https://place-hold.it/300x200" alt="Placeholder">
+                <h3>Departments</h3>
+                <p>Find your academic home in our departments and programs.</p>
+            </div>
+            <div class="content-item">
+                <img src="https://place-hold.it/300x200" alt="Placeholder">
+                <h3>Careers</h3>
+                <p>Excel and advance with a degree in the arts and sciences.</p>
+            </div>
+            <div class="content-item">
+                <img src="https://place-hold.it/300x200" alt="Placeholder">
+                <h3>Research</h3>
+                <p>Drive innovation by advancing the frontiers of what’s known.</p>
+            </div>
         </div>
     </div>
     <footer>
