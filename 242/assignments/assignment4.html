@@ -137,10 +137,8 @@
             font-size: 0.9rem;
         }
 
-        /* News Section */
         .news-section {
-            width: 1200px;
-            height: 400px;
+            width: calc(33.33% - 2rem); /* Matches the width of content items */
             margin: 2rem auto;
             background-color: #fff;
             border-radius: 8px;
@@ -159,14 +157,14 @@
             line-height: 1.5;
         }
 
-        .social-media {
+        .news-section .social-media {
             margin-top: 1rem;
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
 
-        .social-media a {
+        .news-section .social-media a {
             width: 40px;
             height: 40px;
             display: block;
@@ -286,9 +284,11 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2025 College of Arts and Sciences. All rights reserved.</p>
+        <p>&copy; 2025 University of South Carolina, College of Arts and Sciences</p>
         <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Accessibility</a>
         </div>
     </footer>
 </body>
