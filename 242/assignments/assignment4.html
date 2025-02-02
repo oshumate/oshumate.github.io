@@ -18,15 +18,21 @@
         }
 
         .top-right {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
             font-size: 0.9rem;
+            flex-wrap: wrap;
         }
 
-        .top-right p {
-            margin: 0.3rem 0;
+        .top-right a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .top-right a:hover {
+            text-decoration: underline;
         }
 
         nav {
@@ -47,12 +53,12 @@
             text-align: center;
             position: relative;
             padding-top: 2rem;
-            height: 600px; /* Increased height */
+            height: 600px;
         }
 
         .hero img {
             max-width: 100%;
-            height: 100%; /* Ensure it fills the increased height */
+            height: 100%;
             object-fit: cover;
         }
 
@@ -112,10 +118,10 @@
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            width: calc(33.33% - 2rem); /* 3 items per row */
+            width: calc(33.33% - 2rem);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            margin-bottom: 1rem; /* To add a bit of space at the bottom */
+            margin-bottom: 1rem;
         }
 
         .content-item img {
@@ -208,8 +214,18 @@
 <body>
     <header>
         <div class="top-right">
-            <p>Gateways For: STUDENTS | FACULTY & STAFF | ALUMNI | PARENTS & FAMILIES</p>
-            <p>Calendar | Map | Directory | Apply | Give</p>
+            <p>
+                Gateways For: 
+                <a href="#">STUDENTS</a> | 
+                <a href="#">FACULTY & STAFF</a> | 
+                <a href="#">ALUMNI</a> | 
+                <a href="#">PARENTS & FAMILIES</a> |
+                <a href="#">Calendar</a> | 
+                <a href="#">Map</a> | 
+                <a href="#">Directory</a> | 
+                <a href="#">Apply</a> | 
+                <a href="#">Give</a>
+            </p>
         </div>
         <h1>University of South Carolina</h1>
         <nav>
@@ -312,4 +328,3 @@
     </footer>
 </body>
 </html>
-
