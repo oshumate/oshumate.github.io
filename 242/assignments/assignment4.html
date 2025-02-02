@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            direction: ltr;
+            direction: ltr; /* Changed from rtl to ltr */
         }
 
         header {
@@ -68,8 +68,8 @@
 
         .hero-text {
             position: absolute;
-            top: 78%;
-            left: 15%;
+            top: 78%;  /* Adjust the top value to move it down more */
+            left: 15%;  /* Adjust the right value to move it to the right */
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
@@ -81,19 +81,17 @@
 
         .main-container {
             display: flex;
-            justify-content: center;
-            padding: 2rem;
+            align-items: flex-start;
         }
 
         .sidebar {
             background-color: #fff;
             padding: 1rem;
             margin: 1rem;
-            width: 200px; /* Shrunk width */
+            width: 300px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Center content in sidebar */
         }
 
         .sidebar h2 {
@@ -115,10 +113,9 @@
 
         .content {
             display: flex;
-            justify-content: center; /* Center content items */
             flex-wrap: wrap;
             gap: 1rem;
-            text-align: center; /* Center text inside content items */
+            padding: 2rem;
         }
 
         .content-item {
@@ -129,7 +126,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             margin-bottom: 1rem;
-            text-align: center; /* Center text inside content items */
         }
 
         .content-item img {
@@ -190,6 +186,21 @@
 
         .news-box a:hover {
             text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-media a {
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         footer {
@@ -315,33 +326,86 @@
             </div>
         </div>
     </div>
+
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Arts and Sciences News</h2>
+
+        <!-- First News Item -->
+        <div class="news-box">
+            <h3>Video: USC professor, alumni work to prepare communities for hazardous events</h3>
+            <p>From communities in the Southeast submerged by floodwaters to neighborhoods on the California coast battling raging wildfires, natural disasters are on the rise. Hear from geographer Susan Cutter, Carolina Distinguished Professor, and alumni working in emergency management across the state and nation about how tools like the Social Vulnerability Index can lead to better outcomes for the future.</p>
+        </div>
+
+        <!-- Second News Item -->
+        <div class="news-box">
+            <h3>USC alum, Medal of Honor recipient recognized at national championship</h3>
+            <p>University of South Carolina alumnus and Medal of Honor recipient Marine Corporal (retired) Kyle Carpenter will be recognized during Monday’s national championship college football game.</p>
+        </div>
+
+        <p><a href="#">View More News</a></p>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <div class="left">
-            <p>University of South Carolina | All Rights Reserved</p>
+            <p>College of Arts and Sciences</p>
         </div>
         <div class="right">
-            <a href="#">Contact</a> |
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Terms of Use</a>
+            <a href="#">Location</a>
+            <a href="#">Contact</a>
+            <a href="#">Give</a>
+            <a href="#">Calendar</a>
+            <a href="#">Social Media</a>
         </div>
     </footer>
+
+    <!-- Second Footer -->
     <div class="footer-second">
         <div class="footer-column">
-            <a href="#">Undergraduate</a>
-            <a href="#">Graduate</a>
-            <a href="#">Departments</a>
-            <a href="#">Research</a>
+            <h3>Colleges & Schools</h3>
+            <a href="#">Arts and Sciences</a>
+            <a href="#">Business</a>
+            <a href="#">Education</a>
+            <a href="#">Engineering and Computing</a>
+            <a href="#">The Graduate School</a>
+            <a href="#">Hospitality, Retail and Sport Management</a>
+            <a href="#">Information and Communications</a>
+            <a href="#">Law</a>
+            <a href="#">Medicine (Columbia)</a>
+            <a href="#">Medicine (Greenville)</a>
+            <a href="#">Music</a>
+            <a href="#">Nursing</a>
+            <a href="#">Pharmacy</a>
+            <a href="#">Public Health</a>
+            <a href="#">Social Work</a>
+            <a href="#">South Carolina Honors College</a>
         </div>
         <div class="footer-column">
-            <a href="#">Support</a>
-            <a href="#">Alumni</a>
-            <a href="#">Give</a>
+            <h3>Offices & Divisions</h3>
+            <a href="#">Employment</a>
+            <a href="#">Undergraduate Admissions</a>
+            <a href="#">Financial Aid and Scholarships</a>
+            <a href="#">Bursar (fee payment)</a>
+            <a href="#">Veterans and Military Services</a>
+            <a href="#">Disability Resources</a>
+            <a href="#">Access and Opportunity</a>
+            <a href="#">Human Resources</a>
+            <a href="#">Law Enforcement and Safety</a>
+            <a href="#">University Libraries</a>
+            <a href="#">All Offices and Divisions</a>
         </div>
         <div class="footer-column">
-            <a href="#">Site Map</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Contact</a>
+            <h3>Tools</h3>
+            <a href="#">CarolinaCard</a>
+            <a href="#">MySC.edu</a>
+            <a href="#">Blackboard</a>
+            <a href="#">Email</a>
+            <a href="#">Self Service Carolina</a>
+            <a href="#">Student Health Services</a>
+            <a href="#">Counseling and Psychiatry</a>
+            <a href="#">Campus Dining</a>
         </div>
     </div>
 </body>
-</html>
+</html> 
