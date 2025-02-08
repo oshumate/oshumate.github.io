@@ -88,9 +88,7 @@
         <div class="box" id="helloBox">Click me</div>
         <div class="box" id="colorBox">
             <span class="star">&#9733;</span>
-            <div class="color-picker-container" id="colorPickerContainer">
-                <input type="color" id="colorPicker">
-            </div>
+            <input type="color" id="colorPicker" style="display: none;">
         </div>
         <div class="box image-box" id="imageBox">
             <img id="image" src="image1.jpg" alt="Image">
@@ -99,7 +97,6 @@
     <script>
         const helloBox = document.getElementById("helloBox");
         const colorBox = document.getElementById("colorBox");
-        const colorPickerContainer = document.getElementById("colorPickerContainer");
         const colorPicker = document.getElementById("colorPicker");
         const star = document.querySelector(".star");
         const imageBox = document.getElementById("imageBox");
@@ -118,12 +115,11 @@
         });
         
         colorBox.addEventListener("click", () => {
-            colorPickerContainer.style.display = "block";
+            colorPicker.click();
         });
         
         colorPicker.addEventListener("input", (event) => {
             star.style.color = event.target.value;
-            colorPickerContainer.style.display = "none";
         });
         
         imageBox.addEventListener("click", () => {
