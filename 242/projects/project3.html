@@ -57,7 +57,7 @@
         .color-picker-container {
             display: none;
             position: absolute;
-            bottom: -40px;
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
             background: white;
@@ -88,16 +88,19 @@
         <div class="box" id="helloBox">Click me</div>
         <div class="box" id="colorBox">
             <span class="star">&#9733;</span>
-            <input type="color" id="colorPicker" style="display: none;">
         </div>
         <div class="box image-box" id="imageBox">
             <img id="image" src="image1.jpg" alt="Image">
         </div>
     </div>
+    <div class="color-picker-container" id="colorPickerContainer">
+        <input type="color" id="colorPicker">
+    </div>
     <script>
         const helloBox = document.getElementById("helloBox");
         const colorBox = document.getElementById("colorBox");
         const colorPicker = document.getElementById("colorPicker");
+        const colorPickerContainer = document.getElementById("colorPickerContainer");
         const star = document.querySelector(".star");
         const imageBox = document.getElementById("imageBox");
         const image = document.getElementById("image");
@@ -115,7 +118,7 @@
         });
         
         colorBox.addEventListener("click", () => {
-            colorPicker.click();
+            colorPickerContainer.style.display = colorPickerContainer.style.display === 'block' ? 'none' : 'block';
         });
         
         colorPicker.addEventListener("input", (event) => {
