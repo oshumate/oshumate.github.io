@@ -57,7 +57,7 @@
         .color-picker-container {
             display: none;
             position: absolute;
-            top: 100%;
+            top: 100%;  /* Moves the color picker below the box */
             left: 50%;
             transform: translateX(-50%);
             background: white;
@@ -104,11 +104,11 @@
         const star = document.querySelector(".star");
         const imageBox = document.getElementById("imageBox");
         const image = document.getElementById("image");
-        
+
         let helloCount = 0;
         let imageIndex = 0;
         const images = ["project31.jpg", "project32.jpg", "project33.jpg", "project34.jpg", "project35.jpg"];
-        
+
         helloBox.addEventListener("click", () => {
             helloCount++;
             helloBox.innerHTML = "";
@@ -116,15 +116,19 @@
                 helloBox.innerHTML += "Hello<br>";
             }
         });
-        
+
         colorBox.addEventListener("click", () => {
+            // Adjusting color picker to appear directly below the box
+            const boxRect = colorBox.getBoundingClientRect();
+            colorPickerContainer.style.top = `${boxRect.bottom + window.scrollY}px`; // Position it below the box
+            colorPickerContainer.style.left = `${boxRect.left + boxRect.width / 2 - colorPickerContainer.offsetWidth / 2}px`; // Center it
             colorPickerContainer.style.display = colorPickerContainer.style.display === 'block' ? 'none' : 'block';
         });
-        
+
         colorPicker.addEventListener("input", (event) => {
             star.style.color = event.target.value;
         });
-        
+
         imageBox.addEventListener("click", () => {
             imageIndex = (imageIndex + 1) % images.length;
             image.src = images[imageIndex];
