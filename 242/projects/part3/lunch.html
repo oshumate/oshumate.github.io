@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch - Charliovski's</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #001f3f;
+            --secondary-color: #0074D9;
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+        }
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+        .sidebar nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+        .sidebar nav ul li a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        h2 {
+            color: var(--primary-color);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Charliovski's</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="breakfast.html">Breakfast</a></li>
+                <li><a href="lunch.html">Lunch</a></li>
+                <li><a href="dinner.html">Dinner</a></li>
+                <li><a href="dessert.html">Dessert</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="order.html">Order Online</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <h2>Lunch Menu</h2>
+        <ul>
+            <li><strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li><strong>Lorem Ipsum</strong> - Curabitur pretium tincidunt lacus, ut aliquet justo convallis eu.</li>
+            <li><strong>Lorem Ipsum</strong> - Proin ac quam et risus ullamcorper feugiat.</li>
+            <li><strong>Lorem Ipsum</strong> - Sed vel orci nec sapien volutpat aliquam.</li>
+            <li><strong>Lorem Ipsum</strong> - Fusce id lorem vitae erat malesuada lobortis.</li>
+            <li><strong>Lorem Ipsum</strong> - Phasellus volutpat urna non arcu interdum, non varius mi aliquet.</li>
+            <li><strong>Lorem Ipsum</strong> - Ut ullamcorper ipsum sed ante condimentum.</li>
+        </ul>
+    </div>
+</body>
+</html>
