@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charliovski's</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #001f3f;
+            --secondary-color: #0074D9;
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+        }
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+        .sidebar nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+        .sidebar nav ul li a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        h2 {
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -25,7 +78,7 @@
     </div>
     <div class="content">
         <h2>Welcome to Charliovski's</h2>
-        <p>Placeholder text for the restaurant homepage. More content coming soon.</p>
+        <p>Experience fine dining with a unique blend of flavors and ambiance. Stay tuned for our grand opening.</p>
     </div>
 </body>
 </html>
