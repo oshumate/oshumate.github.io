@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Charliovski's</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #001f3f;
+            --secondary-color: #0074D9;
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+        }
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+        .sidebar nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+        .sidebar nav ul li a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        h2 {
+            color: var(--primary-color);
+        }
+        p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Charliovski's</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="breakfast.html">Breakfast</a></li>
+                <li><a href="lunch.html">Lunch</a></li>
+                <li><a href="dinner.html">Dinner</a></li>
+                <li><a href="dessert.html">Dessert</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="order.html">Order Online</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>Welcome to Charliovski’s, where tradition meets flavor. Our restaurant is built on a passion for great food, warm hospitality, and unforgettable dining experiences.</p>
+        <p>At Charliovski’s, we take pride in crafting dishes using the freshest ingredients and time-honored recipes. Whether you're here for a hearty breakfast, a casual lunch, or an elegant dinner, our menu offers something for everyone.</p>
+        <p>Our story began with a simple idea: to create a space where friends and family can come together over delicious meals. With every plate we serve, we strive to bring comfort, quality, and a touch of culinary excellence to your table.</p>
+        <p>Join us and experience what makes Charliovski’s special. We can't wait to welcome you!</p>
+    </div>
+</body>
+</html>
