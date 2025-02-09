@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Boxes</title>
+    <title>Assignment 5</title>
     <style>
         body {
             display: flex;
@@ -57,7 +57,7 @@
         .color-picker-container {
             display: none;
             position: absolute;
-            top: 100%;  /* Moves the color picker below the box */
+            top: 100%;
             left: 50%;
             transform: translateX(-50%);
             background: white;
@@ -118,10 +118,9 @@
         });
 
         colorBox.addEventListener("click", () => {
-            // Adjusting color picker to appear directly below the box
             const boxRect = colorBox.getBoundingClientRect();
-            colorPickerContainer.style.top = `${boxRect.bottom + window.scrollY}px`; // Position it below the box
-            colorPickerContainer.style.left = `${boxRect.left + boxRect.width / 2 - colorPickerContainer.offsetWidth / 2}px`; // Center it
+            colorPickerContainer.style.top = `${boxRect.bottom + window.scrollY}px`; 
+            colorPickerContainer.style.left = `${boxRect.left + boxRect.width / 2 - colorPickerContainer.offsetWidth / 2}px`;
             colorPickerContainer.style.display = colorPickerContainer.style.display === 'block' ? 'none' : 'block';
         });
 
