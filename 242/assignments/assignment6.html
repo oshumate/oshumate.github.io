@@ -9,6 +9,8 @@
             --primary-color: #e6f7ff; /* Very light blue */
             --secondary-color: #ffffff; /* White */
             --text-color: #000000; /* Black for text */
+            --font-size: 20px; /* Larger font size */
+            --spacing: 30px; /* More space between sections */
         }
 
         body {
@@ -18,38 +20,42 @@
             padding: 0;
             background-color: var(--secondary-color);
             color: var(--text-color);
+            font-size: var(--font-size);
         }
 
         header {
             background: var(--primary-color);
-            padding: 20px;
-            font-size: 24px;
+            padding: 30px;
+            font-size: 32px;
             font-weight: bold;
+            margin-bottom: var(--spacing);
         }
 
         .subheader {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: var(--spacing);
         }
 
         .menu {
             display: flex;
             justify-content: center;
             background: var(--primary-color);
-            padding: 10px;
+            padding: 20px;
+            margin-bottom: var(--spacing);
         }
 
         .menu a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 10px;
+            padding: 15px;
             position: relative;
+            font-size: 24px;
         }
 
         .menu a:not(:last-child)::after {
             content: '|';
             color: var(--text-color);
-            margin-left: 10px;
+            margin-left: 15px;
         }
 
         .menu a:hover {
@@ -60,8 +66,9 @@
             display: none;
             background: var(--primary-color);
             color: var(--text-color);
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
+            font-size: 24px;
         }
 
         .menu-items {
@@ -71,17 +78,19 @@
         }
 
         .menu-items a {
-            padding: 10px;
+            padding: 15px;
+            font-size: 24px;
         }
 
         .main-content {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
             background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             color: black;
+            margin-bottom: var(--spacing);
         }
 
         #traveling, #picture-chooser {
@@ -89,8 +98,15 @@
         }
 
         .heart {
-            font-size: 50px;
+            font-size: 70px;
             color: black;
+        }
+
+        #transportImage img {
+            margin-top: var(--spacing);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
         }
 
         @media (max-width: 600px) {
@@ -116,7 +132,7 @@
     <div class="main-content">
         <div id="traveling">
             <h2>Traveling</h2>
-            <input type="text" id="transportInput" placeholder="Enter mode of transport" oninput="showTransportImage()">
+            <input type="text" id="transportInput" placeholder="Enter mode of transport (e.g., bike)" oninput="showTransportImage()">
             <div id="transportImage"></div>
         </div>
         
@@ -149,11 +165,21 @@
 
         function showTransportImage() {
             let input = document.getElementById("transportInput").value.toLowerCase();
-            let validTransports = ["bike", "scooter", "car", "skateboard"];
             let imageDiv = document.getElementById("transportImage");
-            
-            if (validTransports.includes(input)) {
-                imageDiv.innerHTML = `<img src="${input}.png" alt="${input}" width="100">`;
+            let imageSrc = "";
+
+            if (input === "bike") {
+                imageSrc = "bike242.jpeg";
+            } else if (input === "car") {
+                imageSrc = "car242.jpeg";
+            } else if (input === "scooter") {
+                imageSrc = "scooter242.jpeg";
+            } else if (input === "skateboard") {
+                imageSrc = "skateboard242.jpeg";
+            }
+
+            if (imageSrc) {
+                imageDiv.innerHTML = `<img src="${imageSrc}" alt="${input}" />`;
             } else {
                 imageDiv.innerHTML = "";
             }
