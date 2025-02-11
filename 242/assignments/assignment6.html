@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Exercises</title>
     <style>
-        /* Root Variables */
         :root {
             --primary-color: #e6f7ff;
             --secondary-color: #e6f7ff; 
@@ -14,7 +13,6 @@
             --spacing: 30px; 
         }
 
-        /* Body Styles */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -25,7 +23,6 @@
             font-size: var(--font-size);
         }
 
-        /* Header Styling */
         header {
             background: var(--primary-color);
             padding: 30px;
@@ -34,13 +31,11 @@
             margin-bottom: var(--spacing);
         }
 
-        /* Subheader Styling */
         .subheader {
             font-size: 24px;
             margin-bottom: var(--spacing);
         }
 
-        /* Menu Styling for Large Screens */
         .menu {
             display: flex;
             justify-content: center;
@@ -70,10 +65,9 @@
 
         .menu a:hover {
             cursor: pointer;
-            color: #007bff; /* Change color on hover */
+            color: #007bff; 
         }
 
-        /* Toggle Menu (Mobile) */
         .toggle-menu {
             display: none;
             background: var(--primary-color);
@@ -94,7 +88,6 @@
             font-size: 24px;
         }
 
-        /* Media Queries */
         @media (max-width: 600px) {
             .menu {
                 display: none;
@@ -109,20 +102,17 @@
     <header>JavaScript: Conditionals</header>
     <div class="subheader">Owen Shumate</div>
     
-    <!-- Toggle Menu for Small Screens -->
     <div class="toggle-menu" onclick="toggleMenu()">Menu ▼</div>
     <div class="menu-items" id="menuItems">
         <a onclick="showExercise(1)">Exercise 1</a>
         <a onclick="showExercise(2)">Exercise 2</a>
     </div>
     
-    <!-- Large Screen Menu -->
     <div class="menu">
         <a onclick="showExercise(1)">Exercise 1</a>
         <a onclick="showExercise(2)">Exercise 2</a>
     </div>
     
-    <!-- Main Content Section -->
     <div class="main-content">
         <div id="traveling">
             <h2>Traveling</h2>
@@ -139,17 +129,16 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             let menu = document.getElementById("menuItems");
             let toggle = document.querySelector(".toggle-menu");
             if (menu.style.display === "flex") {
                 menu.style.display = "none";
-                toggle.innerHTML = "Menu ▼"; // Arrow pointing down
+                toggle.innerHTML = "Menu ▼";
             } else {
                 menu.style.display = "flex";
-                toggle.innerHTML = "Menu ▲"; // Arrow pointing up
+                toggle.innerHTML = "Menu ▲";
             }
         }
 
@@ -182,6 +171,10 @@
 
         function changeHeartColor(color) {
             document.querySelector(".heart").style.color = color;
+        }
+
+        window.onload = function() {
+            showExercise(1); 
         }
     </script>
 </body>
