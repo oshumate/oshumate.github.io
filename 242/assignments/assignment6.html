@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Exercises</title>
     <style>
+        /* Root Variables */
         :root {
             --primary-color: #e6f7ff;
             --secondary-color: #e6f7ff; 
@@ -13,6 +14,7 @@
             --spacing: 30px; 
         }
 
+        /* Body Styles */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -23,6 +25,7 @@
             font-size: var(--font-size);
         }
 
+        /* Header Styling */
         header {
             background: var(--primary-color);
             padding: 30px;
@@ -31,11 +34,13 @@
             margin-bottom: var(--spacing);
         }
 
+        /* Subheader Styling */
         .subheader {
             font-size: 24px;
             margin-bottom: var(--spacing);
         }
 
+        /* Menu Styling for Large Screens */
         .menu {
             display: flex;
             justify-content: center;
@@ -50,18 +55,25 @@
             padding: 15px;
             position: relative;
             font-size: 24px;
+            transition: color 0.3s ease;
         }
 
-        .menu a:not(:last-child)::after {
+        .menu a::after {
             content: '|';
             color: var(--text-color);
             margin-left: 15px;
         }
 
-        .menu a:hover {
-            cursor: pointer;
+        .menu a:last-child::after {
+            content: '';
         }
 
+        .menu a:hover {
+            cursor: pointer;
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Toggle Menu (Mobile) */
         .toggle-menu {
             display: none;
             background: var(--primary-color);
@@ -82,54 +94,35 @@
             font-size: 24px;
         }
 
-        .main-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background: #fffbe6; 
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            color: black;
-            margin-bottom: var(--spacing);
-        }
-
-
-        #traveling, #picture-chooser {
-            display: none;
-        }
-
-        .heart {
-            font-size: 70px;
-            color: white;
-        }
-
-        #transportImage img {
-            margin-top: var(--spacing);
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
-
+        /* Media Queries */
         @media (max-width: 600px) {
-            .menu { display: none; }
-            .toggle-menu { display: block; }
+            .menu {
+                display: none;
+            }
+            .toggle-menu {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
     <header>JavaScript: Conditionals</header>
     <div class="subheader">Owen Shumate</div>
+    
+    <!-- Toggle Menu for Small Screens -->
     <div class="toggle-menu" onclick="toggleMenu()">Menu ▼</div>
     <div class="menu-items" id="menuItems">
         <a onclick="showExercise(1)">Exercise 1</a>
         <a onclick="showExercise(2)">Exercise 2</a>
     </div>
     
+    <!-- Large Screen Menu -->
     <div class="menu">
         <a onclick="showExercise(1)">Exercise 1</a>
         <a onclick="showExercise(2)">Exercise 2</a>
     </div>
     
+    <!-- Main Content Section -->
     <div class="main-content">
         <div id="traveling">
             <h2>Traveling</h2>
@@ -145,17 +138,18 @@
             <button onclick="changeHeartColor('green')">Green</button>
         </div>
     </div>
-    
+
+    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             let menu = document.getElementById("menuItems");
             let toggle = document.querySelector(".toggle-menu");
             if (menu.style.display === "flex") {
                 menu.style.display = "none";
-                toggle.innerHTML = "Menu ▼";
+                toggle.innerHTML = "Menu ▼"; // Arrow pointing down
             } else {
                 menu.style.display = "flex";
-                toggle.innerHTML = "Menu ▲";
+                toggle.innerHTML = "Menu ▲"; // Arrow pointing up
             }
         }
 
