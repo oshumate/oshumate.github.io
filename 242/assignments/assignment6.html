@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Exercises</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* Navy blue */
+            --secondary-color: #66ccff; /* Light blue */
+            --text-color: #ffffff; /* White */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .subheader {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background: var(--primary-color);
+            padding: 10px;
+        }
+
+        .menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+        }
+
+        .menu a:not(:last-child)::after {
+            content: '|';
+            color: var(--text-color);
+            margin-left: 10px;
+        }
+
+        .menu a:hover {
+            cursor: pointer;
+        }
+
+        .toggle-menu {
+            display: none;
+            background: var(--primary-color);
+            color: var(--text-color);
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-items {
+            display: none;
+            flex-direction: column;
+            background: var(--primary-color);
+        }
+
+        .menu-items a {
+            padding: 10px;
+        }
+
+        .main-content {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            color: black;
+        }
+
+        #traveling, #picture-chooser {
+            display: none;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .menu { display: none; }
+            .toggle-menu { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <header>JavaScript: Conditionals</header>
+    <div class="subheader">Owen Shumate</div>
+    <div class="toggle-menu" onclick="toggleMenu()">Menu ▼</div>
+    <div class="menu-items" id="menuItems">
+        <a onclick="showExercise(1)">Exercise 1</a>
+        <a onclick="showExercise(2)">Exercise 2</a>
+    </div>
+    
+    <div class="menu">
+        <a onclick="showExercise(1)">Exercise 1</a>
+        <a onclick="showExercise(2)">Exercise 2</a>
+    </div>
+    
+    <div class="main-content">
+        <div id="traveling">
+            <h2>Traveling</h2>
+            <input type="text" id="transportInput" placeholder="Enter mode of transport" oninput="showTransportImage()">
+            <div id="transportImage"></div>
+        </div>
+        
+        <div id="picture-chooser">
+            <h2>Color My Heart</h2>
+            <div class="heart">❤</div>
+            <button onclick="changeHeartColor('red')">Red</button>
+            <button onclick="changeHeartColor('blue')">Blue</button>
+            <button onclick="changeHeartColor('green')">Green</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("menuItems");
+            let toggle = document.querySelector(".toggle-menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+                toggle.innerHTML = "Menu ▼";
+            } else {
+                menu.style.display = "flex";
+                toggle.innerHTML = "Menu ▲";
+            }
+        }
+
+        function showExercise(num) {
+            document.getElementById("traveling").style.display = num === 1 ? "block" : "none";
+            document.getElementById("picture-chooser").style.display = num === 2 ? "block" : "none";
+        }
+
+        function showTransportImage() {
+            let input = document.getElementById("transportInput").value.toLowerCase();
+            let validTransports = ["bike", "scooter", "car", "skateboard"];
+            let imageDiv = document.getElementById("transportImage");
+            
+            if (validTransports.includes(input)) {
+                imageDiv.innerHTML = `<img src="${input}.png" alt="${input}" width="100">`;
+            } else {
+                imageDiv.innerHTML = "";
+            }
+        }
+
+        function changeHeartColor(color) {
+            document.querySelector(".heart").style.color = color;
+        }
+    </script>
+</body>
+</html>
