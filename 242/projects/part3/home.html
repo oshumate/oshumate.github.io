@@ -15,17 +15,48 @@
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            display: flex;
-            flex-direction: row;
             font-family: var(--font-family);
             margin: 0;
             background-color: var(--background-color);
             min-height: 100vh;
-            overflow-x: hidden;
+        }
+        .header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 36px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar ul li {
+            margin: 0 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 15px 0;
+            display: block;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: var(--secondary-color);
         }
         .content {
-            flex: 1;
-            padding: 80px 60px;
+            padding: 40px 60px;
             max-width: 1200px;
             margin: auto;
         }
@@ -72,48 +103,22 @@
         .button:hover {
             background-color: var(--secondary-color);
         }
-        .sidebar {
-            width: 270px;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 30px 20px;
-            height: 100vh;
-            position: fixed;
-            right: 0;
-            top: 0;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-            overflow-y: auto;
-        }
-        .sidebar h1 {
-            font-size: 30px;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        .sidebar nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .sidebar nav ul li {
-            margin: 20px 0;
-        }
-        .sidebar nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            display: block;
-            transition: background 0.3s, padding-left 0.3s;
-        }
-        .sidebar nav ul li a:hover {
-            background-color: var(--secondary-color);
-            padding-left: 10px;
-        }
     </style>
 </head>
 <body>
+    <div class="header">
+        Charliovski's
+    </div>
+    <div class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menus.html">Menus</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="order.html">Order Online</a></li>
+        </ul>
+    </div>
+
     <div class="content">
         <h2>Welcome to Charliovski's</h2>
         <p>Experience fine dining with a unique blend of flavors and ambiance. Our carefully crafted menu offers a delightful selection of dishes, made from the freshest ingredients to provide an unforgettable culinary journey. Visit us to indulge in elegance and taste the difference at Charliovski's.</p>
@@ -142,22 +147,6 @@
             <p>Enjoy Charliovski's culinary delights from the comfort of your home. Our online ordering system allows you to conveniently place your order for pickup or delivery. Experience the same quality and taste at your doorstep.</p>
             <a href="order.html" class="button">Order Now</a>
         </div>
-    </div>
-
-    <div class="sidebar">
-        <h1>Charliovski's</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="breakfast.html">Breakfast</a></li>
-                <li><a href="lunch.html">Lunch</a></li>
-                <li><a href="dinner.html">Dinner</a></li>
-                <li><a href="dessert.html">Dessert</a></li>
-                <li><a href="reservations.html">Reservations</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="order.html">Order Online</a></li>
-            </ul>
-        </nav>
     </div>
 </body>
 </html>
