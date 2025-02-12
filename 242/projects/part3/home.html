@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
-            --primary-color: #001f3f;
-            --secondary-color: #0074D9;
+            --primary-color: #001f3f; /* Navy Blue */
+            --secondary-color: #87CEFA; /* Light Blue */
             --text-color: #ffffff;
             --background-color: #f4f4f4;
+            --accent-color: #ffc107; /* Gold Accent */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
             display: flex;
-            font-family: Arial, sans-serif;
+            font-family: var(--font-family);
             margin: 0;
             background-color: var(--background-color);
         }
@@ -22,40 +24,55 @@
             width: 250px;
             background-color: var(--primary-color);
             color: var(--text-color);
-            padding: 20px;
+            padding: 30px 20px;
             height: 100vh;
             position: fixed;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
         }
         .sidebar h1 {
-            font-size: 24px;
+            font-size: 28px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: var(--accent-color);
         }
         .sidebar nav ul {
             list-style-type: none;
             padding: 0;
         }
         .sidebar nav ul li {
-            margin: 15px 0;
+            margin: 20px 0;
         }
         .sidebar nav ul li a {
             color: var(--text-color);
             text-decoration: none;
             font-size: 18px;
-            display: block;
             padding: 10px;
-            transition: background 0.3s;
+            border-radius: 5px;
+            display: block;
+            transition: background 0.3s, padding-left 0.3s;
         }
         .sidebar nav ul li a:hover {
             background-color: var(--secondary-color);
-            border-radius: 5px;
+            padding-left: 20px;
         }
         .content {
             margin-left: 270px;
-            padding: 40px;
+            padding: 60px;
         }
         h2 {
             color: var(--primary-color);
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -78,7 +95,7 @@
     </div>
     <div class="content">
         <h2>Welcome to Charliovski's</h2>
-        <p>Experience fine dining with a unique blend of flavors and ambiance.</p>
+        <p>Experience fine dining with a unique blend of flavors and ambiance. Our carefully crafted menu offers a delightful selection of dishes, made from the freshest ingredients to provide an unforgettable culinary journey. Visit us to indulge in elegance and taste the difference at Charliovski's.</p>
     </div>
 </body>
 </html>
