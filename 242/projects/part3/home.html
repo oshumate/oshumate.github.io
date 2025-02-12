@@ -21,16 +21,17 @@
             margin: 0;
             background-color: var(--background-color);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         .content {
             flex: 1;
-            padding: 60px;
-            max-width: 1000px;
+            padding: 80px 60px;
+            max-width: 1200px;
             margin: auto;
         }
         h2 {
             color: var(--primary-color);
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 20px;
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 5px;
@@ -38,12 +39,12 @@
         }
         h3 {
             color: var(--primary-color);
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 10px;
         }
         p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 20px;
+            line-height: 1.8;
             color: #333;
         }
         .image-section {
@@ -57,7 +58,20 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .text-section {
-            margin: 20px 0;
+            margin: 40px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: var(--secondary-color);
         }
         .sidebar {
             width: 270px;
@@ -69,9 +83,10 @@
             right: 0;
             top: 0;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
         }
         .sidebar h1 {
-            font-size: 28px;
+            font-size: 30px;
             text-align: center;
             margin-bottom: 30px;
             font-weight: bold;
@@ -87,7 +102,7 @@
         .sidebar nav ul li a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             padding: 10px;
             border-radius: 5px;
             display: block;
@@ -105,31 +120,42 @@
         <p>Experience fine dining with a unique blend of flavors and ambiance. Our carefully crafted menu offers a delightful selection of dishes, made from the freshest ingredients to provide an unforgettable culinary journey. Visit us to indulge in elegance and taste the difference at Charliovski's.</p>
 
         <div class="image-section">
-            <img src="https://via.placeholder.com/1000x400" alt="Restaurant Interior">
+            <img src="https://via.placeholder.com/1200x400" alt="Restaurant Interior">
         </div>
 
         <div class="text-section">
             <h3>About Us</h3>
             <p>At Charliovski's, we believe in creating more than just a meal – we create experiences. Our restaurant blends a warm, inviting atmosphere with a commitment to exceptional quality and service. Every dish is a masterpiece, crafted with passion and precision, reflecting our dedication to culinary excellence.</p>
-            <p>Founded on the principles of authenticity and innovation, Charliovski's has become a cherished destination for food lovers. Our team is devoted to delivering a dining experience that delights the senses and leaves lasting memories.</p>
         </div>
 
         <div class="image-section">
-            <img src="https://via.placeholder.com/1000x400" alt="Exquisite Cuisine">
+            <img src="https://via.placeholder.com/1200x400" alt="Exquisite Cuisine">
         </div>
 
         <div class="text-section">
-            <h3>Exquisite Cuisine</h3>
-            <p>Our menu is a symphony of flavors, meticulously crafted to satisfy every palate. From classic favorites to bold, modern creations, each dish is prepared using the finest ingredients, ensuring freshness and quality in every bite.</p>
+            <h3>Reservations</h3>
+            <p>Secure your table today and immerse yourself in an unparalleled dining experience. Whether it's a romantic evening, a family gathering, or a business dinner, Charliovski's is the perfect destination. Reserve now to ensure an unforgettable evening.</p>
+            <a href="reservations.html" class="button">Make a Reservation</a>
         </div>
 
         <div class="image-section">
-            <img src="https://via.placeholder.com/1000x400" alt="Fine Dining Experience">
+            <img src="https://via.placeholder.com/1200x400" alt="Our Locations">
         </div>
 
         <div class="text-section">
-            <h3>Unforgettable Experience</h3>
-            <p>Join us for an unforgettable dining experience, where great food meets exceptional hospitality. Whether celebrating a special occasion or simply savoring a moment with loved ones, Charliovski's is the perfect place to create memories that last a lifetime.</p>
+            <h3>Our Locations</h3>
+            <p>We are proud to serve you at multiple convenient locations. Each of our restaurants provides a unique ambiance with the same dedication to quality and service. Find the nearest Charliovski's and experience fine dining at its best.</p>
+            <a href="locations.html" class="button">Find a Location</a>
+        </div>
+
+        <div class="image-section">
+            <img src="https://via.placeholder.com/1200x400" alt="Order Online">
+        </div>
+
+        <div class="text-section">
+            <h3>Order Online</h3>
+            <p>Enjoy Charliovski's culinary delights from the comfort of your home. Our online ordering system allows you to conveniently place your order for pickup or delivery. Experience the same quality and taste at your doorstep.</p>
+            <a href="order.html" class="button">Order Now</a>
         </div>
     </div>
 
