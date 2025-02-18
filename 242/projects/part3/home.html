@@ -10,7 +10,7 @@
             --primary-color: #001f3f; /* Navy Blue */
             --secondary-color: #87CEFA; /* Light Blue */
             --accent-color: #ffc107; /* Gold Accent */
-            --text-color: #ffffff;
+            --text-color: #333333; /* Default text color (dark gray) */
             --background-color: #f4f4f4;
             --font-family: 'Lora', serif; /* Elegant font */
             --heading-font: 'Montserrat', sans-serif; /* Modern heading font */
@@ -21,7 +21,7 @@
             background-color: var(--background-color);
             min-height: 100vh;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color); /* Set text color back to dark gray */
         }
         .header {
             background-color: var(--primary-color);
@@ -105,7 +105,6 @@
         p {
             font-size: 18px;
             line-height: 1.8;
-            color: #ffffff;
             margin-bottom: 20px;
         }
         .image-left {
