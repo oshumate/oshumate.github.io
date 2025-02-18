@@ -5,6 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menus - Charliovski's</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #001f3f; /* Navy Blue */
+            --secondary-color: #87CEFA; /* Light Blue */
+            --accent-color: #ffc107; /* Gold Accent */
+            --text-color: #ffffff;
+            --background-color: #f4f4f4;
+            --font-family: 'Lora', serif;
+            --heading-font: 'Montserrat', sans-serif;
+        }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar ul li {
+            margin: 0 25px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 20px 0;
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+        .navbar ul li a.active {
+            color: var(--accent-color);
+        }
+        .content {
+            padding: 40px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+            font-size: 48px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        h3 {
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+        .centered {
+            text-align: center;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        ul li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -23,21 +119,21 @@
     <div class="content">
         <h2 class="centered">Desserts</h2>
         <ul>
-            <li><strong>Chocolate Lava Cake</strong> – Rich chocolate cake with a gooey molten center, served with vanilla ice cream.</li>
-            <li><strong>Classic Tiramisu</strong> – Layers of espresso-soaked ladyfingers, mascarpone cream, and cocoa dusting.</li>
-            <li><strong>Crème Brûlée</strong> – Silky vanilla custard topped with a crisp caramelized sugar crust.</li>
+            <li><strong>Chocolate Lava Cake</strong> – Rich chocolate cake with a molten center, served with vanilla ice cream.</li>
+            <li><strong>Classic Tiramisu</strong> – Espresso-soaked ladyfingers layered with mascarpone and cocoa.</li>
+            <li><strong>Crème Brûlée</strong> – Silky custard topped with a caramelized sugar crust.</li>
         </ul>
 
         <h2 class="centered">Breakfast</h2>
         <ul>
-            <li><strong>Classic Pancakes</strong> – Fluffy pancakes served with maple syrup and butter.</li>
-            <li><strong>French Toast</strong> – Thick slices of bread dipped in cinnamon batter, topped with powdered sugar.</li>
-            <li><strong>Omelette Deluxe</strong> – Three-egg omelette with cheese, ham, mushrooms, and spinach.</li>
-            <li><strong>Eggs Benedict</strong> – Poached eggs on English muffins with hollandaise sauce and Canadian bacon.</li>
-            <li><strong>Avocado Toast</strong> – Smashed avocado on toasted sourdough, topped with cherry tomatoes and feta.</li>
-            <li><strong>Breakfast Burrito</strong> – Scrambled eggs, cheese, bacon, and salsa wrapped in a flour tortilla.</li>
-            <li><strong>Smoked Salmon Bagel</strong> – Bagel with smoked salmon, cream cheese, capers, and red onions.</li>
-            <li><strong>Waffles</strong> – Golden waffles served with whipped cream and fresh berries.</li>
+            <li><strong>Classic Pancakes</strong> – Fluffy pancakes served with maple syrup.</li>
+            <li><strong>French Toast</strong> – Cinnamon-battered bread with powdered sugar.</li>
+            <li><strong>Omelette Deluxe</strong> – Cheese, ham, mushrooms, and spinach.</li>
+            <li><strong>Eggs Benedict</strong> – Poached eggs on English muffins with hollandaise.</li>
+            <li><strong>Avocado Toast</strong> – Smashed avocado on sourdough with cherry tomatoes.</li>
+            <li><strong>Breakfast Burrito</strong> – Scrambled eggs, cheese, and bacon in a tortilla.</li>
+            <li><strong>Smoked Salmon Bagel</strong> – With cream cheese, capers, and red onions.</li>
+            <li><strong>Waffles</strong> – Golden waffles with whipped cream and berries.</li>
         </ul>
 
         <h3 class="centered">Breakfast Sides</h3>
@@ -50,15 +146,15 @@
 
         <h2 class="centered">Lunch</h2>
         <ul>
-            <li><strong>Club Sandwich</strong> – Triple-layered sandwich with turkey, bacon, lettuce, tomato, and mayo.</li>
-            <li><strong>Caesar Salad</strong> – Crisp romaine lettuce, croutons, Parmesan, and Caesar dressing.</li>
-            <li><strong>Grilled Chicken Wrap</strong> – Grilled chicken, lettuce, tomato, and ranch dressing in a flour tortilla.</li>
-            <li><strong>Margherita Pizza</strong> – Classic pizza with fresh basil, mozzarella, and tomato sauce.</li>
-            <li><strong>Cheeseburger</strong> – Juicy beef patty with cheese, lettuce, tomato, and special sauce on a brioche bun.</li>
-            <li><strong>Spaghetti Carbonara</strong> – Pasta tossed in creamy sauce with pancetta and Parmesan.</li>
-            <li><strong>Fish Tacos</strong> – Grilled fish, cabbage slaw, and chipotle mayo on soft corn tortillas.</li>
-            <li><strong>Quinoa Salad Bowl</strong> – Mixed greens, quinoa, roasted vegetables, and balsamic vinaigrette.</li>
-            <li><strong>Philly Cheesesteak</strong> – Sliced steak, melted cheese, and grilled onions on a hoagie roll.</li>
+            <li><strong>Club Sandwich</strong> – Turkey, bacon, lettuce, tomato, and mayo.</li>
+            <li><strong>Caesar Salad</strong> – Romaine, croutons, Parmesan, and Caesar dressing.</li>
+            <li><strong>Grilled Chicken Wrap</strong> – Chicken, lettuce, and ranch dressing.</li>
+            <li><strong>Margherita Pizza</strong> – Fresh basil, mozzarella, and tomato sauce.</li>
+            <li><strong>Cheeseburger</strong> – Beef patty with cheese and special sauce.</li>
+            <li><strong>Spaghetti Carbonara</strong> – Pasta with pancetta and Parmesan.</li>
+            <li><strong>Fish Tacos</strong> – Grilled fish with cabbage slaw.</li>
+            <li><strong>Quinoa Salad Bowl</strong> – Mixed greens with roasted vegetables.</li>
+            <li><strong>Philly Cheesesteak</strong> – Steak, melted cheese, and onions.</li>
         </ul>
 
         <h3 class="centered">Lunch Sides</h3>
@@ -72,14 +168,14 @@
 
         <h2 class="centered">Dinner</h2>
         <ul>
-            <li><strong>Grilled Ribeye Steak</strong> – 12 oz ribeye grilled to perfection, served with garlic butter.</li>
-            <li><strong>Seared Salmon</strong> – Atlantic salmon fillet with lemon dill sauce and seasonal vegetables.</li>
-            <li><strong>Chicken Alfredo</strong> – Creamy fettuccine Alfredo topped with grilled chicken breast.</li>
-            <li><strong>Eggplant Parmesan</strong> – Breaded eggplant layered with marinara and melted mozzarella.</li>
-            <li><strong>Lamb Chops</strong> – Herb-crusted lamb chops with rosemary jus and mashed potatoes.</li>
-            <li><strong>Stuffed Portobello</strong> – Baked portobello mushroom with spinach, feta, and balsamic glaze.</li>
-            <li><strong>Seafood Linguine</strong> – Linguine pasta with shrimp, scallops, and white wine garlic sauce.</li>
-            <li><strong>Beef Tenderloin</strong> – Tenderloin medallions with peppercorn sauce and asparagus.</li>
+            <li><strong>Grilled Ribeye Steak</strong> – With garlic butter.</li>
+            <li><strong>Seared Salmon</strong> – Lemon dill sauce and vegetables.</li>
+            <li><strong>Chicken Alfredo</strong> – Creamy fettuccine Alfredo.</li>
+            <li><strong>Eggplant Parmesan</strong> – Breaded eggplant with marinara.</li>
+            <li><strong>Lamb Chops</strong> – Herb-crusted with rosemary jus.</li>
+            <li><strong>Stuffed Portobello</strong> – Spinach, feta, and balsamic glaze.</li>
+            <li><strong>Seafood Linguine</strong> – Shrimp, scallops, and garlic sauce.</li>
+            <li><strong>Beef Tenderloin</strong> – Peppercorn sauce and asparagus.</li>
         </ul>
 
         <h3 class="centered">Dinner Sides</h3>
