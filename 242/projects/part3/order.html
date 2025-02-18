@@ -99,29 +99,6 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .menu-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        .menu-item {
-            width: 250px;
-            background-color: var(--secondary-color);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .menu-item h4 {
-            color: var(--primary-color);
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .menu-item p {
-            color: var(--text-color);
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
         .order-example {
             margin-top: 30px;
             text-align: center;
@@ -203,91 +180,30 @@
     <div class="content">
         <h2>Order Online</h2>
 
-        <div class="menu-items">
-            <div class="menu-item">
-                <h4>Classic Pancakes</h4>
-                <p>Fluffy pancakes served with syrup and butter.</p>
-            </div>
-            <div class="menu-item">
-                <h4>French Toast</h4>
-                <p>Golden-brown with a hint of cinnamon and powdered sugar.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Omelette Deluxe</h4>
-                <p>Choose your fillings from cheese, ham, peppers, and more.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Breakfast Burrito</h4>
-                <p>Scrambled eggs, cheese, and sausage wrapped in a tortilla.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Avocado Toast</h4>
-                <p>Fresh avocado on toasted sourdough with a drizzle of olive oil.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Grilled Chicken Sandwich</h4>
-                <p>A juicy grilled chicken breast served on a toasted bun with lettuce, tomato, and mayo.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Club Sandwich</h4>
-                <p>A triple-decker sandwich with turkey, bacon, lettuce, tomato, and mayo, served with a side of chips.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Caesar Salad</h4>
-                <p>Crisp romaine lettuce tossed in a creamy Caesar dressing, topped with crunchy croutons and parmesan cheese.</p>
-            </div>
-            <div class="menu-item">
-                <h4>BBQ Pulled Pork Sandwich</h4>
-                <p>Tender pulled pork smothered in barbecue sauce, served on a soft bun with coleslaw.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Margherita Pizza</h4>
-                <p>A classic pizza topped with fresh mozzarella, basil, and a rich tomato sauce.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Grilled Ribeye Steak</h4>
-                <p>A tender and juicy ribeye steak grilled to perfection, served with a side of vegetables and mashed potatoes.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Pan-Seared Salmon</h4>
-                <p>Fresh salmon fillet pan-seared to a golden crisp, served with a lemon butter sauce.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Chicken Alfredo Pasta</h4>
-                <p>Creamy alfredo sauce over fettuccine pasta, topped with grilled chicken and parmesan cheese.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Beef Tenderloin</h4>
-                <p>A perfectly cooked beef tenderloin steak, served with a red wine reduction sauce.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Eggplant Parmesan</h4>
-                <p>Breaded and fried eggplant slices layered with marinara sauce and melted mozzarella cheese.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Chocolate Lava Cake</h4>
-                <p>A rich chocolate cake with a gooey molten center, served warm with vanilla ice cream.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Cheesecake</h4>
-                <p>Creamy and smooth cheesecake with a graham cracker crust, topped with a berry compote.</p>
-            </div>
-            <div class="menu-item">
-                <h4>Tiramisu</h4>
-                <p>A traditional Italian dessert made with layers of coffee-soaked ladyfingers, mascarpone cream, and a dusting of cocoa powder.</p>
-            </div>
-        </div>
-
         <div class="order-example">
             <h3>How to Order Online</h3>
             <p>Use the form below to select your items and place your order. Payment and delivery options will be available soon!</p>
             <div class="order-form">
                 <label for="item">Select your item:</label>
                 <select id="item">
-                    <option value="burger">Cheeseburger</option>
-                    <option value="salad">Caesar Salad</option>
-                    <option value="pizza">Pepperoni Pizza</option>
-                    <option value="pasta">Spaghetti</option>
+                    <option value="classic-pancakes">Classic Pancakes</option>
+                    <option value="french-toast">French Toast</option>
+                    <option value="omelette-deluxe">Omelette Deluxe</option>
+                    <option value="breakfast-burrito">Breakfast Burrito</option>
+                    <option value="avocado-toast">Avocado Toast</option>
+                    <option value="grilled-chicken-sandwich">Grilled Chicken Sandwich</option>
+                    <option value="club-sandwich">Club Sandwich</option>
+                    <option value="caesar-salad">Caesar Salad</option>
+                    <option value="bbq-pulled-pork-sandwich">BBQ Pulled Pork Sandwich</option>
+                    <option value="margherita-pizza">Margherita Pizza</option>
+                    <option value="grilled-ribeye-steak">Grilled Ribeye Steak</option>
+                    <option value="pan-seared-salmon">Pan-Seared Salmon</option>
+                    <option value="chicken-alfredo-pasta">Chicken Alfredo Pasta</option>
+                    <option value="beef-tenderloin">Beef Tenderloin</option>
+                    <option value="eggplant-parmesan">Eggplant Parmesan</option>
+                    <option value="chocolate-lava-cake">Chocolate Lava Cake</option>
+                    <option value="cheesecake">Cheesecake</option>
+                    <option value="tiramisu">Tiramisu</option>
                 </select>
 
                 <label for="quantity">Quantity:</label>
