@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menus - Charliovski's</title>
+    <title>Charliovski's | Menus</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
@@ -12,15 +12,14 @@
             --accent-color: #ffc107; /* Gold Accent */
             --text-color: #ffffff;
             --background-color: #f4f4f4;
-            --font-family: 'Lora', serif;
+            --font-family: 'Lora', serif; 
             --heading-font: 'Montserrat', sans-serif;
         }
         body {
             font-family: var(--font-family);
+            margin: 0;
             background-color: var(--background-color);
             color: #333;
-            margin: 0;
-            line-height: 1.6;
         }
         .header {
             background-color: var(--primary-color);
@@ -29,13 +28,12 @@
             padding: 30px 0;
             font-size: 48px;
             font-weight: 700;
-            letter-spacing: 2px;
             text-transform: uppercase;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .navbar {
             background-color: var(--primary-color);
-            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -49,7 +47,6 @@
         }
         .navbar ul li {
             margin: 0 25px;
-            position: relative;
         }
         .navbar ul li a {
             text-decoration: none;
@@ -64,9 +61,6 @@
             color: var(--secondary-color);
             transform: scale(1.05);
         }
-        .navbar ul li a.active {
-            color: var(--accent-color);
-        }
         .content {
             padding: 40px 60px;
             max-width: 1200px;
@@ -79,114 +73,129 @@
             margin-bottom: 20px;
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
+            display: inline-block;
             text-transform: uppercase;
         }
         h3 {
             color: var(--primary-color);
             font-family: var(--heading-font);
             font-size: 36px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
-        .centered {
-            text-align: center;
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
         }
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding-left: 0;
             margin-bottom: 30px;
         }
         ul li {
             font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-section {
+            margin-bottom: 50px;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Charliovski's</h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="menus.html" class="active">Menus</a></li>
-                <li><a href="reservations.html">Reservations</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="order.html">Order Online</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="header">
+        Charliovski's
+    </div>
+    <div class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menus.html">Menus</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="order.html">Order Online</a></li>
+        </ul>
+    </div>
 
     <div class="content">
-        <h2 class="centered">Desserts</h2>
-        <ul>
-            <li><strong>Chocolate Lava Cake</strong> – Rich chocolate cake with a molten center, served with vanilla ice cream.</li>
-            <li><strong>Classic Tiramisu</strong> – Espresso-soaked ladyfingers layered with mascarpone and cocoa.</li>
-            <li><strong>Crème Brûlée</strong> – Silky custard topped with a caramelized sugar crust.</li>
-        </ul>
+        <h2>Our Menus</h2>
+        
+        <div class="menu-section">
+            <h3>Breakfast</h3>
+            <ul>
+                <li>Classic Pancakes - Fluffy pancakes served with syrup and butter.</li>
+                <li>French Toast - Golden-brown with a hint of cinnamon and powdered sugar.</li>
+                <li>Omelette Deluxe - Choose your fillings from cheese, ham, peppers, and more.</li>
+                <li>Breakfast Burrito - Scrambled eggs, cheese, and sausage wrapped in a tortilla.</li>
+                <li>Avocado Toast - Fresh avocado on toasted sourdough with a drizzle of olive oil.</li>
+                <li>Belgian Waffles - Crisp outside, fluffy inside, served with berries and cream.</li>
+                <li>Eggs Benedict - Poached eggs, Canadian bacon, and hollandaise sauce.</li>
+                <li>Smoked Salmon Bagel - Cream cheese, smoked salmon, capers, and onions.</li>
+            </ul>
+            <h3>Sides</h3>
+            <ul>
+                <li>Crispy Bacon</li>
+                <li>Sausage Links</li>
+                <li>Hash Browns</li>
+                <li>Fresh Fruit Cup</li>
+            </ul>
+        </div>
 
-        <h2 class="centered">Breakfast</h2>
-        <ul>
-            <li><strong>Classic Pancakes</strong> – Fluffy pancakes served with maple syrup.</li>
-            <li><strong>French Toast</strong> – Cinnamon-battered bread with powdered sugar.</li>
-            <li><strong>Omelette Deluxe</strong> – Cheese, ham, mushrooms, and spinach.</li>
-            <li><strong>Eggs Benedict</strong> – Poached eggs on English muffins with hollandaise.</li>
-            <li><strong>Avocado Toast</strong> – Smashed avocado on sourdough with cherry tomatoes.</li>
-            <li><strong>Breakfast Burrito</strong> – Scrambled eggs, cheese, and bacon in a tortilla.</li>
-            <li><strong>Smoked Salmon Bagel</strong> – With cream cheese, capers, and red onions.</li>
-            <li><strong>Waffles</strong> – Golden waffles with whipped cream and berries.</li>
-        </ul>
+        <div class="menu-section">
+            <h3>Lunch</h3>
+            <ul>
+                <li>Grilled Chicken Sandwich</li>
+                <li>Club Sandwich</li>
+                <li>Caesar Salad</li>
+                <li>BBQ Pulled Pork Sandwich</li>
+                <li>Margherita Pizza</li>
+                <li>Chicken Caesar Wrap</li>
+                <li>Fish Tacos</li>
+                <li>BLT Sandwich</li>
+                <li>Caprese Salad</li>
+            </ul>
+            <h3>Sides</h3>
+            <ul>
+                <li>French Fries</li>
+                <li>Onion Rings</li>
+                <li>Side Salad</li>
+                <li>Coleslaw</li>
+                <li>Potato Chips</li>
+            </ul>
+        </div>
 
-        <h3 class="centered">Breakfast Sides</h3>
-        <ul>
-            <li>Crispy Bacon</li>
-            <li>Sausage Links</li>
-            <li>Hash Browns</li>
-            <li>Fresh Fruit Cup</li>
-        </ul>
+        <div class="menu-section">
+            <h3>Dinner</h3>
+            <ul>
+                <li>Grilled Ribeye Steak</li>
+                <li>Pan-Seared Salmon</li>
+                <li>Chicken Alfredo Pasta</li>
+                <li>Beef Tenderloin</li>
+                <li>Eggplant Parmesan</li>
+                <li>Stuffed Chicken Breast</li>
+                <li>Lobster Tail</li>
+                <li>Spaghetti Bolognese</li>
+            </ul>
+            <h3>Sides</h3>
+            <ul>
+                <li>Mashed Potatoes</li>
+                <li>Grilled Asparagus</li>
+                <li>Steamed Vegetables</li>
+                <li>Garlic Bread</li>
+                <li>Garden Salad</li>
+                <li>Rice Pilaf</li>
+            </ul>
+        </div>
 
-        <h2 class="centered">Lunch</h2>
-        <ul>
-            <li><strong>Club Sandwich</strong> – Turkey, bacon, lettuce, tomato, and mayo.</li>
-            <li><strong>Caesar Salad</strong> – Romaine, croutons, Parmesan, and Caesar dressing.</li>
-            <li><strong>Grilled Chicken Wrap</strong> – Chicken, lettuce, and ranch dressing.</li>
-            <li><strong>Margherita Pizza</strong> – Fresh basil, mozzarella, and tomato sauce.</li>
-            <li><strong>Cheeseburger</strong> – Beef patty with cheese and special sauce.</li>
-            <li><strong>Spaghetti Carbonara</strong> – Pasta with pancetta and Parmesan.</li>
-            <li><strong>Fish Tacos</strong> – Grilled fish with cabbage slaw.</li>
-            <li><strong>Quinoa Salad Bowl</strong> – Mixed greens with roasted vegetables.</li>
-            <li><strong>Philly Cheesesteak</strong> – Steak, melted cheese, and onions.</li>
-        </ul>
-
-        <h3 class="centered">Lunch Sides</h3>
-        <ul>
-            <li>French Fries</li>
-            <li>Onion Rings</li>
-            <li>Side Salad</li>
-            <li>Coleslaw</li>
-            <li>Seasonal Vegetables</li>
-        </ul>
-
-        <h2 class="centered">Dinner</h2>
-        <ul>
-            <li><strong>Grilled Ribeye Steak</strong> – With garlic butter.</li>
-            <li><strong>Seared Salmon</strong> – Lemon dill sauce and vegetables.</li>
-            <li><strong>Chicken Alfredo</strong> – Creamy fettuccine Alfredo.</li>
-            <li><strong>Eggplant Parmesan</strong> – Breaded eggplant with marinara.</li>
-            <li><strong>Lamb Chops</strong> – Herb-crusted with rosemary jus.</li>
-            <li><strong>Stuffed Portobello</strong> – Spinach, feta, and balsamic glaze.</li>
-            <li><strong>Seafood Linguine</strong> – Shrimp, scallops, and garlic sauce.</li>
-            <li><strong>Beef Tenderloin</strong> – Peppercorn sauce and asparagus.</li>
-        </ul>
-
-        <h3 class="centered">Dinner Sides</h3>
-        <ul>
-            <li>Mashed Potatoes</li>
-            <li>Grilled Asparagus</li>
-            <li>Sauteed Spinach</li>
-            <li>Roasted Brussels Sprouts</li>
-            <li>Garlic Bread</li>
-            <li>Wild Rice Pilaf</li>
-        </ul>
+        <div class="menu-section">
+            <h3>Desserts</h3>
+            <ul>
+                <li>Chocolate Lava Cake</li>
+                <li>Cheesecake</li>
+                <li>Tiramisu</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
