@@ -142,21 +142,31 @@
             outline-offset: 3px;
         }
 
-        /* Updated Hours Section (Footer-like) */
-        .hours {
+        /* Combined Footer Section */
+        .footer {
             background-color: var(--primary-color);
             color: var(--text-color);
             text-align: center;
             padding: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
         }
-        .hours h3 {
-            font-size: 28px;
+        .footer .hours {
             margin-bottom: 15px;
+        }
+        .footer h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
             text-transform: uppercase;
         }
-        .hours p {
-            font-size: 18px;
+        .footer p {
             margin: 5px 0;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
         }
     </style>
 </head>
@@ -204,12 +214,15 @@
         </div>
     </div>
 
-    <!-- Updated Hours Section (Footer-like) -->
-    <div class="hours">
-        <h3>Our Hours</h3>
-        <p><strong>Monday - Thursday:</strong> 11:00 AM - 8:00 PM</p>
-        <p><strong>Friday - Saturday:</strong> 11:00 AM - 10:00 PM</p>
-        <p><strong>Sunday:</strong> 12:00 PM - 7:00 PM</p>
+    <!-- Combined Footer Section -->
+    <div class="footer">
+        <div class="hours">
+            <h3>Our Hours</h3>
+            <p><strong>Monday - Thursday:</strong> 11:00 AM - 8:00 PM</p>
+            <p><strong>Friday - Saturday:</strong> 11:00 AM - 10:00 PM</p>
+            <p><strong>Sunday:</strong> 12:00 PM - 7:00 PM</p>
+        </div>
+        <p>&copy; 2025 Charliovski's. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </div>
 </body>
 </html>
