@@ -44,9 +44,10 @@
             list-style: none;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .navbar ul li {
-            margin: 0 25px;
+            margin: 0 15px;
         }
         .navbar ul li a {
             text-decoration: none;
@@ -62,7 +63,7 @@
             transform: scale(1.05);
         }
         .content {
-            padding: 40px 60px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
@@ -83,11 +84,6 @@
             margin-bottom: 10px;
             text-transform: uppercase;
         }
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
         ul {
             list-style: none;
             padding-left: 0;
@@ -95,20 +91,40 @@
         }
         ul li {
             font-size: 18px;
-            margin-bottom: 8px;
-            padding: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
             border-bottom: 1px solid #ccc;
+            transition: color 0.3s;
+        }
+        ul li:hover {
+            color: var(--secondary-color);
+            cursor: pointer;
         }
         .menu-section {
             margin-bottom: 50px;
         }
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 36px;
+            }
+            h3 {
+                font-size: 28px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         Charliovski's
-    </div>
-    <div class="navbar">
+    </header>
+    <nav class="navbar">
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="menus.html">Menus</a></li>
@@ -116,12 +132,12 @@
             <li><a href="locations.html">Locations</a></li>
             <li><a href="order.html">Order Online</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <div class="content">
+    <main class="content">
         <h2>Our Menus</h2>
         
-        <div class="menu-section">
+        <section class="menu-section">
             <h3>Breakfast</h3>
             <ul>
                 <li>Classic Pancakes - Fluffy pancakes served with syrup and butter.</li>
@@ -129,20 +145,10 @@
                 <li>Omelette Deluxe - Choose your fillings from cheese, ham, peppers, and more.</li>
                 <li>Breakfast Burrito - Scrambled eggs, cheese, and sausage wrapped in a tortilla.</li>
                 <li>Avocado Toast - Fresh avocado on toasted sourdough with a drizzle of olive oil.</li>
-                <li>Belgian Waffles - Crisp outside, fluffy inside, served with berries and cream.</li>
-                <li>Eggs Benedict - Poached eggs, Canadian bacon, and hollandaise sauce.</li>
-                <li>Smoked Salmon Bagel - Cream cheese, smoked salmon, capers, and onions.</li>
             </ul>
-            <h3>Sides</h3>
-            <ul>
-                <li>Crispy Bacon</li>
-                <li>Sausage Links</li>
-                <li>Hash Browns</li>
-                <li>Fresh Fruit Cup</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="menu-section">
+        <section class="menu-section">
             <h3>Lunch</h3>
             <ul>
                 <li>Grilled Chicken Sandwich</li>
@@ -150,22 +156,10 @@
                 <li>Caesar Salad</li>
                 <li>BBQ Pulled Pork Sandwich</li>
                 <li>Margherita Pizza</li>
-                <li>Chicken Caesar Wrap</li>
-                <li>Fish Tacos</li>
-                <li>BLT Sandwich</li>
-                <li>Caprese Salad</li>
             </ul>
-            <h3>Sides</h3>
-            <ul>
-                <li>French Fries</li>
-                <li>Onion Rings</li>
-                <li>Side Salad</li>
-                <li>Coleslaw</li>
-                <li>Potato Chips</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="menu-section">
+        <section class="menu-section">
             <h3>Dinner</h3>
             <ul>
                 <li>Grilled Ribeye Steak</li>
@@ -173,29 +167,17 @@
                 <li>Chicken Alfredo Pasta</li>
                 <li>Beef Tenderloin</li>
                 <li>Eggplant Parmesan</li>
-                <li>Stuffed Chicken Breast</li>
-                <li>Lobster Tail</li>
-                <li>Spaghetti Bolognese</li>
             </ul>
-            <h3>Sides</h3>
-            <ul>
-                <li>Mashed Potatoes</li>
-                <li>Grilled Asparagus</li>
-                <li>Steamed Vegetables</li>
-                <li>Garlic Bread</li>
-                <li>Garden Salad</li>
-                <li>Rice Pilaf</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="menu-section">
+        <section class="menu-section">
             <h3>Desserts</h3>
             <ul>
                 <li>Chocolate Lava Cake</li>
                 <li>Cheesecake</li>
                 <li>Tiramisu</li>
             </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
