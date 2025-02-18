@@ -130,41 +130,27 @@
             outline-offset: 3px;
         }
 
-        /* Updated Hours Section */
-        .hours {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .hours h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .hours p {
-            font-size: 18px;
-            margin: 5px 0;
-            font-weight: 400;
-        }
-
-        /* Footer Styles */
+        /* Combined Hours and Footer Section */
         .footer {
             background-color: var(--primary-color);
             color: var(--text-color);
             text-align: center;
             padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
         }
+        .footer .hours {
+            margin-bottom: 15px;
+        }
+        .footer h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
         .footer p {
-            margin: 0;
-            font-size: 16px;
+            margin: 5px 0;
+            font-size: 18px;
+            font-weight: 400;
         }
         .footer a {
             color: var(--accent-color);
@@ -190,18 +176,16 @@
         <h2>Reservations</h2>
         <p>Secure your table at Charliovski's by making a reservation in advance. You can also call us at (123) 456-7890 or visit us in person to book your table. Online reservations will be available soon.</p>
         <a href="reservations.html" class="button">Make a Reservation</a>
+    </div>
 
-        <!-- Updated Hours Section -->
+    <!-- Combined Hours and Footer Section -->
+    <div class="footer">
         <div class="hours">
             <h3>Our Hours</h3>
             <p><strong>Monday - Thursday:</strong> 11:00 AM - 8:00 PM</p>
             <p><strong>Friday - Saturday:</strong> 11:00 AM - 10:00 PM</p>
             <p><strong>Sunday:</strong> 12:00 PM - 7:00 PM</p>
         </div>
-    </div>
-
-    <!-- Footer Section -->
-    <div class="footer">
         <p>&copy; 2025 Charliovski's. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </div>
 </body>
