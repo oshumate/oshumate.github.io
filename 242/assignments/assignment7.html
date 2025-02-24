@@ -65,7 +65,10 @@
         }
         #climb-btn {
             display: none;
-            margin-top: 20px;
+            position: absolute;
+            top: calc(50% + 120px); /* Positioned right below the ladder */
+            left: 50%;
+            transform: translateX(-50%);
         }
         #stickman {
             position: absolute;
@@ -82,12 +85,12 @@
     <h1>Assignment 7</h1>
     <div id="buttons-container">
         <button id="draw-btn">Draw Ladder</button>
-        <button id="climb-btn">Climb Ladder</button>
     </div>
     <div id="stairs-container">
         <div class="ladder-side left-side"></div>
         <div class="ladder-side right-side"></div>
     </div>
+    <button id="climb-btn">Climb Ladder</button> <!-- Moved below the ladder -->
     <img id="stickman" src="images/right.png" alt="Stickman"> <!-- Starts with right.png -->
     
     <script>
@@ -123,7 +126,8 @@
             stickman.style.transform = "translate(-50%, 50%)";
             currentStep = 0; // Reset tracking
 
-            climbBtn.style.display = "inline-block";
+            // Show the climb button below the ladder
+            climbBtn.style.display = "block";
         });
 
         climbBtn.addEventListener("click", () => {
