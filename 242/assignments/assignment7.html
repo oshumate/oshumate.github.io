@@ -18,7 +18,7 @@
         }
         #stairs-container {
             position: absolute;
-            bottom: 20px; /* Moves the entire ladder to the bottom */
+            bottom: 80px; /* Lifted slightly from the bottom */
             left: 50%;
             transform: translateX(-50%);
             display: inline-block;
@@ -96,7 +96,7 @@
 
             // Position stickman at the first step (at the new bottom position)
             stickman.style.display = "block";
-            stickman.style.bottom = `${stickmanHoverOffset + 20}px`; // Hovers just above the first step
+            stickman.style.bottom = `${stickmanHoverOffset + 80}px`; // Adjusted with new bottom positioning
             stickman.style.left = "50%"; // Center horizontally
             stickman.style.transform = "translateX(-50%)";
             currentStep = 0; // Reset tracking
@@ -112,7 +112,7 @@
                 stickman.src = currentStep % 2 === 0 ? "images/right.png" : "images/left.png";
 
                 // Move up one step
-                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset + 20}px`;
+                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset + 80}px`;
             }
         });
     </script>
