@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <style>
+        :root {
+            --primary-color: #005f00; /* Dark Green */
+            --secondary-color: #f4f4f9; /* Light Gray Background */
+            --white: #ffffff;
+            --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: green;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
             margin: 0;
             padding: 0;
         }
 
         #content {
-            background-color: white;
+            background-color: var(--white);
             width: 80%;
             margin: 20px auto;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
         }
 
         h1, h2 {
-            color: green;
+            color: var(--primary-color);
             text-align: center;
         }
 
@@ -31,7 +38,7 @@
             font-size: 1.2rem;
             line-height: 1.6;
             text-align: center;
-            color: green; 
+            color: var(--primary-color);
         }
 
         .assignments, .projects {
@@ -43,23 +50,24 @@
         }
 
         .assignment, .project {
-            background-color: #fff;
-            padding: 10px;
+            background-color: var(--white);
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
             text-align: center;
             width: 30%;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .assignment:hover, .project:hover {
             transform: translateY(-5px);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
         }
 
         .assignment a, .project a {
             display: block;
             text-decoration: none;
-            color: green; 
+            color: var(--primary-color);
         }
 
         .assignment img, .project img {
@@ -70,17 +78,16 @@
         }
 
         .assignment h3, .project h3 {
-            color: green; 
             margin: 10px 0;
         }
 
         .assignment p, .project p {
-            color: green; 
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .assignment, .project {
-                width: 100%;
+                width: 90%;
             }
         }
     </style>
@@ -128,21 +135,20 @@
                     <p>Basic JavaScript</p>
                 </a>
             </div>
-        </div>
-        <div class="assignment">
-            <a href="assignments/assignment6.html">
-                <h3>Assignment 6</h3>
-                <img src="images/242assignment6.png" alt="Assignment 6">
-                <p>More JavaScript</p>
-            </a>
-        </div>
-        <div class="assignment">
-            <a href="assignments/assignment7.html">
-                <h3>Assignment 7</h3>
-                <img src="images/242assignment7.png" alt="Assignment 7">
-                <p>JavaScript For Loops</p>
-            </a>
-        </div>
+            <div class="assignment">
+                <a href="assignments/assignment6.html">
+                    <h3>Assignment 6</h3>
+                    <img src="images/242assignment6.png" alt="Assignment 6">
+                    <p>More JavaScript</p>
+                </a>
+            </div>
+            <div class="assignment">
+                <a href="assignments/assignment7.html">
+                    <h3>Assignment 7</h3>
+                    <img src="images/242assignment7.png" alt="Assignment 7">
+                    <p>JavaScript For Loops</p>
+                </a>
+            </div>
         </div>
 
         <h2>Projects</h2>
@@ -157,13 +163,13 @@
             <div class="project">
                 <a href="projects/project2.html">
                     <h3>Project 2 - Wireframe</h3>
-                    <img src="images/project2.png" alt="Project 2 Wireframe">
+                    <img src="images/242project2.png" alt="Project 2 Wireframe">
                     <p>The wireframe embedded in the project page, not as a link.</p>
                 </a>
             </div>
             <div class="project">
                 <a href="projects/part3/home.html">
-                    <h3>Project 2 - Wireframe</h3>
+                    <h3>Project 3 - Website CSS and HTML</h3>
                     <img src="images/242project3.png" alt="Project 3 Website CSS and HTML">
                     <p>Basic CSS and HTML to set up the project website.</p>
                 </a>
