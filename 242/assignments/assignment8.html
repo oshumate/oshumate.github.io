@@ -92,8 +92,8 @@
     
     <section id="popup-overlay" class="popup-overlay">
         <div id="popup" class="popup">
-            <h2 id="popup-title" aria-live="polite"></h2> <!-- Title moved to top -->
-            <button id="close" aria-label="Close popup">&#10006;</button>
+            <h2 id="popup-title"></h2> <!-- Title at the top -->
+            <button id="close">&#10006;</button>
             <img id="popup-image" src="" alt="" loading="lazy">
         </div>
     </section>
@@ -130,26 +130,13 @@
             }
         }
 
-        // Preload images
-        Object.values(images).forEach((src) => {
-            const img = new Image();
-            img.src = src;
-        });
-
         Object.keys(images).forEach(title => {
             const div = document.createElement("div");
             div.className = "title";
             div.textContent = title;
             div.setAttribute("role", "button");
-            div.tabIndex = 0;
 
             div.addEventListener("click", () => togglePopup(true, title, images[title]));
-
-            div.addEventListener("keydown", (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    togglePopup(true, title, images[title]);
-                }
-            });
 
             titlesContainer.appendChild(div);
         });
