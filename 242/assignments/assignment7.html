@@ -9,14 +9,19 @@
             background-color: #f0f0f0;
             text-align: center;
             font-family: Arial, sans-serif;
+            position: relative;
+            height: 100vh;
+            margin: 0;
         }
         #buttons-container {
             margin-bottom: 20px;
         }
         #stairs-container {
-            position: relative;
+            position: absolute;
+            bottom: 20px; /* Moves the entire ladder to the bottom */
+            left: 50%;
+            transform: translateX(-50%);
             display: inline-block;
-            margin-top: 20px;
         }
         .step {
             width: 100px;
@@ -31,7 +36,7 @@
             position: absolute;
             width: 10px;
             background-color: black;
-            top: 0;
+            bottom: 0;
         }
         .left-side {
             left: -15px;
@@ -89,9 +94,9 @@
                 side.style.height = `${stepCount * stepHeight + 20}px`;
             });
 
-            // Reset stickman position at the bottom
+            // Position stickman at the first step (at the new bottom position)
             stickman.style.display = "block";
-            stickman.style.bottom = `${stickmanHoverOffset}px`; // Hovering above first step
+            stickman.style.bottom = `${stickmanHoverOffset + 20}px`; // Hovers just above the first step
             stickman.style.left = "50%"; // Center horizontally
             stickman.style.transform = "translateX(-50%)";
             currentStep = 0; // Reset tracking
@@ -107,7 +112,7 @@
                 stickman.src = currentStep % 2 === 0 ? "images/right.png" : "images/left.png";
 
                 // Move up one step
-                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset}px`;
+                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset + 20}px`;
             }
         });
     </script>
