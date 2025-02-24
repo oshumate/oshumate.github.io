@@ -6,13 +6,13 @@
     <title>Assignment 7 - Climbing Ladder</title>
     <style>
         body {
-            background-color: #001f3f; /* Solid navy blue background */
+            background-color: #001f3f;
             text-align: center;
             font-family: Arial, sans-serif;
             position: relative;
             height: 100vh;
             margin: 0;
-            color: #ffeb99; /* Light yellow text */
+            color: #ffeb99;
         }
         h1 {
             margin-top: 20px;
@@ -22,8 +22,8 @@
             margin-bottom: 20px;
         }
         button {
-            background-color: #ffeb99; /* Light yellow buttons */
-            color: #001f3f; /* Navy blue text */
+            background-color: #ffeb99;
+            color: #001f3f;
             border: 2px solid #001f3f;
             padding: 10px 15px;
             font-size: 16px;
@@ -33,11 +33,11 @@
             transition: background 0.3s;
         }
         button:hover {
-            background-color: #e6d88d; /* Slightly darker yellow on hover */
+            background-color: #e6d88d;
         }
         #stairs-container {
             position: absolute;
-            top: 50%; /* Center vertically */
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: inline-block;
@@ -45,16 +45,16 @@
         .step {
             width: 100px;
             height: 10px;
-            background-color: #b8860b; /* Golden brown steps */
+            background-color: #b8860b;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            border: 2px solid #654321; /* Dark brown border */
+            border: 2px solid #654321;
         }
         .ladder-side {
             position: absolute;
             width: 10px;
-            background-color: #654321; /* Dark brown ladder sides */
+            background-color: #654321;
             bottom: 0;
         }
         .left-side {
@@ -66,7 +66,7 @@
         #climb-btn {
             display: none;
             position: absolute;
-            top: calc(50% + 120px); /* Positioned right below the ladder */
+            top: calc(50% + 120px);
             left: 50%;
             transform: translateX(-50%);
         }
@@ -74,7 +74,7 @@
             position: absolute;
             width: 50px;
             display: none;
-            bottom: calc(50% - 20px); /* Slightly lower position */
+            bottom: calc(50% - 20px);
             left: 50%;
             transform: translate(-50%, 50%);
             transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out;
@@ -90,8 +90,8 @@
         <div class="ladder-side left-side"></div>
         <div class="ladder-side right-side"></div>
     </div>
-    <button id="climb-btn">Climb Ladder</button> <!-- Moved below the ladder -->
-    <img id="stickman" src="images/right.png" alt="Stickman"> <!-- Starts with right.png -->
+    <button id="climb-btn">Climb Ladder</button>
+    <img id="stickman" src="images/right.png" alt="Stickman">
     
     <script>
         const drawBtn = document.getElementById("draw-btn");
@@ -99,12 +99,11 @@
         const stairsContainer = document.getElementById("stairs-container");
         const stickman = document.getElementById("stickman");
 
-        let stepHeight = 20;  // Height of each step
-        let stepCount = 10;   // Total steps
-        let currentStep = 0;  // Keep track of stickman's position
+        let stepHeight = 20;
+        let stepCount = 10;
+        let currentStep = 0;
 
         drawBtn.addEventListener("click", () => {
-            // Clear existing steps while keeping ladder sides
             document.querySelectorAll(".step").forEach(step => step.remove());
 
             for (let i = 0; i < stepCount; i++) {
@@ -114,30 +113,22 @@
                 stairsContainer.appendChild(step);
             }
 
-            // Adjust ladder height dynamically
             document.querySelectorAll(".ladder-side").forEach(side => {
                 side.style.height = `${stepCount * stepHeight + 20}px`;
             });
 
-            // Move stickman down slightly
             stickman.style.display = "block";
-            stickman.style.bottom = "calc(50% - 20px)"; /* Lowered further */
+            stickman.style.bottom = "calc(50% - 20px)";
             stickman.style.left = "50%"; 
             stickman.style.transform = "translate(-50%, 50%)";
-            currentStep = 0; // Reset tracking
-
-            // Show the climb button below the ladder
+            currentStep = 0;
             climbBtn.style.display = "block";
         });
 
         climbBtn.addEventListener("click", () => {
-            if (currentStep < stepCount - 1) {  // Prevent moving past the top step
+            if (currentStep < stepCount - 1) {
                 currentStep++;
-
-                // First movement switches to left.png, then alternates
                 stickman.src = currentStep % 2 === 1 ? "images/left.png" : "images/right.png";
-
-                // Move up one step from the bottom
                 stickman.style.bottom = `calc(50% - 20px + ${currentStep * stepHeight}px)`;
             }
         });
