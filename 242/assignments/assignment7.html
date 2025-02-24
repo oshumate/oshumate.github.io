@@ -52,6 +52,9 @@
             position: absolute;
             width: 50px;
             display: none;
+            bottom: 20px; /* Moves stickman to the very bottom of the page */
+            left: 50%;
+            transform: translateX(-50%);
             transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out;
         }
     </style>
@@ -75,7 +78,6 @@
 
         let stepHeight = 20;  // Height of each step
         let stepCount = 10;   // Total steps
-        let stickmanHoverOffset = 15; // Stickman hovers above the step
         let currentStep = 0;  // Keep track of stickman's position
 
         drawBtn.addEventListener("click", () => {
@@ -94,9 +96,9 @@
                 side.style.height = `${stepCount * stepHeight + 20}px`;
             });
 
-            // Position stickman slightly LOWER at the start
+            // Move stickman to the bottom of the page before climbing
             stickman.style.display = "block";
-            stickman.style.bottom = `${stickmanHoverOffset + 60}px`; // Adjusted lower starting position
+            stickman.style.bottom = "20px"; // Positioned at the very bottom
             stickman.style.left = "50%"; // Center horizontally
             stickman.style.transform = "translateX(-50%)";
             currentStep = 0; // Reset tracking
@@ -111,8 +113,8 @@
                 // Alternate stickman images for walking animation
                 stickman.src = currentStep % 2 === 0 ? "images/right.png" : "images/left.png";
 
-                // Move up one step
-                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset + 60}px`;
+                // Move up one step from the bottom
+                stickman.style.bottom = `${20 + currentStep * stepHeight}px`;
             }
         });
     </script>
