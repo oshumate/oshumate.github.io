@@ -6,25 +6,25 @@
     <title>Assignment 7 - Climbing Ladder</title>
     <style>
         body {
-            background: linear-gradient(to bottom, #e0f7fa, #80deea);
+            background-color: #001f3f; /* Solid navy blue background */
             text-align: center;
             font-family: Arial, sans-serif;
             position: relative;
             height: 100vh;
             margin: 0;
+            color: #ffeb99; /* Light yellow text */
         }
         h1 {
             margin-top: 20px;
             font-size: 32px;
-            color: #005082;
         }
         #buttons-container {
             margin-bottom: 20px;
         }
         button {
-            background-color: #0077b6;
-            color: white;
-            border: none;
+            background-color: #ffeb99; /* Light yellow buttons */
+            color: #001f3f; /* Navy blue text */
+            border: 2px solid #001f3f;
             padding: 10px 15px;
             font-size: 16px;
             margin: 5px;
@@ -33,7 +33,7 @@
             transition: background 0.3s;
         }
         button:hover {
-            background-color: #0096c7;
+            background-color: #e6d88d; /* Slightly darker yellow on hover */
         }
         #stairs-container {
             position: absolute;
@@ -45,16 +45,16 @@
         .step {
             width: 100px;
             height: 10px;
-            background-color: #6d4c41;
+            background-color: #b8860b; /* Golden brown steps */
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            border: 2px solid #3e2723;
+            border: 2px solid #654321; /* Dark brown border */
         }
         .ladder-side {
             position: absolute;
             width: 10px;
-            background-color: #3e2723;
+            background-color: #654321; /* Dark brown ladder sides */
             bottom: 0;
         }
         .left-side {
