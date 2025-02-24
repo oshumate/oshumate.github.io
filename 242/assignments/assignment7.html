@@ -68,7 +68,7 @@
         <div class="ladder-side left-side"></div>
         <div class="ladder-side right-side"></div>
     </div>
-    <img id="stickman" src="images/right.png" alt="Stickman"> <!-- Swapped starting image -->
+    <img id="stickman" src="images/right.png" alt="Stickman"> <!-- Start with right.png -->
     
     <script>
         const drawBtn = document.getElementById("draw-btn");
@@ -110,8 +110,8 @@
             if (currentStep < stepCount - 1) {  // Prevent moving past the top step
                 currentStep++;
 
-                // Alternate stickman images for walking animation
-                stickman.src = currentStep % 2 === 0 ? "images/left.png" : "images/right.png";
+                // First movement switches to left.png, then alternates
+                stickman.src = currentStep % 2 === 1 ? "images/left.png" : "images/right.png";
 
                 // Move up one step from the bottom
                 stickman.style.bottom = `${20 + currentStep * stepHeight}px`;
