@@ -14,18 +14,21 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            background-color: var(--light-yellow);
-            color: var(--navy);
+            background-color: var(--navy);
+            color: var(--light-yellow);
         }
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             margin: 20px 0;
+        }
+        h2 {
+            font-size: 32px;
         }
         .title {
             cursor: pointer;
-            font-size: 22px;
+            font-size: 24px;
             margin: 15px;
-            color: var(--navy);
+            color: var(--light-yellow);
             font-weight: bold;
         }
         .popup-overlay {
@@ -41,8 +44,8 @@
             z-index: 1000;
         }
         .popup {
-            background: white;
-            padding: 30px;
+            background: var(--light-yellow);
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 30px var(--light-green);
             position: relative;
@@ -58,7 +61,7 @@
         }
         #close {
             cursor: pointer;
-            font-size: 24px;
+            font-size: 28px;
             color: red;
             position: absolute;
             top: 10px;
@@ -76,7 +79,6 @@
     <h2>Image Gallery</h2>
     <div id="titles"></div>
     
-    <!-- Popup Section -->
     <section id="popup-overlay" class="popup-overlay">
         <div id="popup" class="popup">
             <span id="close" role="button" aria-label="Close popup">&#10006;</span>
@@ -86,7 +88,7 @@
     </section>
 
     <section>
-        <p>Image by <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63" target="_blank">Freepik</a></p>
+        <p>Image by <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63" target="_blank" style="color: var(--light-green);">Freepik</a></p>
     </section>
 
     <script>
