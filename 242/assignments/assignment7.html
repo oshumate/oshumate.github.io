@@ -46,7 +46,8 @@
         #stickman {
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 50px;
             display: none;
         }
@@ -68,22 +69,26 @@
         const climbBtn = document.getElementById("climb-btn");
         const stairsContainer = document.getElementById("stairs-container");
         const stickman = document.getElementById("stickman");
-        
+
         drawBtn.addEventListener("click", () => {
-            stairsContainer.innerHTML = '<div class="ladder-side left-side"></div><div class="ladder-side right-side"></div>';
+            // Clear existing steps while keeping ladder sides
+            document.querySelectorAll(".step").forEach(step => step.remove());
+
             for (let i = 0; i < 10; i++) {
                 let step = document.createElement("div");
                 step.className = "step";
-                step.style.top = `${i * 20}px`;
                 stairsContainer.appendChild(step);
             }
-            
+
+            // Position stickman at the bottom center of the ladder
             stickman.style.display = "block";
             stickman.style.bottom = "0px";
-            stickman.style.left = "20px";
+            stickman.style.left = "50%"; // Center horizontally
+            stickman.style.transform = "translateX(-50%)"; // Ensure it's perfectly centered
+
             climbBtn.style.display = "inline-block";
         });
-        
+
         climbBtn.addEventListener("click", () => {
             let step = 0;
             const interval = setInterval(() => {
@@ -92,7 +97,7 @@
                     return;
                 }
                 stickman.src = step % 2 === 0 ? "images/right.png" : "images/left.png";
-                stickman.style.bottom = `${step * 20}px`;
+                stickman.style.bottom = `${step * 20}px`; // Moves up step by step
                 step++;
             }, 500);
         });
