@@ -45,15 +45,24 @@
         }
         .popup {
             background: var(--light-yellow);
-            padding: 40px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 10px 30px var(--light-green);
             position: relative;
             max-width: 80%;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             animation: fadeIn 0.3s ease-in-out;
         }
-        .popup img {
+        #popup-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        #popup-image {
             max-width: 100%;
             max-height: 70vh;
             height: auto;
@@ -66,6 +75,8 @@
             position: absolute;
             top: 10px;
             right: 15px;
+            background: none;
+            border: none;
             font-weight: bold;
         }
         @keyframes fadeIn {
@@ -81,8 +92,8 @@
     
     <section id="popup-overlay" class="popup-overlay">
         <div id="popup" class="popup">
-            <span id="close" role="button" aria-label="Close popup">&#10006;</span>
-            <h2 id="popup-title"></h2>
+            <h2 id="popup-title" aria-live="polite"></h2> <!-- Title moved to top -->
+            <button id="close" aria-label="Close popup">&#10006;</button>
             <img id="popup-image" src="" alt="" loading="lazy">
         </div>
     </section>
@@ -118,6 +129,12 @@
                 popupImage.alt = title;
             }
         }
+
+        // Preload images
+        Object.values(images).forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
 
         Object.keys(images).forEach(title => {
             const div = document.createElement("div");
