@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
         }
         .title {
             cursor: pointer;
@@ -25,6 +26,7 @@
             display: none;
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
         .popup {
             background: white;
@@ -34,9 +36,11 @@
             position: relative;
             max-width: 80%;
             text-align: center;
+            animation: fadeIn 0.3s ease-in-out;
         }
         .popup img {
             max-width: 100%;
+            max-height: 80vh;
             height: auto;
             margin-top: 10px;
         }
@@ -48,8 +52,9 @@
             top: 10px;
             right: 15px;
         }
-        .hidden {
-            display: none;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
@@ -57,20 +62,20 @@
     <h1>Image Gallery</h1>
     <div id="titles"></div>
     
-    <div id="popup-overlay" class="popup-overlay">
+    <!-- Popup Section -->
+    <section id="popup-overlay" class="popup-overlay" aria-hidden="true">
         <div id="popup" class="popup">
-            <span id="close">&#10006;</span>
+            <span id="close" role="button" aria-label="Close popup">&#10006;</span>
             <h2 id="popup-title"></h2>
-            <img id="popup-image" src="" alt="">
+            <img id="popup-image" src="" alt="" loading="lazy">
         </div>
-    </div>
+    </section>
 
     <section>
         Image by <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63" target="_blank">Freepik</a>
     </section>
 
     <script>
-        // Associative array with image titles and paths
         const images = {
             "Happy Birthday": "images/birthday.jpg",
             "Crazy Clown": "images/clown.jpg",
@@ -85,42 +90,49 @@
         const popupTitle = document.getElementById("popup-title");
         const popupImage = document.getElementById("popup-image");
         const closeBtn = document.getElementById("close");
+        const popup = document.getElementById("popup");
 
-        // Loop through the associative array and create title elements
+        function togglePopup(open, title = "", imagePath = "") {
+            popupOverlay.style.display = open ? "flex" : "none";
+            document.body.style.overflow = open ? "hidden" : "auto";
+            popupOverlay.setAttribute("aria-hidden", open ? "false" : "true");
+
+            if (open) {
+                popupTitle.textContent = title;
+                popupImage.src = imagePath;
+                popupImage.alt = title;
+            }
+        }
+
         Object.keys(images).forEach(title => {
             const div = document.createElement("div");
             div.className = "title";
             div.textContent = title;
-            div.setAttribute("role", "button"); // Accessibility
-            div.tabIndex = 0; // Keyboard navigable
+            div.setAttribute("role", "button");
+            div.tabIndex = 0;
 
-            // Click event to show popup
-            div.addEventListener("click", () => {
-                popupTitle.textContent = title;
-                popupImage.src = images[title];
-                popupImage.alt = title;
-                popupOverlay.style.display = "flex";
+            div.addEventListener("click", () => togglePopup(true, title, images[title]));
+
+            div.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    togglePopup(true, title, images[title]);
+                }
             });
 
             titlesContainer.appendChild(div);
         });
 
-        // Close popup on button click
-        closeBtn.addEventListener("click", () => {
-            popupOverlay.style.display = "none";
-        });
+        closeBtn.addEventListener("click", () => togglePopup(false));
 
-        // Close popup when clicking outside the box
         popupOverlay.addEventListener("click", (e) => {
-            if (e.target === popupOverlay) {
-                popupOverlay.style.display = "none";
+            if (!popup.contains(e.target)) {
+                togglePopup(false);
             }
         });
 
-        // Close popup with Escape key
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
-                popupOverlay.style.display = "none";
+                togglePopup(false);
             }
         });
     </script>
