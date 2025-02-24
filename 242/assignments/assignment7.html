@@ -71,7 +71,7 @@
             position: absolute;
             width: 50px;
             display: none;
-            bottom: calc(50% - 10px); /* Slightly lower */
+            bottom: calc(50% - 20px); /* Slightly lower position */
             left: 50%;
             transform: translate(-50%, 50%);
             transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out;
@@ -118,7 +118,7 @@
 
             // Move stickman down slightly
             stickman.style.display = "block";
-            stickman.style.bottom = "calc(50% - 10px)"; /* Lower than ladder */
+            stickman.style.bottom = "calc(50% - 20px)"; /* Lowered further */
             stickman.style.left = "50%"; 
             stickman.style.transform = "translate(-50%, 50%)";
             currentStep = 0; // Reset tracking
@@ -134,7 +134,7 @@
                 stickman.src = currentStep % 2 === 1 ? "images/left.png" : "images/right.png";
 
                 // Move up one step from the bottom
-                stickman.style.bottom = `calc(50% - 10px + ${currentStep * stepHeight}px)`;
+                stickman.style.bottom = `calc(50% - 20px + ${currentStep * stepHeight}px)`;
             }
         });
     </script>
