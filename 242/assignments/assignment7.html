@@ -61,7 +61,7 @@
         <div class="ladder-side left-side"></div>
         <div class="ladder-side right-side"></div>
     </div>
-    <img id="stickman" src="left.png" alt="Stickman">
+    <img id="stickman" src="images/left.png" alt="Stickman">
     
     <script>
         const drawBtn = document.getElementById("draw-btn");
@@ -91,7 +91,7 @@
                     clearInterval(interval);
                     return;
                 }
-                stickman.src = step % 2 === 0 ? "right.png" : "left.png";
+                stickman.src = step % 2 === 0 ? "images/right.png" : "images/left.png";
                 stickman.style.bottom = `${step * 20}px`;
                 step++;
             }, 500);
