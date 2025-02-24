@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .title {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            color: navy;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            border-radius: 8px;
+        }
+        .popup img {
+            max-width: 100%;
+            height: auto;
+        }
+        #close {
+            cursor: pointer;
+            font-size: 20px;
+            color: red;
+            float: right;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div id="titles"></div>
+    
+    <div id="popup" class="popup hidden">
+        <span id="close">&#10006;</span>
+        <h2 id="popup-title"></h2>
+        <img id="popup-image" src="" alt="">
+    </div>
+
+    <section>
+        Image by <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63">Freepik</a>
+    </section>
+
+    <script>
+        const images = {
+            "Running Stickman": "1.png",
+            "Jumping Stickman": "2.png",
+            "Dancing Stickman": "3.png",
+            "Sitting Stickman": "4.png",
+            "Thinking Stickman": "5.png",
+            "Happy Stickman": "6.png"
+        };
+
+        const titlesContainer = document.getElementById("titles");
+        const popup = document.getElementById("popup");
+        const popupTitle = document.getElementById("popup-title");
+        const popupImage = document.getElementById("popup-image");
+        const closeBtn = document.getElementById("close");
+
+        Object.keys(images).forEach(title => {
+            const div = document.createElement("div");
+            div.className = "title";
+            div.textContent = title;
+            div.addEventListener("click", () => {
+                popupTitle.textContent = title;
+                popupImage.src = images[title];
+                popup.classList.remove("hidden");
+            });
+            titlesContainer.appendChild(div);
+        });
+
+        closeBtn.addEventListener("click", () => {
+            popup.classList.add("hidden");
+        });
+    </script>
+</body>
+</html>
