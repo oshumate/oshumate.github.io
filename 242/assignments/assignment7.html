@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Stairs</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #stairs-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .step {
+            width: 100px;
+            height: 10px;
+            background-color: brown;
+            position: relative;
+            border: 2px solid black;
+            margin-top: 10px;
+        }
+        .ladder-side {
+            position: absolute;
+            width: 10px;
+            height: 220px;
+            background-color: black;
+            top: 0;
+        }
+        .left-side {
+            left: -10px;
+        }
+        .right-side {
+            right: -10px;
+        }
+        #climb-btn {
+            display: none;
+            margin-top: 20px;
+        }
+        #stickman {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="draw-btn">Draw Ladder</button>
+    <div id="stairs-container">
+        <div class="ladder-side left-side"></div>
+        <div class="ladder-side right-side"></div>
+    </div>
+    <button id="climb-btn">Climb Ladder</button>
+    <img id="stickman" src="left.png" alt="Stickman">
+    
+    <script>
+        const drawBtn = document.getElementById("draw-btn");
+        const climbBtn = document.getElementById("climb-btn");
+        const stairsContainer = document.getElementById("stairs-container");
+        const stickman = document.getElementById("stickman");
+        
+        drawBtn.addEventListener("click", () => {
+            stairsContainer.innerHTML = '<div class="ladder-side left-side"></div><div class="ladder-side right-side"></div>';
+            for (let i = 0; i < 10; i++) {
+                let step = document.createElement("div");
+                step.className = "step";
+                step.style.top = `${i * 20}px`;
+                stairsContainer.appendChild(step);
+            }
+            
+            stickman.style.display = "block";
+            stickman.style.bottom = "0px";
+            stickman.style.left = "20px";
+            climbBtn.style.display = "inline-block";
+        });
+        
+        climbBtn.addEventListener("click", () => {
+            let step = 0;
+            const interval = setInterval(() => {
+                if (step >= 10) {
+                    clearInterval(interval);
+                    return;
+                }
+                stickman.src = step % 2 === 0 ? "right.png" : "left.png";
+                stickman.style.bottom = `${step * 20}px`;
+                step++;
+            }, 500);
+        });
+    </script>
+</body>
+</html>
