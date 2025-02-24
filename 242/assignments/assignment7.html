@@ -22,22 +22,22 @@
             width: 100px;
             height: 10px;
             background-color: brown;
-            position: relative;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             border: 2px solid black;
-            margin-top: 10px;
         }
         .ladder-side {
             position: absolute;
             width: 10px;
-            height: 220px;
             background-color: black;
             top: 0;
         }
         .left-side {
-            left: -10px;
+            left: -15px;
         }
         .right-side {
-            right: -10px;
+            right: -15px;
         }
         #climb-btn {
             display: none;
@@ -45,11 +45,9 @@
         }
         #stickman {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
             width: 50px;
             display: none;
+            transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -70,36 +68,47 @@
         const stairsContainer = document.getElementById("stairs-container");
         const stickman = document.getElementById("stickman");
 
+        let stepHeight = 20;  // Height of each step
+        let stepCount = 10;   // Total steps
+        let stickmanHoverOffset = 15; // Stickman hovers above the step
+        let currentStep = 0;  // Keep track of stickman's position
+
         drawBtn.addEventListener("click", () => {
             // Clear existing steps while keeping ladder sides
             document.querySelectorAll(".step").forEach(step => step.remove());
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < stepCount; i++) {
                 let step = document.createElement("div");
                 step.className = "step";
+                step.style.bottom = `${i * stepHeight}px`;
                 stairsContainer.appendChild(step);
             }
 
-            // Position stickman at the bottom center of the ladder
+            // Adjust ladder height dynamically
+            document.querySelectorAll(".ladder-side").forEach(side => {
+                side.style.height = `${stepCount * stepHeight + 20}px`;
+            });
+
+            // Reset stickman position at the bottom
             stickman.style.display = "block";
-            stickman.style.bottom = "0px";
+            stickman.style.bottom = `${stickmanHoverOffset}px`; // Hovering above first step
             stickman.style.left = "50%"; // Center horizontally
-            stickman.style.transform = "translateX(-50%)"; // Ensure it's perfectly centered
+            stickman.style.transform = "translateX(-50%)";
+            currentStep = 0; // Reset tracking
 
             climbBtn.style.display = "inline-block";
         });
 
         climbBtn.addEventListener("click", () => {
-            let step = 0;
-            const interval = setInterval(() => {
-                if (step >= 10) {
-                    clearInterval(interval);
-                    return;
-                }
-                stickman.src = step % 2 === 0 ? "images/right.png" : "images/left.png";
-                stickman.style.bottom = `${step * 20}px`; // Moves up step by step
-                step++;
-            }, 500);
+            if (currentStep < stepCount - 1) {  // Prevent moving past the top step
+                currentStep++;
+
+                // Alternate stickman images for walking animation
+                stickman.src = currentStep % 2 === 0 ? "images/right.png" : "images/left.png";
+
+                // Move up one step
+                stickman.style.bottom = `${currentStep * stepHeight + stickmanHoverOffset}px`;
+            }
         });
     </script>
 </body>
