@@ -37,9 +37,9 @@
         }
         #stairs-container {
             position: absolute;
-            bottom: 80px;
+            top: 50%; /* Center vertically */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             display: inline-block;
         }
         .step {
@@ -71,9 +71,9 @@
             position: absolute;
             width: 50px;
             display: none;
-            bottom: 20px;
+            bottom: 50%; /* Moves up the same amount as the ladder */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, 50%);
             transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out;
         }
     </style>
@@ -116,11 +116,11 @@
                 side.style.height = `${stepCount * stepHeight + 20}px`;
             });
 
-            // Move stickman to the bottom of the page before climbing
+            // Move stickman up with the ladder
             stickman.style.display = "block";
-            stickman.style.bottom = "20px"; // Positioned at the very bottom
-            stickman.style.left = "50%"; // Center horizontally
-            stickman.style.transform = "translateX(-50%)";
+            stickman.style.bottom = "50%"; /* Matches the new centered position */
+            stickman.style.left = "50%"; 
+            stickman.style.transform = "translate(-50%, 50%)";
             currentStep = 0; // Reset tracking
 
             climbBtn.style.display = "inline-block";
@@ -134,7 +134,7 @@
                 stickman.src = currentStep % 2 === 1 ? "images/left.png" : "images/right.png";
 
                 // Move up one step from the bottom
-                stickman.style.bottom = `${20 + currentStep * stepHeight}px`;
+                stickman.style.bottom = `calc(50% + ${currentStep * stepHeight}px)`;
             }
         });
     </script>
