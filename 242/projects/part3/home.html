@@ -168,30 +168,30 @@
             }
         }
 
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--text-color); 
+        /* Featured Dishes */
+        .dish-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .dish-item {
+            width: 30%;
             text-align: center;
-            padding: 40px 0;
-            margin-top: 50px;
         }
-        .footer h3 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+
+        /* Testimonials */
+        .testimonials blockquote {
+            font-style: italic;
+            margin: 20px 0;
         }
-        .footer p {
-            margin: 0;
-            font-size: 18px;
-        }
-        .footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-        }
-        .footer a:hover {
-            text-decoration: underline;
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -219,28 +219,65 @@
         <img src="https://via.placeholder.com/1200x600" alt="Restaurant Interior" style="width: 100%; height: auto; margin-bottom: 30px;">
         <p>Experience fine dining with a unique blend of flavors and ambiance. Our carefully crafted menu offers a delightful selection of dishes, made from the freshest ingredients to provide an unforgettable culinary journey. Visit us to indulge in elegance and taste the difference at Charliovski's.</p>
 
+        <!-- Featured Dishes Section -->
         <div class="text-section">
-            <h3 class="centered">About Us</h3>
-            <p>At Charliovski's, we believe in creating more than just a meal – we create experiences. Our restaurant blends a warm, inviting atmosphere with a commitment to exceptional quality and service. Every dish is a masterpiece, crafted with passion and precision, reflecting our dedication to culinary excellence.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Dish Example" style="width: 100%; height: auto; margin-bottom: 30px;">
+            <h3 class="centered">Featured Dishes</h3>
+            <div class="dish-gallery">
+                <div class="dish-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Dish 1" style="width: 100%; height: auto;">
+                    <h4>Grilled Salmon</h4>
+                    <p>Fresh salmon grilled to perfection, served with a side of seasonal vegetables.</p>
+                </div>
+                <div class="dish-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Dish 2" style="width: 100%; height: auto;">
+                    <h4>Spaghetti Carbonara</h4>
+                    <p>A classic Italian pasta dish with creamy sauce, pancetta, and Parmesan cheese.</p>
+                </div>
+                <div class="dish-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Dish 3" style="width: 100%; height: auto;">
+                    <h4>Chocolate Lava Cake</h4>
+                    <p>Decadent molten chocolate cake, served with vanilla ice cream.</p>
+                </div>
+            </div>
         </div>
 
+        <!-- Customer Testimonials Section -->
         <div class="text-section">
-            <h3 class="centered">Reservations</h3>
-            <p>Secure your table today and immerse yourself in an unparalleled dining experience. Whether it's a romantic evening, a family gathering, or a business dinner, Charliovski's is the perfect destination. Reserve now to ensure an unforgettable evening.</p>
+            <h3 class="centered">What Our Customers Say</h3>
+            <div class="testimonials">
+                <blockquote>
+                    "The best dining experience I've had in years. The food is always fresh and delicious!"
+                    <footer>- Sarah L.</footer>
+                </blockquote>
+                <blockquote>
+                    "Charliovski's is the perfect place for any occasion. The ambiance and service are top-notch."
+                    <footer>- Michael R.</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Special Offers Section -->
+        <div class="text-section">
+            <h3 class="centered">Special Offers</h3>
+            <p>Take advantage of our limited-time promotions!</p>
+            <ul>
+                <li><strong>Happy Hour</strong>: Monday - Friday, 4:00 PM - 6:00 PM</li>
+                <li><strong>Free Dessert</strong>: Get a free dessert with any entrée purchase on your birthday.</li>
+            </ul>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="text-section">
+            <h3 class="centered">Our Gallery</h3>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x300" alt="Restaurant Image 1" style="width: 100%; height: auto; margin-bottom: 20px;">
+                <img src="https://via.placeholder.com/400x300" alt="Restaurant Image 2" style="width: 100%; height: auto; margin-bottom: 20px;">
+            </div>
+        </div>
+
+        <!-- Call-to-action for Reservations -->
+        <div class="text-section centered">
             <a href="reservations.html" class="button">Make a Reservation</a>
-        </div>
-
-        <div class="text-section">
-            <h3 class="centered">Our Locations</h3>
-            <p>We are proud to serve you at multiple convenient locations. Each of our restaurants provides a unique ambiance with the same dedication to quality and service. Find the nearest Charliovski's and experience fine dining at its best.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Restaurant Location" style="width: 100%; height: auto; margin-bottom: 30px;">
-        </div>
-
-        <div class="text-section">
-            <h3 class="centered">Order Online</h3>
-            <p>Enjoy Charliovski's culinary delights from the comfort of your home. Our online ordering system allows you to conveniently place your order for pickup or delivery. Experience the same quality and taste at your doorstep.</p>
-            <a href="order.html" class="button">Order Now</a>
         </div>
     </div>
 
@@ -249,13 +286,13 @@
         <p>We are open every day of the week! Here are our hours:</p>
         <p><strong>Monday - Friday:</strong> 10:00 AM - 10:00 PM</p>
         <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
-    
+
         <h3>Our Locations</h3>
         <p><strong>Charlotte, NC:</strong> 123 Main St, Charlotte, NC 28202</p>
         <p><strong>New York, NY:</strong> 456 Broadway, New York, NY 10012</p>
         <p><strong>Austin, TX:</strong> 789 Congress Ave, Austin, TX 78701</p>
         <p><strong>Cleveland, OH:</strong> 101 Lakeside Ave, Cleveland, OH 44114</p>
-    
+
         <p>&copy; 2025 Charliovski's | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
     </div>
 
