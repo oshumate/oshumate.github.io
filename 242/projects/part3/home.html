@@ -134,7 +134,40 @@
             outline-offset: 3px;
         }
 
-        
+        /* Added Hamburger menu for mobile */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger-menu div {
+            background-color: #fff;
+            height: 3px;
+            margin: 5px;
+            width: 25px;
+            transition: all 0.3s;
+        }
+        .navbar ul {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar ul li a {
+                padding: 15px;
+                width: 100%;
+            }
+            .navbar.active ul {
+                display: flex;
+            }
+        }
+
         .footer {
             background-color: var(--primary-color);
             color: var(--text-color); 
@@ -167,6 +200,11 @@
         Charliovski's
     </div>
     <div class="navbar">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="menus.html">Menus</a></li>
@@ -178,11 +216,13 @@
 
     <div class="content">
         <h2>Welcome to Charliovski's</h2>
+        <img src="https://via.placeholder.com/1200x600" alt="Restaurant Interior" style="width: 100%; height: auto; margin-bottom: 30px;">
         <p>Experience fine dining with a unique blend of flavors and ambiance. Our carefully crafted menu offers a delightful selection of dishes, made from the freshest ingredients to provide an unforgettable culinary journey. Visit us to indulge in elegance and taste the difference at Charliovski's.</p>
 
         <div class="text-section">
             <h3 class="centered">About Us</h3>
             <p>At Charliovski's, we believe in creating more than just a meal – we create experiences. Our restaurant blends a warm, inviting atmosphere with a commitment to exceptional quality and service. Every dish is a masterpiece, crafted with passion and precision, reflecting our dedication to culinary excellence.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Dish Example" style="width: 100%; height: auto; margin-bottom: 30px;">
         </div>
 
         <div class="text-section">
@@ -194,7 +234,7 @@
         <div class="text-section">
             <h3 class="centered">Our Locations</h3>
             <p>We are proud to serve you at multiple convenient locations. Each of our restaurants provides a unique ambiance with the same dedication to quality and service. Find the nearest Charliovski's and experience fine dining at its best.</p>
-            <a href="locations.html" class="button">Find a Location</a>
+            <img src="https://via.placeholder.com/800x400" alt="Restaurant Location" style="width: 100%; height: auto; margin-bottom: 30px;">
         </div>
 
         <div class="text-section">
@@ -211,5 +251,12 @@
         <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
         <p>&copy; 2025 Charliovski's | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
