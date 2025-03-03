@@ -47,13 +47,9 @@
             transform: scale(1.05);
         }
         .pizza-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .bbq-image {
-            width: 110%;
-            height: auto;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
             border-radius: 10px;
         }
         .w3-modal-content {
@@ -62,7 +58,9 @@
             border-radius: 10px;
         }
         .modal-image {
-            width: 100%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -93,10 +91,9 @@
             }
 
             getSection() {
-                const imageClass = this.name === "BBQ Chicken" ? "bbq-image" : "pizza-image";
                 return `
                     <div class="pizza-box w3-card" onclick="showPopup('${this.name}')">
-                        <img src="images/${this.image}" alt="${this.name}" class="${imageClass}">
+                        <img src="images/${this.image}" alt="${this.name}" class="pizza-image">
                         <h2>${this.name}</h2>
                     </div>
                 `;
