@@ -51,6 +51,11 @@
             height: auto;
             border-radius: 10px;
         }
+        .bbq-image {
+            width: 110%;
+            height: auto;
+            border-radius: 10px;
+        }
         .w3-modal-content {
             padding: 20px;
             background: white;
@@ -88,9 +93,10 @@
             }
 
             getSection() {
+                const imageClass = this.name === "BBQ Chicken" ? "bbq-image" : "pizza-image";
                 return `
                     <div class="pizza-box w3-card" onclick="showPopup('${this.name}')">
-                        <img src="images/${this.image}" alt="${this.name}" class="pizza-image">
+                        <img src="images/${this.image}" alt="${this.name}" class="${imageClass}">
                         <h2>${this.name}</h2>
                     </div>
                 `;
@@ -107,6 +113,7 @@
 
         function loadPizzas() {
             const container = document.getElementById("pizza-container");
+            container.innerHTML = "";
             pizzas.forEach(pizza => {
                 container.innerHTML += pizza.getSection();
             });
@@ -114,6 +121,7 @@
 
         function showPopup(pizzaName) {
             const pizza = pizzas.find(p => p.name === pizzaName);
+            if (!pizza) return;
             const modalContent = document.getElementById("modal-content");
             modalContent.innerHTML = `
                 <h2>${pizza.name}</h2>
