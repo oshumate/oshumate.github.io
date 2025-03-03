@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #34495e;
+        }
+        .pizza-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .pizza-box {
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .pizza-box:hover {
+            transform: scale(1.05);
+        }
+        .pizza-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .w3-modal-content {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        .modal-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Assignment 9</div>
+    <h1 class="title">Pizza Menu</h1>
+    <div id="pizza-container" class="pizza-grid"></div>
+
+    <!-- Modal Structure -->
+    <div id="pizzaModal" class="w3-modal" onclick="closeModal()">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <span class="w3-button w3-display-topright" onclick="closeModal()">&times;</span>
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
+    
+    <script>
+        class Pizza {
+            constructor(name, description, price, ingredients, image, size) {
+                this.name = name;
+                this.description = description;
+                this.price = price;
+                this.ingredients = ingredients;
+                this.image = image;
+                this.size = size;
+            }
+
+            getSection() {
+                return `
+                    <div class="pizza-box w3-card" onclick="showPopup('${this.name}')">
+                        <img src="images/${this.image}" alt="${this.name}" class="pizza-image">
+                        <h2>${this.name}</h2>
+                    </div>
+                `;
+            }
+        }
+
+        const pizzas = [
+            new Pizza("Margherita", "Classic tomato and cheese pizza.", "$12.99", "Tomato, Mozzarella, Basil", "margherita.jpg", "Large"),
+            new Pizza("Pepperoni", "Spicy pepperoni with mozzarella cheese.", "$14.99", "Pepperoni, Mozzarella, Tomato Sauce", "pepperoni.jpg", "Medium"),
+            new Pizza("BBQ Chicken", "Tangy BBQ sauce with grilled chicken.", "$15.99", "BBQ Sauce, Chicken, Red Onion, Mozzarella", "bbq_chicken.jpg", "Large"),
+            new Pizza("Hawaiian", "A sweet and savory delight.", "$14.99", "Ham, Pineapple, Mozzarella", "hawaiian.jpg", "Large"),
+            new Pizza("Meat Lovers", "A feast of meats for carnivores.", "$16.99", "Pepperoni, Sausage, Bacon, Ham, Mozzarella", "meat_lovers.jpg", "Large")
+        ];
+
+        function loadPizzas() {
+            const container = document.getElementById("pizza-container");
+            pizzas.forEach(pizza => {
+                container.innerHTML += pizza.getSection();
+            });
+        }
+
+        function showPopup(pizzaName) {
+            const pizza = pizzas.find(p => p.name === pizzaName);
+            const modalContent = document.getElementById("modal-content");
+            modalContent.innerHTML = `
+                <h2>${pizza.name}</h2>
+                <img src="images/${pizza.image}" alt="${pizza.name}" class="modal-image w3-animate-zoom">
+                <p><strong>Description:</strong> ${pizza.description}</p>
+                <p><strong>Ingredients:</strong> ${pizza.ingredients}</p>
+                <p><strong>Size:</strong> ${pizza.size}</p>
+                <p><strong>Price:</strong> ${pizza.price}</p>
+            `;
+            document.getElementById("pizzaModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("pizzaModal").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPizzas);
+    </script>
+</body>
+</html>
