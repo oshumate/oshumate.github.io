@@ -25,7 +25,7 @@
       color: #333;
     }
 
-    /* Header */
+    
     .header {
       background-color: var(--primary-color);
       color: var(--accent-color);
@@ -38,7 +38,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Navbar */
+    
     .navbar {
       background-color: var(--primary-color);
       overflow: hidden;
@@ -51,7 +51,7 @@
       padding: 0;
       margin: 0;
       list-style: none;
-      display: flex; /* Default: desktop layout */
+      display: flex; 
       justify-content: center;
     }
     .navbar ul li {
@@ -68,7 +68,7 @@
       transition: color 0.3s, transform 0.3s;
     }
 
-    /* Separator after each link except the last */
+
     .navbar ul li a::after {
       content: "|";
       color: var(--text-color);
@@ -90,11 +90,11 @@
       outline-offset: 3px;
     }
 
-    /* Hamburger menu (mobile) */
+ 
     .hamburger-menu {
       display: none;
       cursor: pointer;
-      padding: 15px 25px; /* Extra clickable area */
+      padding: 15px 25px; 
     }
     .hamburger-menu div {
       background-color: #fff;
@@ -104,13 +104,13 @@
       transition: all 0.3s;
     }
 
-    /* Responsive: Screens <= 768px */
+   
     @media (max-width: 768px) {
       .hamburger-menu {
-        display: block; /* Show hamburger */
+        display: block; 
       }
       .navbar ul {
-        display: none;  /* Hide the menu links by default */
+        display: none;  
         flex-direction: column;
         width: 100%;
         text-align: center;
@@ -123,11 +123,11 @@
         width: 100%;
       }
       .navbar.active ul {
-        display: flex; /* Show menu when .navbar has .active */
+        display: flex; 
       }
     }
 
-    /* Content */
+   
     .content {
       padding: 40px 60px;
       max-width: 1200px;
@@ -151,7 +151,7 @@
       text-transform: uppercase;
     }
 
-    /* Additional Sections */
+   
     .additional-section {
       margin-top: 40px;
     }
@@ -166,7 +166,7 @@
       padding-bottom: 5px;
     }
 
-    /* Dish Grid (Featured Items) */
+   
     .dish-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -191,7 +191,7 @@
       font-size: 16px;
     }
 
-    /* Order Form */
+  
     .order-form {
       margin-top: 40px;
       background-color: var(--background-color);
@@ -270,7 +270,7 @@
       transform: translateY(-3px);
     }
 
-    /* Footer */
+
     .footer {
       background-color: var(--primary-color);
       color: var(--text-color);
@@ -326,12 +326,10 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <div class="header">
     Charliovski's
   </div>
 
-  <!-- Navbar with Hamburger Menu -->
   <div class="navbar">
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div></div>
@@ -346,7 +344,6 @@
     </ul>
   </div>
 
-  <!-- Main Content -->
   <div class="content">
     <h2>Order Online</h2>
     <p>
@@ -355,7 +352,6 @@
       enjoy your favorite Charliovski’s dishes at home.
     </p>
 
-    <!-- Featured Items Section (Optional) -->
     <div class="additional-section">
       <h4>Featured Items</h4>
       <p>
@@ -382,7 +378,6 @@
       </div>
     </div>
 
-    <!-- Ordering & Delivery FAQ -->
     <div class="additional-section">
       <h4>Ordering & Delivery FAQ</h4>
       <p><strong>Delivery Range:</strong> We deliver within a 5-mile radius of each Charliovski’s location.</p>
@@ -391,11 +386,9 @@
       <p><strong>Need Catering?</strong> For large or corporate orders, please <a href="contact.html">contact us</a> for a custom quote.</p>
     </div>
 
-    <!-- Enhanced Order Form with All Menu Items -->
     <div class="order-form">
       <h3>Place Your Order</h3>
       <form action="submit_order.php" method="POST">
-        <!-- Breakfast Category -->
         <div class="menu-category">
           <h4>Breakfast</h4>
           <div class="menu-item">
@@ -440,7 +433,6 @@
           </div>
         </div>
 
-        <!-- Lunch Category -->
         <div class="menu-category">
           <h4>Lunch</h4>
           <div class="menu-item">
@@ -495,7 +487,6 @@
           </div>
         </div>
 
-        <!-- Dinner Category -->
         <div class="menu-category">
           <h4>Dinner</h4>
           <div class="menu-item">
@@ -550,7 +541,6 @@
           </div>
         </div>
 
-        <!-- Dessert Category -->
         <div class="menu-category">
           <h4>Desserts</h4>
           <div class="menu-item">
@@ -580,7 +570,6 @@
           </div>
         </div>
 
-        <!-- Customer Info -->
         <div class="customer-info">
           <label for="customer-name">Full Name</label>
           <input
@@ -615,7 +604,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <div class="footer-container">
       <div class="footer-section">
@@ -643,7 +631,6 @@
     </div>
   </div>
 
-  <!-- Script for hamburger menu toggle -->
   <script>
     function toggleMenu() {
       const navbar = document.querySelector('.navbar');

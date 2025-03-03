@@ -171,7 +171,7 @@
     }
     .footer {
       background-color: var(--primary-color);
-      color: var(--text-color);
+      color: #fff;
       padding: 40px 0;
       margin-top: 50px;
       text-align: center;
@@ -199,6 +199,7 @@
       font-size: 16px;
       line-height: 1.8;
       margin-bottom: 10px;
+      color: #fff;
     }
     .footer-section ul {
       list-style: none;
@@ -206,11 +207,11 @@
     }
     .footer-section ul li a {
       text-decoration: none;
-      color: var(--text-color);
+      color: #fff;
       transition: color 0.3s;
     }
     .footer-section ul li a:hover {
-      color: var(--secondary-color);
+      color: #fff;
     }
     .footer-bottom {
       border-top: 1px solid #fff;
@@ -224,12 +225,9 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <div class="header">
     Charliovski's
   </div>
-
-  <!-- Navbar with Hamburger Menu -->
   <div class="navbar">
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div></div>
@@ -243,12 +241,9 @@
       <li><a href="order.html">Order Online</a></li>
     </ul>
   </div>
-
-  <!-- Main Content -->
   <div class="content">
     <h2>Our Menus</h2>
     <p>At Charliovski’s, we offer a wide variety of dishes for every meal of the day. Take a look at our most popular selections below.</p>
-
     <div class="menu-section">
       <img src="images/breakfast.jpg" alt="Breakfast Dishes" />
       <h3>Breakfast</h3>
@@ -263,7 +258,6 @@
         <li>Hash Brown Platter – Crispy golden hash browns served with a side of ketchup or sour cream.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/lunch.jpg" alt="Lunch Dishes" />
       <h3>Lunch</h3>
@@ -280,7 +274,6 @@
         <li>Caprese Panini – Mozzarella, tomatoes, and basil pressed in crispy ciabatta with balsamic glaze.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/dinner.jpg" alt="Dinner Dishes" />
       <h3>Dinner</h3>
@@ -297,7 +290,6 @@
         <li>Mushroom Risotto – Creamy risotto with wild mushrooms and finished with parmesan cheese.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/dessert.jpg" alt="Desserts" />
       <h3>Desserts</h3>
@@ -310,8 +302,6 @@
       </ul>
     </div>
   </div>
-
-  <!-- Footer -->
   <div class="footer">
     <div class="footer-container">
       <div class="footer-section">
@@ -338,8 +328,6 @@
       <p>&copy; 2025 Charliovski's | All Rights Reserved</p>
     </div>
   </div>
-
-  <!-- Script for hamburger menu toggle -->
   <script>
     function toggleMenu() {
       const navbar = document.querySelector('.navbar');
