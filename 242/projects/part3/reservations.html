@@ -1,348 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservations - Charliovski's</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --primary-color: #001f3f;
-            --secondary-color: #87CEFA;
-            --accent-color: #ffc107;
-            --text-color: #ffffff;
-            --background-color: #f4f4f4;
-            --font-family: 'Lora', serif;
-            --heading-font: 'Montserrat', sans-serif;
-        }
-        body {
-            font-family: var(--font-family);
-            margin: 0;
-            background-color: var(--background-color);
-            min-height: 100vh;
-            line-height: 1.6;
-            color: #333;
-        }
-        .header {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            text-align: center;
-            padding: 30px 0;
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar {
-            background-color: var(--primary-color);
-            overflow: hidden;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-        .navbar ul li {
-            margin: 0 25px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            padding: 20px 0;
-            display: block;
-            font-size: 20px;
-            font-weight: 500;
-            transition: color 0.3s, transform 0.3s;
-        }
-        .navbar ul li a:hover {
-            color: var(--secondary-color);
-            transform: scale(1.05);
-        }
-        .content {
-            padding: 40px 60px;
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h2, h3 {
-            color: var(--primary-color);
-            font-family: var(--heading-font);
-            text-transform: uppercase;
-        }
-        h2 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .reservation-form {
-            background: var(--background-color);
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            font-size: 18px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            color: var(--text-color);
-            background-color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s, transform 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 40px 0;
-            margin-top: 50px;
-            text-align: center;
-            font-size: 16px;
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 60px;
-            margin-bottom: 30px;
-        }
-        .footer-section {
-            width: 30%;
-            text-align: left;
-        }
-        .footer-section h3 {
-            font-family: var(--heading-font);
-            font-size: 24px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .footer-section p, .footer-section ul {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-section ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
-        .footer-section ul li a:hover {
-            color: var(--secondary-color);
-        }
-        .footer-bottom {
-            border-top: 1px solid #fff;
-            padding-top: 20px;
-            font-size: 14px;
-            color: #fff;
-        }
-        .footer-bottom p {
-            margin: 0;
-        }
-        /* Additional sections */
-        .additional-section {
-            margin-top: 40px;
-        }
-        .additional-section h4 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-family: var(--heading-font);
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .faq-item {
-            margin-bottom: 20px;
-        }
-        .testimonial-section {
-            margin-top: 40px;
-        }
-        .testimonial {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservations - Charliovski's</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary-color: #001f3f;
+      --secondary-color: #87CEFA;
+      --accent-color: #ffc107;
+      --text-color: #ffffff;
+      --background-color: #f4f4f4;
+      --font-family: 'Lora', serif;
+      --heading-font: 'Montserrat', sans-serif;
+      /* Optional additional variable if needed:
+         --grey-text: #7a7a7a;
+      */
+    }
+
+    body {
+      font-family: var(--font-family);
+      margin: 0;
+      background-color: var(--background-color);
+      min-height: 100vh;
+      line-height: 1.6;
+      color: #333; /* Kept from your original code */
+    }
+
+    /* Header */
+    .header {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      text-align: center;
+      padding: 30px 0;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--primary-color);
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .navbar ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;           /* Default (desktop) menu display */
+      justify-content: center;
+    }
+    .navbar ul li {
+      margin: 0 25px;
+      position: relative;      /* Needed for the “|” separator pseudo-element */
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      padding: 20px 0;
+      display: block;
+      font-size: 20px;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    /* Add “|” separator after each link except the last one */
+    .navbar ul li a::after {
+      content: "|";
+      color: var(--text-color);
+      font-size: 24px;
+      margin-left: 15px;
+      position: absolute;
+      right: -15px;
+    }
+    .navbar ul li:last-child a::after {
+      content: "";
+    }
+
+    .navbar ul li a:hover {
+      color: var(--secondary-color);
+      transform: scale(1.05);
+    }
+    .navbar ul li a:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 3px;
+    }
+
+    /* Hamburger menu (mobile) */
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      padding: 15px 25px; /* Extra clickable area on mobile */
+    }
+    .hamburger-menu div {
+      background-color: #fff;
+      height: 3px;
+      margin: 5px;
+      width: 25px;
+      transition: all 0.3s;
+    }
+
+    /* Media query for screens <= 768px */
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: block;        /* Show hamburger on smaller screens */
+      }
+      .navbar ul {
+        display: none;         /* Hide the menu links by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+      .navbar ul li {
+        margin: 0;            /* Let them stack properly */
+      }
+      .navbar ul li a {
+        padding: 15px;
+        width: 100%;
+      }
+      .navbar.active ul {
+        display: flex;         /* Show menu when .navbar has class 'active' */
+      }
+    }
+
+    /* Page content styling */
+    .content {
+      padding: 40px 60px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2, h3 {
+      color: var(--primary-color);
+      font-family: var(--heading-font);
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      border-bottom: 3px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Reservation Form */
+    .reservation-form {
+      background: var(--background-color);
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-size: 18px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Button */
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      color: var(--text-color);
+      background-color: var(--primary-color);
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.3s, transform 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Additional sections (Dress Code, FAQs, Testimonials, etc.) */
+    .additional-section {
+      margin-top: 40px;
+    }
+    .additional-section h4 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      font-family: var(--heading-font);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .testimonial-section {
+      margin-top: 40px;
+    }
+    .testimonial {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      padding: 40px 0;
+      margin-top: 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 60px;
+      margin-bottom: 30px;
+    }
+    .footer-section {
+      width: 30%;
+      text-align: left;
+    }
+    .footer-section h3 {
+      font-family: var(--heading-font);
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-section p,
+    .footer-section ul {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-section ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .footer-section ul li a:hover {
+      color: var(--secondary-color);
+    }
+    .footer-bottom {
+      border-top: 1px solid #fff;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #fff;
+    }
+    .footer-bottom p {
+      margin: 0;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Header -->
+  <div class="header">
+    Charliovski's
+  </div>
 
-    <div class="header">
-        Charliovski's
+  <!-- Navbar with Hamburger Menu -->
+  <div class="navbar">
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="menus.html">Menus</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="order.html">Order Online</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>Reserve Your Table</h2>
+    <p>Enjoy an unforgettable dining experience at Charliovski’s. Secure your table with an easy reservation below. We recommend booking in advance, especially for weekends and holidays.</p>
+
+    <h3>Reservation Policies</h3>
+    <p><strong>Reservation Timing:</strong> We accept reservations up to 30 days in advance. For parties larger than 8, please call us directly.</p>
+    <p><strong>Special Requests:</strong> If you have dietary restrictions or seating preferences, let us know in the form below.</p>
+    <p><strong>Late Arrivals:</strong> We hold reservations for 15 minutes past the scheduled time. Please call if you’re running late.</p>
+
+    <!-- Reservation Form -->
+    <div class="reservation-form">
+      <h3>Make a Reservation</h3>
+      <form action="submit_reservation.php" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Reservation Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Time</label>
+          <select id="time" name="time" required>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+          </select>
+        </div>
+        <button type="submit" class="button">Confirm Reservation</button>
+      </form>
     </div>
 
-    <div class="navbar">
+    <!-- Dress Code & Policies -->
+    <div class="additional-section">
+      <h4>Dress Code & Policies</h4>
+      <p>
+        We kindly request semi-formal attire for dinner service. Guests are welcome
+        to dress smart casual during lunch hours. Large party cancellations or changes
+        must be made at least 48 hours in advance.
+      </p>
+    </div>
+
+    <!-- FAQs -->
+    <div class="additional-section">
+      <h4>Frequently Asked Questions</h4>
+      <div class="faq-item">
+        <strong>Do you allow walk-ins?</strong>
+        <p>Yes, we do accept walk-ins, though availability may be limited during busy periods.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Can I bring my own wine?</strong>
+        <p>Yes, we allow guests to bring up to two bottles of wine. A corkage fee applies.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Is there a kids’ menu?</strong>
+        <p>Absolutely! Children are always welcome, and we have special dishes just for them.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonial-section">
+      <h3>What Our Guests Are Saying</h3>
+      <div class="testimonial">
+        <p>
+          "We celebrated our anniversary at Charliovski’s, and it was perfect!
+          The staff went above and beyond." – Emily R.
+        </p>
+      </div>
+      <div class="testimonial">
+        <p>
+          "Amazing service, beautiful ambiance, and the food was out of this
+          world!" – Carlos M.
+        </p>
+      </div>
+    </div>
+
+    <!-- Parking & Directions -->
+    <div class="additional-section">
+      <h4>Parking & Directions</h4>
+      <p>
+        Complimentary valet parking is available for dinner service. We are located
+        two blocks from the Convention Center, easily accessible by public transport
+        or rideshare services.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Our Hours</h3>
+        <p><strong>Monday - Friday:</strong> 10:00 AM - 10:00 PM</p>
+        <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Our Locations</h3>
+        <p><strong>Charlotte, NC:</strong> 123 Main St, Charlotte, NC 28202</p>
+        <p><strong>New York, NY:</strong> 456 Broadway, New York, NY 10012</p>
+        <p><strong>Austin, TX:</strong> 789 Congress Ave, Austin, TX 78701</p>
+        <p><strong>Cleveland, OH:</strong> 101 Lakeside Ave, Cleveland, OH 44114</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="menus.html">Menus</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="order.html">Order Online</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
+      </div>
     </div>
-
-    <div class="content">
-        <h2>Reserve Your Table</h2>
-        <p>Enjoy an unforgettable dining experience at Charliovski’s. Secure your table with an easy reservation below. We recommend booking in advance, especially for weekends and holidays.</p>
-
-        <h3>Reservation Policies</h3>
-        <p><strong>Reservation Timing:</strong> We accept reservations up to 30 days in advance. For parties larger than 8, please call us directly.</p>
-        <p><strong>Special Requests:</strong> If you have dietary restrictions or seating preferences, let us know in the form below.</p>
-        <p><strong>Late Arrivals:</strong> We hold reservations for 15 minutes past the scheduled time. Please call if you’re running late.</p>
-
-        <div class="reservation-form">
-            <h3>Make a Reservation</h3>
-            <form action="submit_reservation.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="date">Reservation Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Time</label>
-                    <select id="time" name="time" required>
-                        <option value="12:00 PM">12:00 PM</option>
-                        <option value="2:00 PM">2:00 PM</option>
-                        <option value="6:00 PM">6:00 PM</option>
-                        <option value="8:00 PM">8:00 PM</option>
-                    </select>
-                </div>
-                <button type="submit" class="button">Confirm Reservation</button>
-            </form>
-        </div>
-
-        <!-- Dress Code and Policies -->
-        <div class="additional-section">
-            <h4>Dress Code & Policies</h4>
-            <p>We kindly request semi-formal attire for dinner service. Guests are welcome to dress smart casual during lunch hours. Large party cancellations or changes must be made at least 48 hours in advance.</p>
-        </div>
-
-        <!-- FAQs -->
-        <div class="additional-section">
-            <h4>Frequently Asked Questions</h4>
-            <div class="faq-item">
-                <strong>Do you allow walk-ins?</strong>
-                <p>Yes, we do accept walk-ins, though availability may be limited during busy periods.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Can I bring my own wine?</strong>
-                <p>Yes, we allow guests to bring up to two bottles of wine. A corkage fee applies.</p>
-            </div>
-            <div class="faq-item">
-                <strong>Is there a kids’ menu?</strong>
-                <p>Absolutely! Children are always welcome, and we have special dishes just for them.</p>
-            </div>
-        </div>
-
-        <!-- Testimonials -->
-        <div class="testimonial-section">
-            <h3>What Our Guests Are Saying</h3>
-            <div class="testimonial">
-                <p>"We celebrated our anniversary at Charliovski’s, and it was perfect! The staff went above and beyond." – Emily R.</p>
-            </div>
-            <div class="testimonial">
-                <p>"Amazing service, beautiful ambiance, and the food was out of this world!" – Carlos M.</p>
-            </div>
-        </div>
-
-        <!-- Parking and Location Info -->
-        <div class="additional-section">
-            <h4>Parking & Directions</h4>
-            <p>Complimentary valet parking is available for dinner service. We are located two blocks from the Convention Center, easily accessible by public transport or rideshare services.</p>
-        </div>
-
-        <!-- The “Find Us” section has been removed -->
-
+    <div class="footer-bottom">
+      <p>&copy; 2025 Charliovski's | All Rights Reserved</p>
     </div>
+  </div>
 
-    <div class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Our Hours</h3>
-                <p><strong>Monday - Friday:</strong> 10:00 AM - 10:00 PM</p>
-                <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Our Locations</h3>
-                <p><strong>Charlotte, NC:</strong> 123 Main St, Charlotte, NC 28202</p>
-                <p><strong>New York, NY:</strong> 456 Broadway, New York, NY 10012</p>
-                <p><strong>Austin, TX:</strong> 789 Congress Ave, Austin, TX 78701</p>
-                <p><strong>Cleveland, OH:</strong> 101 Lakeside Ave, Cleveland, OH 44114</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Charliovski's | All Rights Reserved</p>
-        </div>
-    </div>
-
+  <!-- Script for hamburger menu toggle -->
+  <script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
