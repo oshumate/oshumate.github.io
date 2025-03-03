@@ -1,304 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charliovski's | Menus</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --primary-color: #001f3f; 
-            --secondary-color: #87CEFA; 
-            --accent-color: #ffc107; 
-            --text-color: #ffffff;
-            --background-color: #f4f4f4;
-            --font-family: 'Lora', serif; 
-            --heading-font: 'Montserrat', sans-serif;
-        }
-        body {
-            font-family: var(--font-family);
-            margin: 0;
-            background-color: var(--background-color);
-            color: #333;
-        }
-        .header {
-            background-color: var(--primary-color);
-            color: var(--accent-color);
-            text-align: center;
-            padding: 30px 0;
-            font-size: 48px;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar {
-            background-color: var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .navbar ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .navbar ul li {
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            padding: 20px 0;
-            display: block;
-            font-size: 20px;
-            font-weight: 500;
-            transition: color 0.3s, transform 0.3s;
-        }
-        .navbar ul li a:hover {
-            color: var(--secondary-color);
-            transform: scale(1.05);
-        }
-        .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .menu-section img {
-            width: 650px; /* Set a fixed width */
-            height: 500px; /* Set the same height to make it square */
-            object-fit: cover; /* Ensures the image fills the square while maintaining aspect ratio */
-            display: block; /* Removes extra space below images */
-            margin: 0 auto 20px; /* Centers the image and adds spacing */
-            border-radius: 10px; /* Optional: adds rounded corners */
-        }
-        h2 {
-            color: var(--primary-color);
-            font-family: var(--heading-font);
-            font-size: 48px;
-            margin-bottom: 20px;
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 10px;
-            display: inline-block;
-            text-transform: uppercase;
-        }
-        h3 {
-            color: var(--primary-color);
-            font-family: var(--heading-font);
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 30px;
-        }
-        ul li {
-            font-size: 18px;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            transition: color 0.3s;
-        }
-        ul li:hover {
-            color: var(--secondary-color);
-            cursor: pointer;
-        }
-        .menu-section {
-            margin-bottom: 50px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charliovski's | Menus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary-color: #001f3f;      /* Dark navy */
+      --secondary-color: #87CEFA;    /* Light sky-blue */
+      --accent-color: #ffc107;       /* Gold-like accent */
+      --text-color: #ffffff;         /* Navbar/Footer text color */
+      --background-color: #f4f4f4;   /* General page background */
+      --font-family: 'Lora', serif; 
+      --heading-font: 'Montserrat', sans-serif;
+    }
 
-        
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--text-color); 
-            padding: 40px 0;
-            margin-top: 50px;
-            text-align: center;
-            font-size: 16px;
-        }
+    body {
+      font-family: var(--font-family);
+      margin: 0;
+      background-color: var(--background-color);
+      color: #333; /* Main text color */
+    }
 
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 60px;
-            margin-bottom: 30px;
-        }
+    /* Header */
+    .header {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      text-align: center;
+      padding: 30px 0;
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .footer-section {
-            width: 30%;
-            text-align: left;
-        }
+    /* Navbar */
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .navbar ul li {
+      margin: 0 15px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      padding: 20px 0;
+      display: block;
+      font-size: 20px;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .navbar ul li a:hover {
+      color: var(--secondary-color);
+      transform: scale(1.05);
+    }
 
-        .footer-section h3 {
-            font-family: var(--heading-font);
-            font-size: 24px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    /* Main Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .footer-section p, .footer-section ul {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
+    h2 {
+      color: var(--primary-color);
+      font-family: var(--heading-font);
+      font-size: 48px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 10px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
 
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
+    h3 {
+      color: var(--primary-color);
+      font-family: var(--heading-font);
+      font-size: 36px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
 
-        .footer-section ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
+    .menu-section {
+      margin-bottom: 50px;
+      text-align: center; /* helps center the heading and image */
+    }
 
-        .footer-section ul li a:hover {
-            color: var(--secondary-color);
-        }
+    .menu-section img {
+      width: 100%;
+      max-width: 650px;   /* Provide a maximum width */
+      height: 500px;      /* Fixed height to keep images uniform */
+      object-fit: cover;  /* Ensures the image fills while maintaining aspect ratio */
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+    }
 
-        .footer-bottom {
-            border-top: 1px solid #fff;
-            padding-top: 20px;
-            font-size: 14px;
-            color: #ccc;
-        }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 30px; /* center the lists underneath headings */
+      text-align: left;
+    }
+    ul li {
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      transition: color 0.3s;
+    }
+    ul li:hover {
+      color: var(--secondary-color);
+      cursor: pointer;
+    }
 
-        .footer-bottom p {
-            margin: 0;
-        }
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 36px;
-            }
-            h3 {
-                font-size: 28px;
-            }
-            .navbar ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            .navbar ul li {
-                margin: 10px 0;
-            }
-        }
-    </style>
+    /* Footer */
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      padding: 40px 0;
+      margin-top: 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      margin-bottom: 30px;
+    }
+    .footer-section {
+      width: 30%;
+      min-width: 250px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .footer-section h3 {
+      font-family: var(--heading-font);
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-section p,
+    .footer-section ul {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-section ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .footer-section ul li a:hover {
+      color: var(--secondary-color);
+    }
+    .footer-bottom {
+      border-top: 1px solid #fff;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 36px;
+      }
+      h3 {
+        font-size: 28px;
+      }
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar ul li {
+        margin: 10px 0;
+      }
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-section {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        Charliovski's
-    </header>
-    <nav class="navbar">
+  <!-- HEADER -->
+  <header class="header">
+    Charliovski's
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="menus.html">Menus</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="order.html">Order Online</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <h2>Our Menus</h2>
+
+    <section class="menu-section">
+      <img src="images/breakfast.jpg" alt="Breakfast Dishes" />
+      <h3>Breakfast</h3>
+      <ul>
+        <li>Classic Pancakes - Fluffy pancakes served with syrup and butter.</li>
+        <li>French Toast - Golden-brown with a hint of cinnamon and powdered sugar.</li>
+        <li>Omelette Deluxe - Choose your fillings from cheese, ham, peppers, and more.</li>
+        <li>Breakfast Burrito - Scrambled eggs, cheese, and sausage wrapped in a tortilla.</li>
+        <li>Avocado Toast - Fresh avocado on toasted sourdough with a drizzle of olive oil.</li>
+        <li>Eggs Benedict - Poached eggs and Canadian bacon on an English muffin, topped with hollandaise sauce.</li>
+        <li>Blueberry Muffin - A soft and fluffy muffin loaded with fresh blueberries.</li>
+        <li>Hash Brown Platter - Crispy golden hash browns served with a side of ketchup or sour cream.</li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <img src="images/lunch.jpg" alt="Lunch Dishes" />
+      <h3>Lunch</h3>
+      <ul>
+        <li>Grilled Chicken Sandwich - A juicy grilled chicken breast served on a toasted bun with lettuce, tomato, and mayo.</li>
+        <li>Club Sandwich - A triple-decker sandwich with turkey, bacon, lettuce, tomato, and mayo, served with chips.</li>
+        <li>Caesar Salad - Crisp romaine lettuce tossed in a creamy Caesar dressing, topped with croutons and parmesan.</li>
+        <li>BBQ Pulled Pork Sandwich - Tender pulled pork smothered in BBQ sauce, served on a soft bun with coleslaw.</li>
+        <li>Margherita Pizza - A classic pizza topped with fresh mozzarella, basil, and rich tomato sauce.</li>
+        <li>Turkey Avocado Wrap - Sliced turkey breast, fresh avocado, lettuce, and tomato wrapped in a whole wheat tortilla.</li>
+        <li>Veggie Burger - A flavorful plant-based patty on a toasted bun with lettuce, tomato, and house-made aioli.</li>
+        <li>French Dip Sandwich - Sliced roast beef on a toasted hoagie roll, served with au jus for dipping.</li>
+        <li>Greek Salad - Fresh cucumbers, tomatoes, olives, feta cheese, and red onions in a zesty Greek dressing.</li>
+        <li>Caprese Panini - Mozzarella, tomatoes, and basil pressed in ciabatta bread with balsamic glaze.</li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <img src="images/dinner.jpg" alt="Dinner Dishes" />
+      <h3>Dinner</h3>
+      <ul>
+        <li>Grilled Ribeye Steak - A tender, juicy ribeye steak grilled to perfection, with vegetables and mashed potatoes.</li>
+        <li>Pan-Seared Salmon - Fresh salmon fillet seared golden, served with a lemon butter sauce.</li>
+        <li>Chicken Alfredo Pasta - Creamy alfredo sauce over fettuccine, topped with grilled chicken and parmesan.</li>
+        <li>Beef Tenderloin - Perfectly cooked beef tenderloin with a red wine reduction sauce.</li>
+        <li>Eggplant Parmesan - Breaded and fried eggplant slices layered with marinara and melted mozzarella.</li>
+        <li>Lobster Tail - Butter-basted lobster tail broiled to perfection, served with garlic butter and asparagus.</li>
+        <li>Stuffed Bell Peppers - Roasted bell peppers filled with seasoned ground beef, rice, and tomato sauce.</li>
+        <li>Seafood Paella - A saffron-infused rice dish with shrimp, mussels, and calamari.</li>
+        <li>BBQ Baby Back Ribs - Slow-cooked, fall-off-the-bone ribs glazed with smoky barbecue sauce.</li>
+        <li>Mushroom Risotto - Creamy risotto with wild mushrooms and finished with parmesan cheese.</li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <img src="images/dessert.jpg" alt="Desserts" />
+      <h3>Desserts</h3>
+      <ul>
+        <li>Chocolate Lava Cake - Rich chocolate cake with a molten center, served warm with vanilla ice cream.</li>
+        <li>Cheesecake - Creamy cheesecake with a graham cracker crust, topped with berry compote.</li>
+        <li>Tiramisu - Layers of coffee-soaked ladyfingers, mascarpone cream, and a dusting of cocoa powder.</li>
+        <li>Crème Brûlée - Classic French custard with a caramelized sugar crust.</li>
+        <li>Apple Pie - Warm spiced apple pie served with a scoop of vanilla ice cream.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Our Hours</h3>
+        <p><strong>Monday - Friday:</strong> 10:00 AM - 10:00 PM</p>
+        <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Locations</h3>
+        <p><strong>Charlotte, NC:</strong> 123 Main St, Charlotte, NC 28202</p>
+        <p><strong>New York, NY:</strong> 456 Broadway, New York, NY 10012</p>
+        <p><strong>Austin, TX:</strong> 789 Congress Ave, Austin, TX 78701</p>
+        <p><strong>Cleveland, OH:</strong> 101 Lakeside Ave, Cleveland, OH 44114</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="menus.html">Menus</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="order.html">Order Online</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
-    </nav>
-
-    <main class="content">
-        <h2>Our Menus</h2>
-        
-        <section class="menu-section">
-            <img src="images/breakfast.jpg" alt="Breakfast Dishes">
-            <h3>Breakfast</h3>
-            <ul>
-                <li>Classic Pancakes - Fluffy pancakes served with syrup and butter.</li>
-                <li>French Toast - Golden-brown with a hint of cinnamon and powdered sugar.</li>
-                <li>Omelette Deluxe - Choose your fillings from cheese, ham, peppers, and more.</li>
-                <li>Breakfast Burrito - Scrambled eggs, cheese, and sausage wrapped in a tortilla.</li>
-                <li>Avocado Toast - Fresh avocado on toasted sourdough with a drizzle of olive oil.</li>
-                <li>Eggs Benedict - Poached eggs and Canadian bacon on an English muffin, topped with hollandaise sauce.</li>
-                <li>Blueberry Muffin - A soft and fluffy muffin loaded with fresh blueberries.</li>
-                <li>Hash Brown Platter - Crispy golden hash browns served with a side of ketchup or sour cream.</li>
-            </ul>
-        </section>
-        
-
-        <section class="menu-section">
-            <img src="images/lunch.jpg" alt="Lunch Dishes">
-            <h3>Lunch</h3>
-            <ul>
-                <li>Grilled Chicken Sandwich - A juicy grilled chicken breast served on a toasted bun with lettuce, tomato, and mayo.</li>
-                <li>Club Sandwich - A triple-decker sandwich with turkey, bacon, lettuce, tomato, and mayo, served with a side of chips.</li>
-                <li>Caesar Salad - Crisp romaine lettuce tossed in a creamy Caesar dressing, topped with crunchy croutons and parmesan cheese.</li>
-                <li>BBQ Pulled Pork Sandwich - Tender pulled pork smothered in barbecue sauce, served on a soft bun with coleslaw.</li>
-                <li>Margherita Pizza - A classic pizza topped with fresh mozzarella, basil, and a rich tomato sauce.</li>
-                <li>Turkey Avocado Wrap - Sliced turkey breast, fresh avocado, lettuce, and tomato wrapped in a whole wheat tortilla.</li>
-                <li>Veggie Burger - A flavorful plant-based patty served on a toasted bun with lettuce, tomato, and a house-made aioli.</li>
-                <li>French Dip Sandwich - Sliced roast beef on a toasted hoagie roll, served with a side of au jus for dipping.</li>
-                <li>Greek Salad - Fresh cucumbers, tomatoes, olives, feta cheese, and red onions, tossed in a zesty Greek dressing.</li>
-                <li>Caprese Panini - Mozzarella, tomatoes, and fresh basil pressed between crispy ciabatta bread with balsamic glaze.</li>
-            </ul>
-        </section>
-        
-
-        <section class="menu-section">
-            <img src="images/dinner.jpg" alt="Dinner Dishes">
-            <h3>Dinner</h3>
-            <ul>
-                <li>Grilled Ribeye Steak - A tender and juicy ribeye steak grilled to perfection, served with a side of vegetables and mashed potatoes.</li>
-                <li>Pan-Seared Salmon - Fresh salmon fillet pan-seared to a golden crisp, served with a lemon butter sauce.</li>
-                <li>Chicken Alfredo Pasta - Creamy alfredo sauce over fettuccine pasta, topped with grilled chicken and parmesan cheese.</li>
-                <li>Beef Tenderloin - A perfectly cooked beef tenderloin steak, served with a red wine reduction sauce.</li>
-                <li>Eggplant Parmesan - Breaded and fried eggplant slices layered with marinara sauce and melted mozzarella cheese.</li>
-                <li>Lobster Tail - Butter-basted lobster tail broiled to perfection, served with garlic butter and asparagus.</li>
-                <li>Stuffed Bell Peppers - Roasted bell peppers filled with seasoned ground beef, rice, and tomato sauce.</li>
-                <li>Seafood Paella - A flavorful saffron-infused rice dish with shrimp, mussels, and calamari.</li>
-                <li>BBQ Baby Back Ribs - Slow-cooked, fall-off-the-bone ribs glazed with a smoky barbecue sauce.</li>
-                <li>Mushroom Risotto - Creamy risotto cooked with wild mushrooms and finished with parmesan cheese.</li>
-            </ul>
-        </section>
-
-        <section class="menu-section">
-            <img src="images/dessert.jpg" alt="Desserts">
-            <h3>Desserts</h3>
-            <ul>
-                <li>Chocolate Lava Cake - A rich chocolate cake with a gooey molten center, served warm with vanilla ice cream.</li>
-                <li>Cheesecake - Creamy and smooth cheesecake with a graham cracker crust, topped with a berry compote.</li>
-                <li>Tiramisu - A traditional Italian dessert made with layers of coffee-soaked ladyfingers, mascarpone cream, and a dusting of cocoa powder.</li>
-                <li>Crème Brûlée - A classic French custard dessert with a caramelized sugar crust.</li>
-                <li>Apple Pie - A warm spiced apple pie served with a scoop of vanilla ice cream.</li>
-            </ul>
-        </section>        
-    </main>
-
-    
-    <div class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Our Hours</h3>
-                <p><strong>Monday - Friday:</strong> 10:00 AM - 10:00 PM</p>
-                <p><strong>Saturday - Sunday:</strong> 11:00 AM - 11:00 PM</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Our Locations</h3>
-                <p><strong>Charlotte, NC:</strong> 123 Main St, Charlotte, NC 28202</p>
-                <p><strong>New York, NY:</strong> 456 Broadway, New York, NY 10012</p>
-                <p><strong>Austin, TX:</strong> 789 Congress Ave, Austin, TX 78701</p>
-                <p><strong>Cleveland, OH:</strong> 101 Lakeside Ave, Cleveland, OH 44114</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Charliovski's | All Rights Reserved</p>
-        </div>
+      </div>
     </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Charliovski's | All Rights Reserved</p>
+    </div>
+  </div>
 </body>
 </html>
