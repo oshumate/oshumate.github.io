@@ -137,29 +137,63 @@
         }
         .footer {
             background-color: var(--primary-color);
-            color: var(--text-color);
+            color: var(--text-color); 
+            padding: 40px 0;
+            margin-top: 50px;
             text-align: center;
-            padding: 20px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
         }
-        .footer .hours {
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            width: 30%;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            font-family: var(--heading-font);
+            font-size: 24px;
             margin-bottom: 15px;
-        }
-        .footer h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .footer p {
-            margin: 5px 0;
-            font-size: 18px;
-            font-weight: 400;
-            color: white;
+
+        .footer-section p, .footer-section ul {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 10px;
         }
-        .footer a {
-            color: var(--accent-color);
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
             text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #fff;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-bottom p {
+            margin: 0;
         }
     </style>
 </head>
