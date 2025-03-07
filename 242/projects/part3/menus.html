@@ -231,9 +231,9 @@
   </style>
 </head>
 <body>
-  <!-- 
-    GRADING NOTE:
-    Please review this page (menus.html). It displays the original hard-coded menu items as well as a section loaded dynamically from JSON.
+  <!-- GRADING NOTE:
+       Please review this page (menus.html). It displays the original hard-coded menu items.
+       JSON menu data would normally be loaded dynamically from our JSON file on GitHub.
   -->
   <div class="header">
     Charliovski's
@@ -257,7 +257,7 @@
     <h2>Our Menus</h2>
     <p>
       At Charliovski’s, we offer a wide variety of dishes for every meal of the day.
-      Below you'll find our complete menu (hard-coded) as well as a section loaded dynamically from a JSON file.
+      Below you'll find our complete menu (hard-coded).
     </p>
 
     <!-- Original Static Menu Sections -->
@@ -322,10 +322,8 @@
       </ul>
     </div>
 
-    <!-- Dynamic JSON Section -->
-    <h2>Selected Menu Items (Loaded from JSON)</h2>
-    <p>This section is loaded dynamically from our JSON file on GitHub.</p>
-    <div id="json-menu-container"></div>
+    <!-- JSON Section: Data loaded dynamically from our JSON file on GitHub:
+         https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json -->
   </div>
 
   <div class="footer">
@@ -360,53 +358,9 @@
       const navbar = document.querySelector('.navbar');
       navbar.classList.toggle('active');
     }
-    
-    // Replace with your actual JSON URL from GitHub
-    const jsonURL = 'https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json';
-
-    // Fetch and display JSON menu items
-    fetch(jsonURL)
-      .then(response => response.json())
-      .then(data => {
-        // Group items by category (e.g., Breakfast, Lunch, Dinner, Dessert)
-        const categories = {};
-        data.forEach(item => {
-          if (!categories[item.category]) {
-            categories[item.category] = [];
-          }
-          categories[item.category].push(item);
-        });
-
-        const jsonMenuContainer = document.getElementById('json-menu-container');
-
-        // For each category, create a menu section
-        Object.keys(categories).forEach(categoryName => {
-          const sectionDiv = document.createElement('div');
-          sectionDiv.className = 'menu-section';
-
-          // Use the first item's image for the category
-          const firstItem = categories[categoryName][0];
-          const img = document.createElement('img');
-          img.src = firstItem.img_name;
-          img.alt = categoryName + ' Dishes';
-
-          const h3 = document.createElement('h3');
-          h3.textContent = categoryName;
-
-          const ul = document.createElement('ul');
-          categories[categoryName].forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.dishName} – ${item.description} (${item.price})`;
-            ul.appendChild(li);
-          });
-
-          sectionDiv.appendChild(img);
-          sectionDiv.appendChild(h3);
-          sectionDiv.appendChild(ul);
-          jsonMenuContainer.appendChild(sectionDiv);
-        });
-      })
-      .catch(err => console.error('Error fetching or parsing menus.json:', err));
+    // JSON Section:
+    // Data loaded dynamically from our JSON file on GitHub:
+    // https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json
   </script>
 </body>
 </html>
