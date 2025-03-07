@@ -15,7 +15,6 @@
       --font-family: 'Lora', serif;
       --heading-font: 'Montserrat', sans-serif;
     }
-
     body {
       font-family: var(--font-family);
       margin: 0;
@@ -24,7 +23,6 @@
       line-height: 1.6;
       color: #333;
     }
-
     .header {
       background-color: var(--primary-color);
       color: var(--accent-color);
@@ -36,7 +34,6 @@
       text-transform: uppercase;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
     .navbar {
       background-color: var(--primary-color);
       overflow: hidden;
@@ -45,7 +42,6 @@
       z-index: 100;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
     .navbar ul {
       padding: 0;
       margin: 0;
@@ -53,12 +49,10 @@
       display: flex;
       justify-content: center;
     }
-
     .navbar ul li {
       margin: 0 25px;
       position: relative;
     }
-
     .navbar ul li a {
       text-decoration: none;
       color: var(--text-color);
@@ -68,7 +62,6 @@
       font-weight: 500;
       transition: color 0.3s, transform 0.3s;
     }
-
     .navbar ul li a::after {
       content: "|";
       color: var(--text-color);
@@ -77,27 +70,22 @@
       position: absolute;
       right: -15px;
     }
-
     .navbar ul li:last-child a::after {
       content: "";
     }
-
     .navbar ul li a:hover {
       color: var(--secondary-color);
       transform: scale(1.05);
     }
-
     .navbar ul li a:focus {
       outline: 2px solid var(--accent-color);
       outline-offset: 3px;
     }
-
     .hamburger-menu {
       display: none;
       cursor: pointer;
       padding: 15px 25px;
     }
-
     .hamburger-menu div {
       background-color: #fff;
       height: 3px;
@@ -105,33 +93,27 @@
       width: 25px;
       transition: all 0.3s;
     }
-
     @media (max-width: 768px) {
       .hamburger-menu {
         display: block;
       }
-
       .navbar ul {
         display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
       }
-
       .navbar ul li {
         margin: 0;
       }
-
       .navbar ul li a {
         padding: 15px;
         width: 100%;
       }
-
       .navbar.active ul {
         display: flex;
       }
     }
-
     .content {
       padding: 40px 60px;
       max-width: 900px;
@@ -140,13 +122,11 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
-
     h2, h3 {
       color: var(--primary-color);
       font-family: var(--heading-font);
       text-transform: uppercase;
     }
-
     h2 {
       font-size: 48px;
       margin-bottom: 10px;
@@ -154,27 +134,18 @@
       display: inline-block;
       padding-bottom: 10px;
     }
-
     h3 {
       font-size: 28px;
       margin-bottom: 10px;
     }
-
     p {
       font-size: 18px;
       line-height: 1.8;
       color: #555;
     }
-
-    /* This container will be populated by JSON data */
-    #menu-container {
-      margin-bottom: 50px;
-    }
-
     .menu-section {
       margin-bottom: 50px;
     }
-
     .menu-section img {
       width: 100%;
       max-width: 650px;
@@ -186,29 +157,24 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-
     .menu-section img:hover {
       transform: scale(1.02);
     }
-
     .menu-section ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     .menu-section ul li {
       font-size: 18px;
       padding: 10px 0;
       border-bottom: 1px solid #ccc;
       transition: color 0.3s;
     }
-
     .menu-section ul li:hover {
       color: var(--secondary-color);
       cursor: pointer;
     }
-
     .footer {
       background-color: var(--primary-color);
       color: #fff;
@@ -217,19 +183,16 @@
       text-align: center;
       font-size: 16px;
     }
-
     .footer-container {
       display: flex;
       justify-content: space-between;
       padding: 0 60px;
       margin-bottom: 30px;
     }
-
     .footer-section {
       width: 30%;
       text-align: left;
     }
-
     .footer-section h3 {
       font-family: var(--heading-font);
       font-size: 24px;
@@ -237,7 +200,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
     .footer-section p,
     .footer-section ul {
       font-size: 16px;
@@ -245,29 +207,24 @@
       margin-bottom: 10px;
       color: #fff;
     }
-
     .footer-section ul {
       list-style: none;
       padding: 0;
     }
-
     .footer-section ul li a {
       text-decoration: none;
       color: #fff;
       transition: color 0.3s;
     }
-
     .footer-section ul li a:hover {
       color: #fff;
     }
-
     .footer-bottom {
       border-top: 1px solid #fff;
       padding-top: 20px;
       font-size: 14px;
       color: #fff;
     }
-
     .footer-bottom p {
       margin: 0;
     }
@@ -276,10 +233,8 @@
 <body>
   <!-- 
     GRADING NOTE:
-    Please look at THIS PAGE (menus.html).
-    It fetches menus.json from GitHub and displays the menu items dynamically below.
+    Please review this page (menus.html). It displays the original hard-coded menu items as well as a section loaded dynamically from JSON.
   -->
-
   <div class="header">
     Charliovski's
   </div>
@@ -302,11 +257,75 @@
     <h2>Our Menus</h2>
     <p>
       At Charliovski’s, we offer a wide variety of dishes for every meal of the day.
-      Now our most popular selections are loaded dynamically from a JSON file!
+      Below you'll find our complete menu (hard-coded) as well as a section loaded dynamically from a JSON file.
     </p>
 
-    <!-- REPLACE the old, hard-coded menu sections with one container -->
-    <div id="menu-container"></div>
+    <!-- Original Static Menu Sections -->
+    <div class="menu-section">
+      <img src="images/breakfast.jpg" alt="Breakfast Dishes" />
+      <h3>Breakfast</h3>
+      <ul>
+        <li>Classic Pancakes – Fluffy pancakes served with syrup and butter.</li>
+        <li>French Toast – Golden-brown with a hint of cinnamon and powdered sugar.</li>
+        <li>Omelette Deluxe – Choose your fillings from cheese, ham, peppers, and more.</li>
+        <li>Breakfast Burrito – Scrambled eggs, cheese, and sausage wrapped in a tortilla.</li>
+        <li>Avocado Toast – Fresh avocado on toasted sourdough with a drizzle of olive oil.</li>
+        <li>Eggs Benedict – Poached eggs and Canadian bacon on an English muffin, topped with hollandaise sauce.</li>
+        <li>Blueberry Muffin – A soft and fluffy muffin loaded with fresh blueberries.</li>
+        <li>Hash Brown Platter – Crispy golden hash browns served with a side of ketchup or sour cream.</li>
+      </ul>
+    </div>
+
+    <div class="menu-section">
+      <img src="images/lunch.jpg" alt="Lunch Dishes" />
+      <h3>Lunch</h3>
+      <ul>
+        <li>Grilled Chicken Sandwich – Juicy grilled chicken on a toasted bun with lettuce, tomato, and mayo.</li>
+        <li>Club Sandwich – A triple-decker sandwich with turkey, bacon, lettuce, tomato, and mayo.</li>
+        <li>Caesar Salad – Crisp romaine lettuce in a creamy Caesar dressing, topped with croutons and parmesan.</li>
+        <li>BBQ Pulled Pork Sandwich – Tender pulled pork smothered in BBQ sauce on a soft bun with coleslaw.</li>
+        <li>Margherita Pizza – A classic pizza topped with fresh mozzarella, basil, and a rich tomato sauce.</li>
+        <li>Turkey Avocado Wrap – Sliced turkey, avocado, lettuce, and tomato in a whole wheat tortilla.</li>
+        <li>Veggie Burger – A flavorful plant-based patty with lettuce, tomato, and house-made aioli.</li>
+        <li>French Dip Sandwich – Sliced roast beef on a toasted hoagie roll, served with au jus.</li>
+        <li>Greek Salad – Cucumbers, tomatoes, olives, feta cheese, and red onions in a zesty Greek dressing.</li>
+        <li>Caprese Panini – Mozzarella, tomatoes, and basil pressed in crispy ciabatta with balsamic glaze.</li>
+      </ul>
+    </div>
+
+    <div class="menu-section">
+      <img src="images/dinner.jpg" alt="Dinner Dishes" />
+      <h3>Dinner</h3>
+      <ul>
+        <li>Grilled Ribeye Steak – A tender, juicy steak grilled to perfection, with veggies and mashed potatoes.</li>
+        <li>Pan-Seared Salmon – Fresh salmon fillet seared golden, served with lemon butter sauce.</li>
+        <li>Chicken Alfredo Pasta – Creamy alfredo sauce over fettuccine, topped with grilled chicken and parmesan.</li>
+        <li>Beef Tenderloin – Perfectly cooked beef tenderloin with a red wine reduction sauce.</li>
+        <li>Eggplant Parmesan – Breaded, fried eggplant layered with marinara and melted mozzarella.</li>
+        <li>Lobster Tail – Butter-basted lobster tail broiled to perfection, served with garlic butter and asparagus.</li>
+        <li>Stuffed Bell Peppers – Roasted peppers filled with seasoned ground beef, rice, and tomato sauce.</li>
+        <li>Seafood Paella – A saffron-infused rice dish with shrimp, mussels, and calamari.</li>
+        <li>BBQ Baby Back Ribs – Slow-cooked, fall-off-the-bone ribs with a smoky barbecue sauce.</li>
+        <li>Mushroom Risotto – Creamy risotto with wild mushrooms and finished with parmesan cheese.</li>
+      </ul>
+    </div>
+
+    <div class="menu-section">
+      <img src="images/dessert.jpg" alt="Desserts" />
+      <h3>Desserts</h3>
+      <ul>
+        <li>Chocolate Lava Cake – A rich chocolate cake with a molten center, served warm with vanilla ice cream.</li>
+        <li>Cheesecake – Creamy cheesecake with a graham cracker crust, topped with a berry compote.</li>
+        <li>Tiramisu – Layers of coffee-soaked ladyfingers, mascarpone cream, and a dusting of cocoa powder.</li>
+        <li>Crème Brûlée – A classic French custard dessert with a caramelized sugar crust.</li>
+        <li>Apple Pie – A warm spiced apple pie served with a scoop of vanilla ice cream.</li>
+      </ul>
+    </div>
+
+    <!-- Dynamic JSON Section -->
+    <h2>Selected Menu Items (Loaded from JSON)</h2>
+    <p>This section is loaded dynamically from our JSON file on GitHub.</p>
+    <div id="json-menu-container"></div>
   </div>
 
   <div class="footer">
@@ -341,17 +360,16 @@
       const navbar = document.querySelector('.navbar');
       navbar.classList.toggle('active');
     }
-
-    // 1) Use YOUR GitHub JSON URL here:
+    
+    // Replace with your actual JSON URL from GitHub
     const jsonURL = 'https://YOUR-USERNAME.github.io/YOUR-REPO/menus.json';
 
-    // 2) Fetch and Display
+    // Fetch and display JSON menu items
     fetch(jsonURL)
       .then(response => response.json())
       .then(data => {
-        // Group items by category (e.g. Breakfast, Lunch, etc.)
+        // Group items by category (e.g., Breakfast, Lunch, Dinner, Dessert)
         const categories = {};
-
         data.forEach(item => {
           if (!categories[item.category]) {
             categories[item.category] = [];
@@ -359,39 +377,36 @@
           categories[item.category].push(item);
         });
 
-        const menuContainer = document.getElementById('menu-container');
+        const jsonMenuContainer = document.getElementById('json-menu-container');
 
-        // For each category, create one .menu-section with an <img>, <h3>, <ul>, etc.
-        Object.keys(categories).forEach(catName => {
+        // For each category, create a menu section
+        Object.keys(categories).forEach(categoryName => {
           const sectionDiv = document.createElement('div');
           sectionDiv.className = 'menu-section';
 
           // Use the first item's image for the category
-          const firstItem = categories[catName][0];
+          const firstItem = categories[categoryName][0];
           const img = document.createElement('img');
           img.src = firstItem.img_name;
-          img.alt = catName + ' Dishes';
+          img.alt = categoryName + ' Dishes';
 
           const h3 = document.createElement('h3');
-          h3.textContent = catName;
+          h3.textContent = categoryName;
 
           const ul = document.createElement('ul');
-          categories[catName].forEach(menuItem => {
+          categories[categoryName].forEach(item => {
             const li = document.createElement('li');
-            // e.g. "Classic Pancakes – Fluffy pancakes served with syrup and butter. ($7.99)"
-            li.textContent = `${menuItem.dishName} – ${menuItem.description} (${menuItem.price})`;
+            li.textContent = `${item.dishName} – ${item.description} (${item.price})`;
             ul.appendChild(li);
           });
 
           sectionDiv.appendChild(img);
           sectionDiv.appendChild(h3);
           sectionDiv.appendChild(ul);
-          menuContainer.appendChild(sectionDiv);
+          jsonMenuContainer.appendChild(sectionDiv);
         });
       })
-      .catch(err => {
-        console.error('Error fetching or parsing menus.json:', err);
-      });
+      .catch(err => console.error('Error fetching or parsing menus.json:', err));
   </script>
 </body>
 </html>
