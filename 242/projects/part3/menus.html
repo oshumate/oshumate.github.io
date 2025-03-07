@@ -350,8 +350,21 @@
       const navbar = document.querySelector('.navbar');
       navbar.classList.toggle('active');
     }
-    // JSON Section:
-    // https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json
+    
+    // Fetch and load JSON data
+    fetch('https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Loaded JSON data:', data);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
   </script>
 </body>
 </html>
