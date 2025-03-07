@@ -1,3 +1,9 @@
+<!-- 
+  Submission Details:
+  Page: menus.html
+  JSON Data Loaded: Menu items for Breakfast, Lunch, Dinner, and Desserts from the provided JSON file.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,13 +142,16 @@
     }
     h3 {
       font-size: 28px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
     }
     p {
       font-size: 18px;
       line-height: 1.8;
       color: #555;
     }
+    /* Styles for menu sections and dynamic JSON items */
     .menu-section {
       margin-bottom: 50px;
     }
@@ -174,6 +183,27 @@
     .menu-section ul li:hover {
       color: var(--secondary-color);
       cursor: pointer;
+    }
+    /* Styles for dynamically loaded dishes from JSON */
+    .dish {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .dish img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .dish-info h4 {
+      margin: 0;
+      font-size: 22px;
+      color: var(--primary-color);
+    }
+    .dish-info p {
+      margin: 5px 0;
     }
     .footer {
       background-color: var(--primary-color);
@@ -253,9 +283,10 @@
     <h2>Our Menus</h2>
     <p>
       At Charliovski’s, we offer a wide variety of dishes for every meal of the day.
-      Below you'll find our complete menu (hard-coded).
+      Below you'll find our complete menu (hard-coded) along with a section loaded dynamically from JSON.
     </p>
-
+    
+    <!-- Hard-coded Static Menu Sections -->
     <div class="menu-section">
       <img src="images/breakfast.jpg" alt="Breakfast Dishes" />
       <h3>Breakfast</h3>
@@ -270,7 +301,6 @@
         <li>Hash Brown Platter – Crispy golden hash browns served with a side of ketchup or sour cream.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/lunch.jpg" alt="Lunch Dishes" />
       <h3>Lunch</h3>
@@ -287,7 +317,6 @@
         <li>Caprese Panini – Mozzarella, tomatoes, and basil pressed in crispy ciabatta with balsamic glaze.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/dinner.jpg" alt="Dinner Dishes" />
       <h3>Dinner</h3>
@@ -304,7 +333,6 @@
         <li>Mushroom Risotto – Creamy risotto with wild mushrooms and finished with parmesan cheese.</li>
       </ul>
     </div>
-
     <div class="menu-section">
       <img src="images/dessert.jpg" alt="Desserts" />
       <h3>Desserts</h3>
@@ -315,6 +343,12 @@
         <li>Crème Brûlée – A classic French custard dessert with a caramelized sugar crust.</li>
         <li>Apple Pie – A warm spiced apple pie served with a scoop of vanilla ice cream.</li>
       </ul>
+    </div>
+    
+    <!-- Dynamic JSON Menu Section -->
+    <div id="json-menu">
+      <h2>Dynamic Menu Loaded from JSON</h2>
+      <!-- Dynamic content will be inserted here -->
     </div>
   </div>
 
@@ -351,7 +385,7 @@
       navbar.classList.toggle('active');
     }
     
-    // Fetch and load JSON data
+    // Fetch and display JSON menu data
     fetch('https://raw.githubusercontent.com/oshumate/oshumate.github.io/main/242/projects/part3/menus.json')
       .then(response => {
         if (!response.ok) {
@@ -360,7 +394,56 @@
         return response.json();
       })
       .then(data => {
-        console.log('Loaded JSON data:', data);
+        // Group dishes by category
+        const categories = {};
+        data.forEach(item => {
+          if (!categories[item.category]) {
+            categories[item.category] = [];
+          }
+          categories[item.category].push(item);
+        });
+        
+        const jsonMenuContainer = document.getElementById('json-menu');
+        
+        // For each category, create a section with dynamic dishes
+        Object.entries(categories).forEach(([category, dishes]) => {
+          const section = document.createElement('div');
+          section.classList.add('menu-section');
+          
+          const header = document.createElement('h3');
+          header.textContent = category;
+          section.appendChild(header);
+          
+          dishes.forEach(dish => {
+            const dishContainer = document.createElement('div');
+            dishContainer.classList.add('dish');
+            
+            const img = document.createElement('img');
+            img.src = dish.img_name;
+            img.alt = dish.dishName;
+            dishContainer.appendChild(img);
+            
+            const dishInfo = document.createElement('div');
+            dishInfo.classList.add('dish-info');
+            
+            const dishName = document.createElement('h4');
+            dishName.textContent = dish.dishName;
+            dishInfo.appendChild(dishName);
+            
+            const description = document.createElement('p');
+            description.textContent = dish.description;
+            dishInfo.appendChild(description);
+            
+            const price = document.createElement('p');
+            price.textContent = dish.price;
+            dishInfo.appendChild(price);
+            
+            dishContainer.appendChild(dishInfo);
+            section.appendChild(dishContainer);
+          });
+          
+          jsonMenuContainer.appendChild(section);
+        });
       })
       .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
