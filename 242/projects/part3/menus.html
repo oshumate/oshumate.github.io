@@ -6,7 +6,6 @@
   <title>Menus - Charliovski's</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* (Your existing styles remain the same) */
     :root {
       --primary-color: #001f3f;
       --secondary-color: #87CEFA;
@@ -167,7 +166,7 @@
       color: #555;
     }
 
-    /* Container where the menu sections will be dynamically inserted */
+    /* This container will be populated by JSON data */
     #menu-container {
       margin-bottom: 50px;
     }
@@ -277,8 +276,8 @@
 <body>
   <!-- 
     GRADING NOTE:
-    Please look at THIS PAGE: menus.html
-    We are fetching 'menus.json' from GitHub and displaying menu items dynamically below.
+    Please look at THIS PAGE (menus.html).
+    It fetches menus.json from GitHub and displays the menu items dynamically below.
   -->
 
   <div class="header">
@@ -301,9 +300,12 @@
 
   <div class="content">
     <h2>Our Menus</h2>
-    <p>At Charliovski’s, we offer a wide variety of dishes for every meal of the day. Check out these popular selections loaded from our JSON file:</p>
+    <p>
+      At Charliovski’s, we offer a wide variety of dishes for every meal of the day.
+      Now our most popular selections are loaded dynamically from a JSON file!
+    </p>
 
-    <!-- This container will be populated by JavaScript -->
+    <!-- REPLACE the old, hard-coded menu sections with one container -->
     <div id="menu-container"></div>
   </div>
 
@@ -340,60 +342,50 @@
       navbar.classList.toggle('active');
     }
 
-    // 1. Replace this URL with the raw GitHub link to your own 'menus.json'
-    const jsonURL = 'https://yourusername.github.io/your-repo-name/menus.json';
+    // 1) Use YOUR GitHub JSON URL here:
+    const jsonURL = 'https://YOUR-USERNAME.github.io/YOUR-REPO/menus.json';
 
-    // 2. Fetch and display the menu items
+    // 2) Fetch and Display
     fetch(jsonURL)
       .then(response => response.json())
       .then(data => {
-        // Group items by category
+        // Group items by category (e.g. Breakfast, Lunch, etc.)
         const categories = {};
 
         data.forEach(item => {
-          const cat = item.category;
-          if (!categories[cat]) {
-            categories[cat] = [];
+          if (!categories[item.category]) {
+            categories[item.category] = [];
           }
-          categories[cat].push(item);
+          categories[item.category].push(item);
         });
 
         const menuContainer = document.getElementById('menu-container');
 
-        // For each category, create a .menu-section block
-        Object.keys(categories).forEach(categoryName => {
-          // Create the wrapper for this category
+        // For each category, create one .menu-section with an <img>, <h3>, <ul>, etc.
+        Object.keys(categories).forEach(catName => {
           const sectionDiv = document.createElement('div');
           sectionDiv.className = 'menu-section';
 
-          // We assume all items in the category use the same image:
-          // so just grab the img_name from the first item
-          const firstItem = categories[categoryName][0];
-
-          // Add the image
+          // Use the first item's image for the category
+          const firstItem = categories[catName][0];
           const img = document.createElement('img');
           img.src = firstItem.img_name;
-          img.alt = categoryName + ' Dishes';
+          img.alt = catName + ' Dishes';
 
-          // Add the heading
           const h3 = document.createElement('h3');
-          h3.textContent = categoryName;
+          h3.textContent = catName;
 
-          // Build the <ul> with all items in this category
           const ul = document.createElement('ul');
-          categories[categoryName].forEach(item => {
+          categories[catName].forEach(menuItem => {
             const li = document.createElement('li');
-            // Example: dishName – description (price)
-            li.textContent = `${item.dishName} – ${item.description} (${item.price})`;
+            // e.g. "Classic Pancakes – Fluffy pancakes served with syrup and butter. ($7.99)"
+            li.textContent = `${menuItem.dishName} – ${menuItem.description} (${menuItem.price})`;
             ul.appendChild(li);
           });
 
-          // Append everything into sectionDiv
           sectionDiv.appendChild(img);
           sectionDiv.appendChild(h3);
           sectionDiv.appendChild(ul);
-
-          // Finally, append to #menu-container
           menuContainer.appendChild(sectionDiv);
         });
       })
