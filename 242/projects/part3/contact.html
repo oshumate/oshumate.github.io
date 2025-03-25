@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Charliovski's</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- EmailJS library for sending emails from JavaScript -->
-  <script async src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- Removed async attribute to ensure EmailJS loads before our code runs -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <style>
     :root {
       --primary-color: #001f3f;
@@ -177,7 +177,7 @@
 
     <h3>Send Us a Message</h3>
     <div class="contact-form">
-      <!-- Removed action and method attributes to prevent default submission -->
+      <!-- Removed action and method attributes to ensure JS handles submission -->
       <form id="contactForm">
         <label for="name">Your Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
@@ -199,29 +199,30 @@
   </div>
 
   <script>
-    // Initialize EmailJS with your user ID (replace 'YOUR_USER_ID' with your actual user ID)
-    (function(){
+    // Wait until the window (and thus EmailJS) is fully loaded
+    window.onload = function() {
+      // Initialize EmailJS with your user ID (replace 'YOUR_USER_ID' with your actual user ID)
       emailjs.init("YOUR_USER_ID");
-    })();
 
-    // Asynchronous form submission using EmailJS
-    document.getElementById('contactForm').addEventListener('submit', async function(event) {
-      event.preventDefault(); // Prevent the default form submission
-      const formMessage = document.getElementById('form-message');
-      formMessage.style.color = "var(--primary-color)";
-      formMessage.innerText = 'Sending...';
+      // Attach the asynchronous form submission handler
+      document.getElementById('contactForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        const formMessage = document.getElementById('form-message');
+        formMessage.style.color = "var(--primary-color)";
+        formMessage.innerText = 'Sending...';
 
-      try {
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
-        await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
-        formMessage.innerText = 'Message sent successfully!';
-        this.reset();
-      } catch (error) {
-        console.error('Failed to send the message:', error);
-        formMessage.style.color = "red";
-        formMessage.innerText = 'There was an error sending your message. Please try again later.';
-      }
-    });
+        try {
+          // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
+          await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
+          formMessage.innerText = 'Message sent successfully!';
+          this.reset();
+        } catch (error) {
+          console.error('Failed to send the message:', error);
+          formMessage.style.color = "red";
+          formMessage.innerText = 'There was an error sending your message. Please try again later.';
+        }
+      });
+    };
   </script>
 </body>
 </html>
