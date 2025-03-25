@@ -177,7 +177,8 @@
 
     <h3>Send Us a Message</h3>
     <div class="contact-form">
-      <form id="contactForm" action="#" method="post">
+      <!-- Removed action and method attributes to prevent default submission -->
+      <form id="contactForm">
         <label for="name">Your Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -205,7 +206,7 @@
 
     // Asynchronous form submission using EmailJS
     document.getElementById('contactForm').addEventListener('submit', async function(event) {
-      event.preventDefault(); // Prevent form from redirecting
+      event.preventDefault(); // Prevent the default form submission
       const formMessage = document.getElementById('form-message');
       formMessage.style.color = "var(--primary-color)";
       formMessage.innerText = 'Sending...';
