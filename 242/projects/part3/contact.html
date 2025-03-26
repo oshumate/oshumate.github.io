@@ -1,200 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Charliovski's</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me</title>
+  <!-- Basic styling for responsiveness and professional alignment -->
   <style>
     :root {
       --primary-color: #001f3f;
-      --secondary-color: #87CEFA;
+      --secondary-color: #87cefa;
       --accent-color: #ffc107;
       --text-color: #ffffff;
-      --grey-text: #7a7a7a;
-      --background-color: #f4f4f4;
+      --error-color: #e74c3c;
+      --success-color: #2ecc71;
       --font-family: 'Lora', serif;
       --heading-font: 'Montserrat', sans-serif;
     }
+    * {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
       font-family: var(--font-family);
-      margin: 0;
-      background-color: var(--background-color);
-      min-height: 100vh;
+      background-color: #f4f4f4;
+      color: #333;
       line-height: 1.6;
-      color: var(--grey-text);
-    }
-    .header {
-      background-color: var(--primary-color);
-      color: var(--accent-color);
-      text-align: center;
-      padding: 30px 0;
-      font-size: 48px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .navbar {
-      background-color: var(--primary-color);
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .navbar ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .navbar ul li {
-      margin: 0 25px;
-      position: relative;
+    .container {
+      background: #fff;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    .navbar ul li a {
-      text-decoration: none;
-      color: var(--text-color);
-      padding: 20px 0;
-      display: block;
-      font-size: 20px;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .navbar ul li a::after {
-      content: "|";
-      color: var(--text-color);
-      font-size: 24px;
-      margin-left: 15px;
-      position: absolute;
-      right: -15px;
-    }
-    .navbar ul li a:last-child::after {
-      content: "";
-    }
-    .navbar ul li a:hover {
-      color: var(--secondary-color);
-      transform: scale(1.05);
-    }
-    .content {
-      padding: 40px 60px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2, h3 {
-      color: var(--primary-color);
+    h1 {
+      text-align: center;
       font-family: var(--heading-font);
-      text-transform: uppercase;
-    }
-    h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 10px;
-    }
-    h3 {
-      font-size: 36px;
+      color: var(--primary-color);
       margin-bottom: 20px;
     }
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+      font-weight: 600;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      width: 100%;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
     }
     .button {
-      display: inline-block;
-      padding: 12px 25px;
-      color: var(--text-color);
+      margin-top: 20px;
+      padding: 12px;
       background-color: var(--primary-color);
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: background 0.3s, transform 0.3s;
+      color: var(--text-color);
       border: none;
+      border-radius: 30px;
+      font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
     }
     .button:hover {
       background-color: var(--secondary-color);
       transform: translateY(-3px);
     }
-    .contact-form {
-      margin-top: 20px;
-    }
-    /* Styling for form messages */
-    #form-message {
-      margin-top: 10px;
-      font-size: 18px;
+    .message {
+      margin-top: 15px;
       font-weight: bold;
-      color: var(--primary-color);
+      font-size: 16px;
     }
-    .footer {
-      background-color: var(--primary-color);
-      color: var(--text-color);
-      text-align: center;
-      padding: 40px 0;
-      margin-top: 50px;
+    .message.success {
+      color: var(--success-color);
     }
-    .footer p {
-      margin: 0;
-      font-size: 18px;
+    .message.error {
+      color: var(--error-color);
     }
-    .footer a {
-      color: var(--accent-color);
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
-    }
-    .footer a:hover {
-      text-decoration: underline;
+    /* Responsive design adjustments */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    Contact Us - Charliovski's
+  <div class="container">
+    <h1>Contact Me</h1>
+    <form id="contactForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit" class="button">Send Message</button>
+    </form>
+    <div id="form-message" class="message"></div>
   </div>
-  <div class="navbar">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="menus.html">Menus</a></li>
-      <li><a href="reservations.html">Reservations</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="order.html">Order Online</a></li>
-    </ul>
-  </div>
-  <div class="content">
-    <h2>Get in Touch</h2>
-    <p>If you have any questions or need assistance, please feel free to contact us. We’d love to hear from you!</p>
-    <h3>Send Us a Message</h3>
-    <div class="contact-form">
-      <!-- Form with no action/method so it doesn't perform a traditional submission -->
-      <form id="contactForm">
-        <label for="name">Your Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Your Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="message">Your Message:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
-        <input type="submit" class="button" value="Send Message">
-      </form>
-      <div id="form-message"></div>
-    </div>
-  </div>
-  <div class="footer">
-    <p>&copy; 2025 Charliovski's | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
-  </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var form = document.getElementById("contactForm");
-      form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting traditionally
-        document.getElementById("form-message").innerText = "Message sent";
-      });
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+    // Initialize EmailJS with your user ID
+    (function(){
+      emailjs.init("YOUR_USER_ID");
+    })();
+
+    // Add an event listener for form submission
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      // Clear previous messages
+      const messageDiv = document.getElementById("form-message");
+      messageDiv.innerText = "";
+      messageDiv.classList.remove("error", "success");
+
+      // Basic HTML validation is handled by required attributes;
+      // additional custom validation could be added here if needed.
+
+      // Retrieve form data
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // Prepare the parameters for the email template
+      const templateParams = {
+        from_name: name,
+        reply_to: email,
+        message: message
+      };
+
+      try {
+        // Send the email using EmailJS asynchronously
+        const response = await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams);
+        console.log("SUCCESS!", response.status, response.text);
+        messageDiv.innerText = "Message sent successfully!";
+        messageDiv.classList.add("success");
+        document.getElementById("contactForm").reset();
+      } catch (error) {
+        console.error("FAILED...", error);
+        messageDiv.innerText = "An error occurred. Please try again later.";
+        messageDiv.classList.add("error");
+      }
     });
   </script>
 </body>
