@@ -172,7 +172,7 @@
     <p>If you have any questions or need assistance, please feel free to contact us. We’d love to hear from you!</p>
     <h3>Send Us a Message</h3>
     <div class="contact-form">
-      <!-- Note: No action or method attributes -->
+      <!-- Form with no action/method so it doesn't perform a traditional submission -->
       <form id="contactForm">
         <label for="name">Your Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
@@ -189,13 +189,11 @@
     <p>&copy; 2025 Charliovski's | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
   </div>
   <script>
-    // Wait for the DOM to load before attaching the event listener
     document.addEventListener("DOMContentLoaded", function() {
       var form = document.getElementById("contactForm");
-      form.addEventListener("submit", function(e) {
-        e.preventDefault(); // Prevent any default submission behavior
-        var messageDiv = document.getElementById("form-message");
-        messageDiv.innerText = "Message send confirmed";
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+        document.getElementById("form-message").innerText = "Message sent";
       });
     });
   </script>
