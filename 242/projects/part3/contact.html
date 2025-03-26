@@ -127,7 +127,6 @@
     .contact-form {
       margin-top: 20px;
     }
-    /* Styling for form messages */
     #form-message {
       margin-top: 10px;
       font-size: 18px;
@@ -196,22 +195,15 @@
     <p>&copy; 2025 Charliovski's | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
   </div>
   <script type="text/javascript">
-    // Asynchronous form submission using Web3Forms
     document.getElementById("contactForm").addEventListener("submit", async function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      // Clear previous messages
+      event.preventDefault();
       const messageDiv = document.getElementById("form-message");
       messageDiv.innerText = "";
       messageDiv.classList.remove("error", "success");
-
-      // Prepare form data
       const formData = new FormData(document.getElementById("contactForm"));
-      // Append Web3Forms required parameters
-      formData.append("apikey", "1a322a45-9b97-4250-8737-86e7ac596b1a"); // Replace with your Web3Forms API key
+      formData.append("apikey", "1a322a45-9b97-4250-8737-86e7ac596b1a");
       formData.append("subject", "New message from Charliovski's contact form");
-      formData.append("to_email", "charliovsk@gmail.com"); // Destination email
-
+      formData.append("to_email", "charliovsk@gmail.com");
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
